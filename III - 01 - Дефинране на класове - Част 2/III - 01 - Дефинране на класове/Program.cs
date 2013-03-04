@@ -15,6 +15,8 @@ namespace III___01___Дефинране_на_класове
             Console.WriteLine(CalculateDistance.calct(point1, point2));
             Path collection = new Path();
             collection.AddPoint(point1, point2);
+            Console.WriteLine(collection.path);
+           
             
 
         }
