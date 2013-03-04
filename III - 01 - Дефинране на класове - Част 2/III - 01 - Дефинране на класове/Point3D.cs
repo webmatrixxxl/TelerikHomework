@@ -14,7 +14,7 @@ namespace III___01___Дефинране_на_класове
         private int Y { get; set; }
         private int Z { get; set; }
 
-        static readonly Point3D O;
+        static readonly Point3D O = new Point3D(0, 0, 0);
         //</fields>
 
         //<constructor>
@@ -32,7 +32,7 @@ namespace III___01___Дефинране_на_класове
         {
             get
             {
-                return new Point3D(0, 0, 0) ;
+                return  Point3D.O;
             }
         }
         //</property>
