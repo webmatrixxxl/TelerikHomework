@@ -18,10 +18,8 @@ namespace III___01___Дефинране_на_класове___Част_1
         //<construcotrs>
         public Call(string phoneNumber, int duration)
         {
-           
             this.phoneNumber = phoneNumber;
             this.duration = duration;
-
         }
         //</constructors>
 

@@ -10,11 +10,11 @@ namespace III___01___Дефинране_на_класове
     {
         //<fields>
 
-        private int X { get; set; }
-        private int Y { get; set; }
-        private int Z { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Z { get; set; }
 
-        static public readonly Point3D pointO = new Point3D(0, 0, 0);
+        private static readonly Point3D pointO = new Point3D(0, 0, 0);
         //</fields>
 
         //<constructor>
