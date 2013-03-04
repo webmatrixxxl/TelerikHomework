@@ -10,8 +10,10 @@ namespace III___01___Дефинране_на_класове
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine(Point3D.PointO);
+
+            Console.WriteLine(Point3D.PointO); // Console.WriteLine(Point3D.PointO.X)
+            //ili 
+            Console.WriteLine(Point3D.pointO);
         }
     }
 }
