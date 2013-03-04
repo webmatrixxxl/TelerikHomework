@@ -18,11 +18,8 @@ namespace III___01___Дефинране_на_класове
         //</fields>
 
         //<constructor>
-        static Point3D()
-        {
-            O = new Point3D(0, 0, 0);
-        }
-        public Point3D(int X, int Y, int Z)
+
+        public Point3D(int X, int Y, int Z):this()
         {
             this.X = X;
             this.Y = Y;
@@ -35,7 +32,7 @@ namespace III___01___Дефинране_на_класове
         {
             get
             {
-                return O;
+                return new Point3D(0, 0, 0) ;
             }
         }
         //</property>
