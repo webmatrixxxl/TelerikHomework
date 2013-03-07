@@ -12,7 +12,7 @@ namespace III___01___Дефинране_на_класове___Част_1
         Call FirstCall = new Call("0878756132", 3600);
             Call SecondCall = new Call("087888888", 3600);
 
-            BlackBerry.AddCall(FirstCall.PhoneNumber, FirstCall.Duration);
+          
         
     }
 }

@@ -10,15 +10,16 @@ namespace III___01___Дефинране_на_класове
     {
         static void Main(string[] args)
         {
-            Point3D point1 = new Point3D(1,1,1);
+            Point3D point1 = new Point3D(2,3,4);
             Point3D point2 = new Point3D(1,1,1);
             Console.WriteLine(CalculateDistance.calct(point1, point2));
             Path collection = new Path();
             collection.AddPoint(point1, point2);
-            Console.WriteLine(collection.PathList[0]);
-           
-            
 
+            PathStorage.Save(collection.PathList, "Colection1");
+            PathStorage.Save(collection.PathList, "Colection2");
+            Console.WriteLine(PathStorage.Load("Colection1"));
+            
         }
     }
 }
