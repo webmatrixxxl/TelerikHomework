@@ -39,25 +39,23 @@ namespace III___01___Дефинране_на_класове
 
 
         }
-        public static string Load(string loadName)
+        public static List<Point3D> Load(string loadName)
         {
 
+            List<Point3D> Point3DList = new List<Point3D>();
 
             StreamReader streamReader =
      new StreamReader("numbers.txt");
             int index;
             using (streamReader)
             {
-                int lineNumber=0;
+              
                 string collection;
                 string line = streamReader.ReadLine();
-                List<Point3D> Point3DList = new List<Point3D>();
 
                 while (line != null)
                 {
-                    lineNumber++;
-                    Console.WriteLine("Line {0}: {1}",
-                        lineNumber, line);
+                    
                     index = line.IndexOf(loadName);
                     line = streamReader.ReadLine();
                     if (index >= 0)
@@ -65,24 +63,25 @@ namespace III___01___Дефинране_на_класове
                         collection = line;
                         collection = collection.Substring(loadName.Length, collection.Length - loadName.Length).Trim();
 
-                        string[] collectionArray = collection.Split(',');
+                        string[] collectionArray = collection.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
                         foreach (var item in collectionArray)
                         {
-                            string[] xyzArray = item.Trim().Split(' ');                           
+                           
+                            string[] xyzArray = item.Trim().Split(' ');
                             Point3D pointLoad = new Point3D(int.Parse(xyzArray[0]),int.Parse(xyzArray[1]),int.Parse(xyzArray[0]));
                        
                             Point3DList.Add(pointLoad);
                             
                         }
 
-                        return "found";
+                        return Point3DList;
                     }
                     
                 }
 
                 streamReader.Close();
             }
-            return "not found";
+            return Point3DList;
 
         }
 
