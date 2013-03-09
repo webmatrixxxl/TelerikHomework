@@ -41,12 +41,29 @@ namespace III___01___Дефинране_на_класове
 
         public static T operator *(T m1, T m2)
         {
-            if (m1.)
+            if (m1)
             {
                 
             }
         }
         //</overloadingoperators>
+
+        //<property>
+        public int Row
+        {
+            get
+            {
+               return array.GetLength(0);
+            }
+        }
+        public int Col
+        {
+            get
+            {
+                return array.GetLength(1);
+            }
+        }
+        //</property>
 
         //<methods>
         public void Add(int row, int col, T value)
