@@ -27,15 +27,24 @@ namespace III___01___Дефинране_на_класове
             LIST.Insert(51, 2);
             LIST.Insert(51, 1);
             LIST.Insert(51, 3);
-            LIST.Insert(51, 6);
+            LIST.Insert(51, 3);
             LIST.AddElement(111);
 
-            Console.WriteLine(LIST.Access(4));
+            Console.WriteLine(LIST.Access(8));
             Console.WriteLine("ss"+LIST.array.Length + "Golemina na masiva");
+            Console.WriteLine(LIST.Find(111));
+            Console.WriteLine(LIST.Min() + " Min");
+            Console.WriteLine(LIST.Max() + " Max");
             LIST.ClearArray();
             Console.WriteLine(LIST.Access(4));
+
+            Matrix<int> matrix = new Matrix<int>(5,5);
+            matrix.Add(1,1,5);
+            matrix[1, 1] = 5;
+
+            Console.WriteLine(matrix[1, 1]);
            
-            
+
 
             
         }

@@ -8,7 +8,11 @@ namespace III___01___Дефинране_на_класове
 {
     class Path
     {
+        //<fields>
         private List<Point3D> path = new List<Point3D>();
+        //</fields>
+
+        //<constructors>
         public Path(params Point3D[] points)
         {
 
@@ -20,6 +24,9 @@ namespace III___01___Дефинране_на_класове
                 return this.path;
             }
         }
+        //</constructors>
+
+        //<methods>
         public void AddPoint(params Point3D[] point)
         {
             foreach (var item in point)
@@ -29,5 +36,7 @@ namespace III___01___Дефинране_на_класове
             }
 
         }
+        //</methods>
+
     }
 }

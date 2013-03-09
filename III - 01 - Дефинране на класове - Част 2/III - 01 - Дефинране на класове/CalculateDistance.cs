@@ -8,6 +8,7 @@ namespace III___01___Дефинране_на_класове
 {
     static class CalculateDistance
     {
+        //<methods>
         public static double calct(Point3D point1, Point3D point2)
         {
 
@@ -17,5 +18,7 @@ namespace III___01___Дефинране_на_класове
       (point2.X - point1.Z) * (point2.Z - point1.Z));
 
         }
+        //</methods>
+
     }
 }

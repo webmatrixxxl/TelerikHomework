@@ -10,15 +10,16 @@ namespace III___01___Дефинране_на_класове
     {
         //<fields>
         public T[] array { get; set; }
-        private int arraSize;
+        private int count = 0;
+        private int arraySize;
         //</fields>
 
         //<constructors>
         public GenericList()
         {
-            this.arraSize = 4;
-            array = new T[arraSize];
-            
+            this.arraySize = 4;
+            array = new T[arraySize];
+
 
         }
         //</constructors>
@@ -36,10 +37,10 @@ namespace III___01___Дефинране_на_класове
             }
 
             this.array[index] = value;
-
-            if (array.Count() == array.Length)
+            count++;
+            if (count == array.Length)
             {
-                T[] arrayBuffer = new T[array.Length*2];
+                T[] arrayBuffer = new T[array.Length * 2];
                 for (int i = 0; i < array.Length; i++)
                 {
                     arrayBuffer[i] = this.array[i];
@@ -64,6 +65,7 @@ namespace III___01___Дефинране_на_класове
                 }
                 arraybuffer[i] = this.array[c];
             }
+            count--;
             this.array = arraybuffer;
         }
         public void AddElement(T value)
@@ -75,15 +77,42 @@ namespace III___01___Дефинране_на_класове
             }
             arraybuffer[arraybuffer.Length - 1] = value;
             array = arraybuffer;
+            count++;
         }
         public void ClearArray()
         {
             Array.Clear(array, 0, array.Length);
+            count = 0;
         }
         public T Access(int index)
         {
             return array[index];
         }
+        public T Find(T value)
+        {
+            int index = Array.IndexOf(array, value);
+            Console.WriteLine(index + "opa");
+            if (index < 0)
+            {
+                throw new IndexOutOfRangeException("ELEMENT IS NOT FOUND IN LIST");
+            }
+            return array[index];
+        }
+
+        public T Min()
+        {
+            T[] sortedArray = array;
+            Array.Sort(sortedArray);
+             return sortedArray[0];
+        }
+        public T Max()
+        {
+            T[] sortedArray = array;
+            Array.Sort(sortedArray);
+            return sortedArray[sortedArray.Length-1];
+        }
+      
+      
         //</methods>
 
     }
