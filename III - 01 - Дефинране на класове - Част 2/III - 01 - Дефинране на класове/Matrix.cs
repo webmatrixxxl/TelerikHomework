@@ -39,7 +39,13 @@ namespace III___01___Дефинране_на_класове
 
         //<overloadingoperators>
 
-
+        public static T operator *(T m1, T m2)
+        {
+            if (m1.)
+            {
+                
+            }
+        }
         //</overloadingoperators>
 
         //<methods>
