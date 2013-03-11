@@ -38,12 +38,70 @@ namespace III___01___Дефинране_на_класове
         //</indexers>
 
         //<overloadingoperators>
-
-        public static T operator *(T m1, T m2)
+        public static Matrix<T> operator +(Matrix<T> first, Matrix<T> second)
         {
-            if (m1)
+            if (first.Row == second.Row && first.Col == second.Col)
             {
-                
+                Matrix<T> tempArr = new Matrix<T>(first.Row, first.Col);
+                for (int i = 0; i < first.Row; i++)
+                {
+                    for (int j = 0; j < first.Col; j++)
+                    {
+                        checked
+                        {
+                            tempArr[i, j] = (dynamic)first[i, j] + second[i, j];
+                        }
+                    }
+                }
+                return tempArr;
+            }
+            else throw new Exception("The given matrix are not with the same Col and Row size");
+        }
+
+        public static Matrix<T> operator -(Matrix<T> first, Matrix<T> second)
+        {
+            if (first.Row == second.Row && first.Col == second.Col)
+            {
+                Matrix<T> tempArr = new Matrix<T>(first.Row, first.Col);
+                for (int i = 0; i < first.Row; i++)
+                {
+                    for (int j = 0; j < first.Col; j++)
+                    {
+                        checked
+                        {
+                            tempArr[i, j] = (dynamic)first[i, j] - second[i, j];
+                        }
+                    }
+                }
+                return tempArr;
+            }
+            else throw new Exception("The given matrix are not with the same Col and Row size");
+        }
+
+        public static Matrix<T> operator *(Matrix<T> first, Matrix<T> second)
+        {
+            if (first.Col == second.Row && (first.Row > 0 && second.Col > 0 && first.Col > 0))
+            {
+                Matrix<T> final = new Matrix<T>(first.Row, second.Col);
+                for (int i = 0; i < final.Row; i++)
+                {
+                    for (int j = 0; j < final.Col; j++)
+                    {
+                        final[i, j] = (dynamic)0;
+                        for (int k = 0; k < first.Col; k++)
+                        {
+                            checked
+                            {
+                                final[i, j] = final[i, j] + (dynamic)first[i, k] * second[k, j];
+                            }
+                        }
+                    }
+                }
+                return final;
+            }
+            else
+            {
+                throw new Exception("Row on the first matrix and col on the second matrix, are with different size, multiplication cannot be done.");
             }
         }
         //</overloadingoperators>
