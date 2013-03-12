@@ -20,9 +20,12 @@ namespace SortNames
             all.Add(Go6o);
             all.Add(Rami);
             
-            var newList  = from names  in all orderby students.FirstName;
+            var newList  = from names  in all where names.FirstName.CompareTo(names.LastName) < 0 select names;
 
-            
+            foreach (var item in newList)
+            {
+                Console.WriteLine(item.FirstName);
+            }
         }
     }
 }
