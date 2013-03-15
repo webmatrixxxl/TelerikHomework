@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Write a method that from a given array of students finds all students
+//whose first name is before its last name alphabetically. Use LINQ query operators.
+
+
 namespace SortNames
 {
     class Program

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Write a LINQ query that finds the first name and last name of all students with age between 18 and 24.
+
+
 namespace _04.FirstAndLastNamesOfStudenstAge
 {
     class Program
@@ -20,7 +23,7 @@ namespace _04.FirstAndLastNamesOfStudenstAge
             all.Add(Go6o);
             all.Add(Rami);
 
-            var newList = from names in all where names.Age > 18 && names.Age < 25 select names;
+            var newList = from names in all where names.Age > 17 && names.Age < 25 select names;
 
             foreach (var item in newList)
             {
