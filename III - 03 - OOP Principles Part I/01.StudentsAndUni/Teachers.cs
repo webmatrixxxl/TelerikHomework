@@ -9,9 +9,9 @@ namespace _01.StudentsAndUni
     {
         public List<Disciplines> Discplines { get; set; }
 
-        public Teachers(string name)
+        public Teachers(string name, List<Disciplines> disciplines)
         {
-            this.Discplines = new List<Disciplines>();
+            this.Discplines = disciplines;
             this.name = name;
         }
     }
