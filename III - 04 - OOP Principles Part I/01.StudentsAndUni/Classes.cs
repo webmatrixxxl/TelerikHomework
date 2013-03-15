@@ -11,7 +11,7 @@ namespace _01.StudentsAndUni
         List<Teachers> teachers = new List<Teachers>();
         List<Students> students = new List<Students>();
 
-        public Classes(string ClassID, List<Teachers> teachers, List<Students> students)
+        public Classes(string ClassID, params List<Teachers> teachers, params List<Students> students)
         {
             this.classID = classID;
             this.teachers = teachers;
