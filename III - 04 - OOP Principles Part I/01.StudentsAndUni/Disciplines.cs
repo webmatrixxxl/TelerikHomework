@@ -9,6 +9,8 @@ namespace _01.StudentsAndUni
     {
         public string name { get; set; }
 
+        public string comment { get; set; }
+
         public int numOfLectures { get; set; }
 
         public int numOfExercises { get; set; }
