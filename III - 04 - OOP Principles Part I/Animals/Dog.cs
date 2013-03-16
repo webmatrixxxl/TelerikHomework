@@ -11,9 +11,9 @@ namespace Animals
         public Dog(int age, string name, string sex)
             : base(age, name, sex)
         { }
-        public override void ISound()
+        public override void Sound()
         {
-            string sound = "Dog say bau bau";
+            Console.WriteLine("Dog say bau bau");
             
         }
 
@@ -24,7 +24,7 @@ namespace Animals
             info.AppendLine("Dog name: " + this.name);
             info.AppendLine("Dog age: " + this.age);
             info.AppendFormat("Dog sex: " + this.sex);
-            info.AppendFormat("Dog sound like: " + ISound()).AppendLine();
+            info.AppendFormat("Dog sound like: " + Sound()).AppendLine();
 
             return base.ToString(info.ToString());
         }

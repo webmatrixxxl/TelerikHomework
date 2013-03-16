@@ -21,6 +21,6 @@ namespace Animals
 
    
 
-        public abstract void ISound ();
+        public abstract void Sound ();
     }
 }
