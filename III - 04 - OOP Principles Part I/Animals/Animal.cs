@@ -8,9 +8,11 @@ namespace Animals
 {
     abstract class Animal
     {
+
         public int age { get; set; }
         public string name { get; set; }
         public string sex { get; set; }
+        public string sound { get; set; }
 
         public Animal(int age, string name, string sex)
         {
@@ -21,6 +23,6 @@ namespace Animals
 
    
 
-        public abstract void Sound ();
+        public abstract string Sound ();
     }
 }
