@@ -1,0 +1,47 @@
+﻿
+<!--Sort 3 real values in descending order using nested if statements.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div id="console"></div>
+        <script src="scripts/js-console.js"></script>
+
+    <script>
+        var f = 4;
+        var s = -5;
+        var t = 7;
+        if (f > s && f > t) {
+            if (s > t) {
+                jsConsole.writeLine("{0} {1} {2}", f, s, t);
+            }
+            else {
+                jsConsole.writeLine("{0} {1} {2}", f, t, s);
+            }
+
+        }
+        else if (s > f && s > t) {
+            if (f > t) {
+                jsConsole.writeLine("{0} {1} {2}", s, f, t);
+            }
+            else {
+                jsConsole.writeLine("{0} {1} {2}", s, t, f);
+            }
+        }
+        else if (t > s && t > f) {
+            if (f > s) {
+                jsConsole.writeLine("{0} {1} {2}", t, f, s);
+            }
+            else {
+                jsConsole.writeLine("{0} {1} {2}", t, s, f);
+            }
+        }
+
+    </script>
+</body>
+</html>

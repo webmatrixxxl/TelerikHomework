@@ -1,0 +1,34 @@
+
+<!--Write a script that finds the biggest of three integers using nested if statements.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div id="console"></div>
+        <script src="scripts/js-console.js"></script>
+
+    <script>
+        var f = 4;
+        var s = -5;
+        var t = 7;
+        if (f > s && f > t) {
+            jsConsole.writeLine("FIRST ONE is the biggest");
+        }
+        else if (s > f && s > t) {
+            jsConsole.writeLine("SECOND ONE is the biggest");
+        }
+        else if (t > s && t > f) {
+            jsConsole.writeLine("THIRD ONE is the biggest");
+        }
+        else {
+            jsConsole.writeLine("Nothing is bigger.");
+        }
+
+    </script>
+</body>
+</html>

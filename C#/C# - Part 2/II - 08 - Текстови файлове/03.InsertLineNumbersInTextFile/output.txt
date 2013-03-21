@@ -1,0 +1,32 @@
+1.using System;
+2.using System.Collections.Generic;
+3.using System.Linq;
+4.using System.Text;
+5.using System.Threading.Tasks;
+6.using System.IO;
+7.
+8.//Write a program that reads a text file and inserts line numbers in front
+9.//of each of its lines. The result should be written to another text file.
+10.
+11.
+12.namespace _03.InsertLineNumbersInTextFile
+13.{
+14.    class Program
+15.    {
+16.        static void Main(string[] args)
+17.        {
+18.            int n = 1;
+19.
+20.            using (StreamReader input = new StreamReader("../../Program.cs"))
+21.            {
+22.                using (StreamWriter output = new StreamWriter("../../output.txt"))
+23.                {
+24.                    for (string line; (line = input.ReadLine()) != null; n++)
+25.                    {
+26.                        output.WriteLine("{0}.{1}", n, line);
+27.                    }
+28.                }
+29.            }
+30.        }
+31.    }
+32.}

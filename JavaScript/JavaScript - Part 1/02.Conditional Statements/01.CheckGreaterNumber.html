@@ -1,0 +1,35 @@
+
+<!--Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div id="console"></div>
+        <script src="scripts/js-console.js"></script>
+
+    <script>
+      
+            var f = 1;
+            var s = 0;
+            jsConsole.writeLine("Numbers bofore if statement: "+ f + " and " + s);
+            if (f > s)
+            {
+                var buffer = f;
+                f = s;
+                s = buffer;
+               
+            }
+
+            jsConsole.writeLine("Numbers after exchange: "+ f + " and " + s);
+
+            
+        
+       
+    </script>
+</body>
+</html>

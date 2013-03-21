@@ -1,0 +1,15 @@
+﻿body {
+    background-color: #ccecff;
+    font-family: 'Trebuchet MS';
+    font-style: italic;
+    color:darkblue;
+}
+#nav a {
+    padding-right:80px;
+}
+#nav {
+        margin-bottom:60px;
+}
+ul {
+    list-style-type:none;
+}

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.IsYearALeap", "II - 06 - Използване на класове и обекти\01.IsYearALeap.csproj", "{6039A94E-0579-4065-8C72-2DC3E7F4E31B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.10RnadomNumbersForm100To200", "02.10RnadomNumbersForm100To200\02.10RnadomNumbersForm100To200.csproj", "{9173B951-86A8-4DF0-9E9F-F0FFB36895D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WhichDayOfTheWeekIsToday", "03.WhichDayOfTheWeekIsToday\03.WhichDayOfTheWeekIsToday.csproj", "{7212D582-FA47-446E-BF94-EAC1274D01D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.TriangleArea", "04.TriangleArea\04.TriangleArea.csproj", "{4FB7EBF3-9077-4F00-99CC-7204CE45C02F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.CalcolatePeriodOfWorkingDays", "05.CalcolatePeriodOfWorkingDays\05.CalcolatePeriodOfWorkingDays.csproj", "{CDED3045-5FB2-4017-8EF6-4B267CD63434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.SumIntInStringWithSpaces", "06.SumIntInStringWithSpaces\06.SumIntInStringWithSpaces.csproj", "{315AD436-76BF-4C4F-97F6-11584B140C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.AritgmeticalExpression", "07.AritgmeticalExpression\07.AritgmeticalExpression.csproj", "{4A7F4985-1181-4E82-8E41-2E63DE662721}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6039A94E-0579-4065-8C72-2DC3E7F4E31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6039A94E-0579-4065-8C72-2DC3E7F4E31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6039A94E-0579-4065-8C72-2DC3E7F4E31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6039A94E-0579-4065-8C72-2DC3E7F4E31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9173B951-86A8-4DF0-9E9F-F0FFB36895D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9173B951-86A8-4DF0-9E9F-F0FFB36895D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9173B951-86A8-4DF0-9E9F-F0FFB36895D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9173B951-86A8-4DF0-9E9F-F0FFB36895D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7212D582-FA47-446E-BF94-EAC1274D01D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7212D582-FA47-446E-BF94-EAC1274D01D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7212D582-FA47-446E-BF94-EAC1274D01D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7212D582-FA47-446E-BF94-EAC1274D01D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FB7EBF3-9077-4F00-99CC-7204CE45C02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FB7EBF3-9077-4F00-99CC-7204CE45C02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FB7EBF3-9077-4F00-99CC-7204CE45C02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FB7EBF3-9077-4F00-99CC-7204CE45C02F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDED3045-5FB2-4017-8EF6-4B267CD63434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDED3045-5FB2-4017-8EF6-4B267CD63434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDED3045-5FB2-4017-8EF6-4B267CD63434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDED3045-5FB2-4017-8EF6-4B267CD63434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315AD436-76BF-4C4F-97F6-11584B140C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315AD436-76BF-4C4F-97F6-11584B140C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315AD436-76BF-4C4F-97F6-11584B140C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315AD436-76BF-4C4F-97F6-11584B140C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7F4985-1181-4E82-8E41-2E63DE662721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7F4985-1181-4E82-8E41-2E63DE662721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7F4985-1181-4E82-8E41-2E63DE662721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7F4985-1181-4E82-8E41-2E63DE662721}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

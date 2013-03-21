@@ -1,0 +1,901 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fo",
+				"font-family"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"li",
+				"list-style"
+			],
+			[
+				"c",
+				"column"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"sp",
+				"letter-spacing"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"sa",
+				"Sans"
+			],
+			[
+				"last",
+				"last-child"
+			],
+			[
+				"bot",
+				"bottom"
+			],
+			[
+				"re",
+				"repeat-x"
+			],
+			[
+				"tabs",
+				"tabs"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"pay",
+				"pay_links"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"new",
+				"new_name"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"get",
+				"getName"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"bor",
+				"border-left"
+			],
+			[
+				"f",
+				"font-size"
+			],
+			[
+				"luck",
+				"lucky_box"
+			],
+			[
+				"lu",
+				"lucky_box"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Task 4/index.html",
+			"settings":
+			{
+				"buffer_size": 1766,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Task 5/index.html",
+			"settings":
+			{
+				"buffer_size": 2238,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Task 6/index.html",
+			"settings":
+			{
+				"buffer_size": 604,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntx ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/wamp/www/Homework/Task 3/index.html",
+		"/D/wamp/www/Homework/Task 4/css/style.css",
+		"/D/wamp/www/Homework/Task 3/css/style.css",
+		"/D/wamp/www/Homework/Task 5/index.html",
+		"/D/wamp/www/Homework/Task 6/index.html",
+		"/D/wamp/www/Homework/Task 2/index.html",
+		"/D/wamp/www/Homework/Task 2/css/style.css",
+		"/D/wamp/www/Homework/Task 1/index.html",
+		"/F/dnes/root/lib/app_simple.php",
+		"/C/Users/Martin Dobrev/Desktop/app_simple.php",
+		"/F/dnes/root/horoskopi/index.php",
+		"/F/dnes/root/slideshow.php",
+		"/F/dnes/root/page_classes/inner.php",
+		"/F/dnes/root/polls.php",
+		"/F/dnes/root/razkarti/igra/application/views/layout.php",
+		"/F/dnes/root/lib/tpl_base.php",
+		"/F/dnes/root/page_classes/guide.php",
+		"/F/dnes/root/template/default-1.0.6/css/main.css",
+		"/F/dnes/root/page_classes/index.php",
+		"/F/dnes/root/index.php",
+		"/F/dnes/root/profile.php",
+		"/F/dnes/root/vodafone/include/functions.php",
+		"/F/dnes/root/facelift/article.html",
+		"/F/dnes/root/mreporter.php",
+		"/C/Users/Martin Dobrev/Desktop/New Text Document.txt",
+		"/F/dnes/root/lib/config.php",
+		"/F/dnes/root/template/default-1.0.6/css/facelift.css",
+		"/F/dnes/root/template/default-1.0.6/css/lifestyle.css",
+		"/F/dnes/root/lib/applets/interface/tabs.php",
+		"/F/dnes/root/article.php",
+		"/F/dnes/root/lib/tpl_default.php",
+		"/F/dnes/root/lib/ibgws/ibgws_comments/template/dnes/comments.style-2012-03-06.css",
+		"/F/dnes/root/lib/ibgws/ibgws_comments/template/dnes/comments-frame.html",
+		"/F/dnes/root/lib/ibgws/ibgws_comments/template/dnes/comments.style-2012-08-15.css",
+		"/F/dnes/root/new_homepage.php",
+		"/F/dnes/root/facelift/blogini_home.php",
+		"/C/Users/Martin Dobrev/Desktop/main.css",
+		"/C/Users/Martin Dobrev/Desktop/dnes facelift/facelift.css",
+		"/C/Users/Martin Dobrev/Desktop/dnes facelift/main.css",
+		"/F/dnes/root/tv/index.php",
+		"/F/dnes/root/horoskopi/proxy/proxy.php",
+		"/F/dnes/root/.htaccess",
+		"/F/dnes/root/party.php",
+		"/F/dnes/root/template/default-1.0.6/css/video.css",
+		"/D/wamp/www/FacebookGame/index.html",
+		"/F/dnes/root/template/default-1.0.6/css/party.css",
+		"/C/Users/Martin Dobrev/Desktop/jquery.fancybox.pack.js",
+		"/F/dnes/root/zodiac.php",
+		"/F/dnes/root/.project",
+		"/F/dnes/root/template/default-1.0.6/js/jquery.cycle.all.js",
+		"/C/Users/Martin Dobrev/Desktop/orbit-1.2.3/orbit-1.2.3/demo/demo.html",
+		"/F/dnes/root/template/mobile-1.0.6/js/jquery.js",
+		"/C/Users/Martin Dobrev/Desktop/foundation.custom/foundation/javascripts/jquery.foundation.orbit.js",
+		"/C/Users/Martin Dobrev/Desktop/style.html",
+		"/F/dnes/root/xml/party_suggest.php",
+		"/D/wamp/www/JSDP/New Text Document.txt",
+		"/C/Users/Martin Dobrev/Desktop/DesignPatternsTest.js",
+		"/C/Users/Martin Dobrev/Desktop/qsqsq",
+		"/C/Users/Martin Dobrev/Desktop/mreporter.php",
+		"/C/Users/Martin Dobrev/Desktop/reklama - new.html",
+		"/C/Users/Martin Dobrev/Desktop/Temp/style.html",
+		"/C/Users/Martin Dobrev/Desktop/reklama.html",
+		"/F/dnes/root/register.php",
+		"/F/dnes/root/login.php",
+		"/F/dnes/root/xml/tabs_content.php",
+		"/F/dnes/root/facelift/home_blogini.php",
+		"/F/dnes/root/template/default-1.0.6/js/login.js",
+		"/C/Users/Martin Dobrev/Desktop/Backups/new.dnes backup/login.php",
+		"/F/dnes/root/beelden.zip",
+		"/D/wamp/www/NBU/content-column-middle.php",
+		"/F/dnes/root/avatar.php",
+		"/C/Users/Martin Dobrev/Desktop/facelift.css",
+		"/F/dnes/root/lib/app_admin.php",
+		"/C/Users/Martin Dobrev/Desktop/dnes_1.html",
+		"/F/dnes/root/lib/app_simple_old.php",
+		"/C/Users/Martin Dobrev/Desktop/dnes.html",
+		"/C/Users/Martin Dobrev/Desktop/rules.html",
+		"/F/dnes/root/cap.php",
+		"/C/Users/Martin Dobrev/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/F/dnes/root/dnes.sublime-project",
+		"/F/dnes/root/dnes.sublime-workspace",
+		"/C/Users/Martin Dobrev/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Martin Dobrev/Desktop/investor.js",
+		"/F/investor/root/app/controllers/news.php",
+		"/C/Users/Martin Dobrev/Desktop/investor.css",
+		"/F/investor/root/app/webroot/css/main.css",
+		"/C/Users/Martin Dobrev/Desktop/inner-investor-300x120.txt",
+		"/C/Users/Martin Dobrev/Desktop/forum-header.html",
+		"/F/investor/root/app/views/elements/banner.php",
+		"/C/Users/Martin Dobrev/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/F/investor/root/app/webroot/HTML/seo_calendar/articles-calendar-sidebar.php",
+		"/F/investor/root/app/views/news/borsa.php",
+		"/F/investor/root/app/webroot/HTML/facelift/investor_article.php",
+		"/F/investor/root/app/webroot/HTML/seo_calendar/article.php",
+		"/F/investor/root/app/views/news/article.php",
+		"/F/investor/root/app/views/layouts/default.php",
+		"/C/Users/Martin Dobrev/Desktop/articles-calendar-sidebar.php",
+		"/F/investor/root/app/views/articles/admin/index.php",
+		"/F/investor/root/app/views/elements/boxes.php",
+		"/F/investor/root/app/views/elements/companies/box.php",
+		"/F/investor/root/app/models/article.php",
+		"/F/investor/root/app/webroot/HTML/facelift/homepage.php",
+		"/F/investor/root/app/webroot/HTML/facelift/dailytopics.php",
+		"/F/az-jenata/root/config/bootstrap.php",
+		"/C/Users/Martin Dobrev/Desktop/banner_script_462_250.html",
+		"/C/Users/Martin Dobrev/Desktop/banner_script_300_80.html",
+		"/F/az-jenata/root/application/views/az-jenata/luck/index.php",
+		"/F/az-jenata/root/application/views/az-jenata/articles/index.php",
+		"/F/az-jenata/root/application/views/az-jenata/elements/offers.php",
+		"/F/automedia/sitemap.php",
+		"/F/automedia/video-test-drive/index.php",
+		"/F/az-jenata/root/application/application.php",
+		"/F/az-jenata/root/application/views/az-jenata/layouts/default.php",
+		"/C/Users/Martin Dobrev/Desktop/Backups/dnes backup/article.php",
+		"/C/Users/Martin Dobrev/Desktop/Backups/automedia backup/templates/index.tpl",
+		"/C/Users/Martin Dobrev/Desktop/Backups/automedia backup/templates/main.tpl",
+		"/C/Users/Martin Dobrev/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"F:\\dnes\\root",
+			"F:\\dnes\\root\\tv",
+			"F:\\dnes\\root",
+			"F:\\dnes\\root\\template\\default-1.0.6\\js",
+			"F:\\dnes\\root",
+			"F:\\tialoto\\root\\trunk",
+			"F:\\investor\\root",
+			"F:\\investor\\root\\app",
+			"F:\\investor\\root",
+			"F:\\investor\\root\\app\\views",
+			"F:\\investor\\root",
+			"F:\\az-jenata\\root",
+			"F:\\automedia",
+			"F:\\automedia\\templates",
+			"F:\\automedia",
+			"F:\\az-jenata\\root"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"render_guide_zodiac_new",
+			"render_guide_zodiac",
+			"zodiacContent",
+			"render_guide_tv",
+			"render_guide_cinema",
+			"guide",
+			"render_guide_weather",
+			"render_guide_zodiac",
+			"zodiacContent",
+			"render_guide_trailers",
+			"render_guide_theaters",
+			"guide_cinema",
+			"render_guide_tv",
+			"render_box_header",
+			"inner",
+			"adoceaninvestorbgvdemorlmjn",
+			"<div id=\"adoceaninvestorbgvdemorlmjn\"></div>",
+			"guide",
+			"guide-weather-container",
+			"render_guide_weather",
+			"iLlRW74UHLKFi8H1qbITzsRvfSPyPQc1ItOlF9SIIM3.N7",
+			"ZyvwqJsA1xO03BxtAMHl4bl_j4XATA8I4oD0h9Kmmn7.j7",
+			"gbtarI8rUvDlouO2ymrlr77xTNxJrx.WBnJ8ByXPbXL.B7",
+			"iLlRW74UHLKFi8H1qbITzsRvfSPyPQc1ItOlF9SIIM3.N7",
+			"'430Ar1qlN89Msj2FmLO4Hw8m7NxpHlCBtgo.hxy7rJv.N7",
+			"430Ar1qlN89Msj2FmLO4Hw8m7NxpHlCBtgo.hxy7rJv.N7",
+			"/?utm_source=investor&utm_medium=link&utm_campaign=lenta ",
+			"?utm_source=investor&utm_medium=link&utm_campaign=lenta",
+			"adoceaninvestorbgugipcjeuzi",
+			"adoceaninvestorbgugipcjeuziadoceaninvestorbgugipcjeuzi",
+			"adoceaninvestorbgugipcjeuzi",
+			"www.automedia.bg",
+			"http://www.automedia.bg/rss/news/",
+			"view_profile",
+			"mb0",
+			"render_guide_weather",
+			"render",
+			"render_guide_theaters",
+			"render_guide_trailers",
+			"render tra",
+			";\n",
+			"render_guide_trailers",
+			"render_guide_zodiac",
+			"zodiacContent",
+			"render_guide_zodiac",
+			"render_guide_zodiac_new",
+			"render_guide_zodiac",
+			"render_content",
+			"render_guide_zodiac",
+			"render_guide_zodiac_new",
+			"pGuideWeather",
+			"snimkabox_h1",
+			"has_link_snimka",
+			"render_box_header_custom",
+			"render_snimka_box",
+			"snimka_bo",
+			"render_tv_tabs",
+			"<div class=\"line mb0\"></div>",
+			"render_tv",
+			"newsletter-box",
+			"render_tv",
+			"bProgram",
+			"today",
+			"body",
+			"tabs_mreporterbox_c",
+			"stat",
+			"line",
+			"render_cinema",
+			".b5",
+			"b5",
+			"last-child",
+			"#blogini",
+			"id=\"c\"",
+			".inner",
+			"blogini",
+			"tabs_mreporterbox_c",
+			"tabs2.tabstoday",
+			"tabstoday",
+			"slideshow",
+			"arrows",
+			"arrow",
+			"tab_top_width",
+			"set_top_width",
+			"set_top_width\nset_top_width",
+			"set_top_width",
+			"tab_top_width",
+			"table_article_slideshow",
+			"paid_list_article",
+			"tabstoday",
+			"tabs2 tabstoday",
+			"0 0 0 150",
+			"mreporter-link",
+			"mreporter_",
+			"mreporter_link",
+			"pro",
+			"link\n",
+			"mreporetyr\n",
+			"mreporter\n",
+			"link\n",
+			";\n",
+			"div.videoSponsor",
+			"exclu",
+			";\n",
+			"128",
+			"128px",
+			"exclu",
+			"render_categories_big_preview",
+			"render_slidebox_tabs",
+			";\n",
+			"../img/kutia-razkarti-logo-sibank.jpg",
+			"tabs_kadarbox_c",
+			" ;",
+			"has_link",
+			"render_box_header_custom",
+			"\n            ",
+			"\ndiv.todayH h1",
+			"branede",
+			"music",
+			"render_snimka_box",
+			"tabs_snimkabox_c",
+			"tabs_mreporterbox_c",
+			"tabs_snimkabox_c",
+			"tabs_snimkabox_c.",
+			"tabs_snimkabox_c",
+			"render_guide_tv",
+			"class=\"pGuideTV\"",
+			"has_link",
+			"has_limk"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Task 4/index.html",
+					"settings":
+					{
+						"buffer_size": 1766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1725,
+								1725
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Task 5/index.html",
+					"settings":
+					{
+						"buffer_size": 2238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2171,
+								2171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2063.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Task 6/index.html",
+					"settings":
+					{
+						"buffer_size": 604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"app",
+				"lib/app_simple.php"
+			],
+			[
+				"guide",
+				"page_classes/guide.php"
+			],
+			[
+				"main",
+				"template/default-1.0.6/css/main.css"
+			],
+			[
+				"inner",
+				"page_classes/inner.php"
+			],
+			[
+				"pol",
+				"polls.php"
+			],
+			[
+				"slide",
+				"slideshow.php"
+			],
+			[
+				"index.",
+				"index.php"
+			],
+			[
+				"page_clas",
+				"page_classes/index.php"
+			],
+			[
+				"profi",
+				"profile.php"
+			],
+			[
+				"profile",
+				"profile.php"
+			],
+			[
+				"mreporter",
+				"mreporter.php"
+			],
+			[
+				"config",
+				"lib/config.php"
+			],
+			[
+				"index",
+				"page_classes/index.php"
+			],
+			[
+				"app_s",
+				"lib/app_simple.php"
+			],
+			[
+				"face",
+				"template/default-1.0.6/css/facelift.css"
+			],
+			[
+				"life",
+				"template/default-1.0.6/css/lifestyle.css"
+			],
+			[
+				"tpl",
+				"lib/tpl_default.php"
+			],
+			[
+				"tabs",
+				"lib/applets/interface/tabs.php"
+			],
+			[
+				"lifes",
+				"template/default-1.0.6/css/lifestyle.css"
+			],
+			[
+				"lifesty",
+				"template/default-1.0.6/css/lifestyle.css"
+			],
+			[
+				"main.css",
+				"template/default-1.0.6/css/main.css"
+			],
+			[
+				"",
+				".htaccess"
+			],
+			[
+				"app_",
+				"lib/app_simple.php"
+			],
+			[
+				"party",
+				"party.php"
+			],
+			[
+				"video.css",
+				"template/default-1.0.6/css/video.css"
+			],
+			[
+				"horos",
+				"horoskopi/index.php"
+			],
+			[
+				"party.css",
+				"template/default-1.0.6/css/party.css"
+			],
+			[
+				"party.php",
+				"party.php"
+			],
+			[
+				"zodia",
+				"zodiac.php"
+			],
+			[
+				"cycle",
+				"template/default-1.0.6/js/jquery.cycle.all.js"
+			],
+			[
+				"app_si",
+				"lib/app_simple.php"
+			],
+			[
+				".css",
+				"template/default-1.0.6/css/main.css"
+			],
+			[
+				"article",
+				"article.php"
+			],
+			[
+				"mrepo",
+				"mreporter.php"
+			],
+			[
+				"login.php",
+				"login.php"
+			],
+			[
+				"facelift",
+				"template/default-1.0.6/css/facelift.css"
+			],
+			[
+				"register",
+				"register.php"
+			],
+			[
+				"login",
+				"login.php"
+			],
+			[
+				"mrepor",
+				"mreporter.php"
+			],
+			[
+				"fac",
+				"template/default-1.0.6/css/facelift.css"
+			],
+			[
+				"facelift.css",
+				"template/default-1.0.6/css/facelift.css"
+			],
+			[
+				"dnes.su",
+				"/C/Users/Martin Dobrev/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+			],
+			[
+				"elementsbane",
+				"app/views/elements/banner.php"
+			],
+			[
+				"side",
+				"app/webroot/HTML/seo_calendar/articles-calendar-sidebar.php"
+			],
+			[
+				"news/",
+				"app/views/news/borsa.php"
+			],
+			[
+				"news",
+				"app/controllers/news.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"bur",
+				"/D/wamp/www/Burgozone.bg/Burgozone.sublime-project"
+			],
+			[
+				"dnes",
+				"/F/dnes/root/dnes.sublime-project"
+			],
+			[
+				"horo",
+				"/F/horoskopi/trunk/horoskopi.sublime-project"
+			],
+			[
+				"tee",
+				"/F/teenproblem/root/teenproblem.sublime-project"
+			],
+			[
+				"tialo",
+				"/F/tialoto/root/trunk/tialoto.sublime-project"
+			],
+			[
+				"tial",
+				"/F/tialoto/root/trunk/tialoto.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 316.0,
+	"status_bar_visible": true
+}

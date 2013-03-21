@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .rome {list-style-type:upper-roman;}
+        .alpha {list-style-type:lower-alpha;}
+        .circle {list-style-type:circle;}
+        .square {list-style-type:square;}
+        .disc {list-style-type:disc;}
+    </style>
+</head>
+<body>
+    <ol class="rome">
+        <li>List Item 1</li>
+            <ol class="alpha">
+                <li>Nested Item 1.1</li>
+                <li>Nested Item 1.2</li>
+            </ol>
+        <li>List Item 2</li>
+            <ol>
+                <li>Nested Item 2.1</li>
+                <li>Nested Item 2.2</li>
+                    <ol class="circle">
+                        <li>Nested Item 2.2.1</li>
+                        <li>Nested Item 2.2.2</li>
+                            <ol class="square">
+                                <li>Nested Item 2.2.2.1</li>
+                                <li>Nested Item 2.2.2.2</li>
+                            </ol>
+                        <li>Nested Item 2.2.3</li>
+                    </ol>
+                <li>Nested Item 2.3</li>
+            </ol>
+        <li>List Item 3</li>
+            <ol class="disc">
+                <li>Nested Item 3.1</li>
+                <li>Nested Item 3.2</li>
+                <li>Nested Item 3.3</li>
+            </ol>
+    </ol>
+</body>
+</html>

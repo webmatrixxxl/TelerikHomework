@@ -1,0 +1,56 @@
+﻿
+
+<!--Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="num">Number: </label>
+	<input type="text" value="6" id="num"/>							  
+	<br />
+	<a href="#" onclick="onFind()">Find if number is PRIME or NOT</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+
+    <script>
+
+        function onFind() {
+            var num = jsConsole.readFloat("#num");
+            var a = ((num == 2) || (num == 3) || (num == 5) || (num == 7) || (num % 2 > 0) && (num % 3 > 0) && (num % 5 > 0) && (num % 7 > 0));
+
+            jsConsole.writeLine(a ? "Prime" : "NOT Prime");
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+	$width:150px;
+	$height:100px;
+	@mixin image ($img){
+	background-image: url($img);
+	background-repeat: no-repeat;
+	background-size: $width*5 $height*5 !important;
+
+	}
+	$img1:"http://notlaura.com/wpfolio-two/wp-content/uploads/2011/07/Animals.jpg";
+	$img2:"http://upload.wikimedia.org/wikipedia/commons/8/80/Knut_IMG_8095.jpg";
+	$img3:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQYaKHmHuMSx6Rij83z4OJhSAtNaivQjZMPvJ88ZaQ4_TzDdYHJQ";
+	$img4:"http://images5.fanpop.com/image/photos/31400000/Animals-animals-31476797-1366-768.jpg";
+	$img5:"http://greens.org.au/sites/greens.org.au/files/imagecache/policy/policypreviews/rsz_istock_animals.jpg";
+
+body
+{
+	
+	a{
+		width:$width;
+		height:$height;
+		display:inline-block;
+		background-size: $width $height !important;
+		
+	}
+
+	.img1 {
+		background: url($img1);
+		&:focus  ~ div {
+		@include image($img1);
+		}
+	}
+	.img2 {
+		background: url($img2);
+		&:focus ~ div {
+		@include image($img2);
+		}
+	}
+	.img3 {
+		background: url($img3);
+		&:focus  ~ div {
+		@include image($img3);
+		}
+	}
+	.img4 {
+		background: url($img4);
+		&:focus  ~ div {
+		@include image($img4);
+		}
+	}
+	.img5 {
+		background: url($img5);
+		&:focus  ~ div {
+		@include image($img5);
+		}
+	}
+
+	div {
+	width:$width*5;
+	height:$height*5;
+	}
+}

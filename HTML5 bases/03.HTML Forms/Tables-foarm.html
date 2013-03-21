@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        td {
+            border: solid 1px;
+        }
+
+        table {
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .inputsize {
+            width: 99%;
+        }
+
+        td:first-child {
+            text-align: center!important;
+            padding-right: 5px;
+        }
+
+        td {
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        tr:last-of-type {
+            background-color: lightgreen;
+            text-align: center !important;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#">
+        <table>
+            <tr>
+                <td>Last Name</td>
+                <td colspan="3">
+                    <input class="inputsize" name="lastname" value="Daskalov" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td colspan="3">
+                    <input class="inputsize" name="firstname" value="Kiril" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td colspan="3">
+                    <textarea class="inputsize" name="address">17 Akademik Ivan Geshov bul.</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <input name="city" value="Sofia" type="text" /></td>
+                <td>State</td>
+                <td>
+                    <input type="text" value="" name="state" /></td>
+            </tr>
+            <tr>
+                <td>Zip / Post Code</td>
+                <td colspan="3">
+                    <input size="10" type="text" name="postzip" value="1618" /></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td colspan="3">
+                    <select name="country">
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Greece">Greece</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone (country code, area code, number)</td>
+                <td colspan="3">(<input size="4" name="countrycode" value="359" type="text" />)
+                <input size="3" name="areacode" value="08" type="text" />-
+                <input name="number" value="" type="tel" />
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td colspan="3">
+                    <input type="email" name="email" value="webmatrix@mail.bg" />
+                </td>
+            </tr>
+            <tr>
+                <td>Birth date</td>
+                <td colspan="3">Month
+                <input size="3" type="text" name="month" value="05" />
+                    Day<input size="3" type="text" value="17" name="day" />
+                    Year<input size="5" type="text" name="year" value="1989" /></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td colspan="3">
+                    <select name="Gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Starting data</td>
+                <td colspan="3">
+                    <input type="radio" name="startingdata" />Spring 2006 
+                <input type="radio" name="startingdata" />Summer 2006
+                </td>
+            </tr>
+            <tr>
+                <td>Comments / Questions</td>
+                <td colspan="3">
+                    <textarea class="inputsize" name="massage">Plz more information</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="submit" name="submit" value="Submit" />
+                    <input type="reset" value="Clear This Form" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        .teble-width {
+            width: 325px;
+        }
+        table {
+            text-align:center;
+        }
+        table th {
+            font-style:italic;
+        }
+        .auto-style1 {
+            width: 100%;
+        }
+        .mycalcolator {
+            width:300px;
+        }
+        table button {
+            width:100%;
+            text-align:center;
+        }
+        table input {
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <table class="teble-width">
+        <thead>
+            <tr>
+                <th colspan="2">
+                Fresh Fruits
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    It has long been know that a diet that includes at least a few servings of fresh fruot every dat will help keep you healthy, fit and trim
+                </td>
+                <td>
+                    <img src="http://store5.geomerx.com/certe/grfx/MediaVault/Fresh%20Fruit%20Cup.jpg" height="100" width="100" alt="" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <table border="1">
+        <tr>
+            <td colspan="3">
+                Title goes here
+            </td>
+            <td>
+                A
+            </td>
+            <td>
+                B
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3">
+                C
+            </td>
+            <td>
+                D
+            </td>
+            <td>
+                E
+            </td>
+            <td>
+                F
+            </td>
+            <td>
+                G
+            </td>
+        </tr>
+        <tr>
+            <td>
+                H
+            </td>
+            <td colspan="2">
+                I
+            </td>
+            <td rowspan="2">
+                J
+            </td>
+        </tr>
+          <tr>
+            <td>
+                K
+            </td>
+            <td>
+                L
+            </td>
+            <td>
+                M
+            </td>
+        </tr>
+        <tr>
+            <td>
+                N
+            </td>
+            <td colspan="4">
+                O
+            </td>
+        </tr>
+    </table>
+    <br />
+    <form action="#">
+        <label for="member">Member name</label>
+        <input required="required" type="text" id="member" name="name" value="" />
+        <br />
+        <label for="email">Email:</label>
+        <input required="required" type="email" id="email" name="name" value="" />
+        <br />
+        <label for="school">School</label>
+        <input required="required" type="text" id="school" name="name" value="" />
+        <br />
+        <input type="submit" />
+    </form>
+    <form action="#" name="mycalcolator" id="calcolator">
+        <table cellpadding="0" class="mycalcolator">
+            <tr>
+                <td colspan="4"><input type="text" name="result" form="calcolator" value="" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" form="calcolator" name="1">1</button>
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="2">2</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="3">3</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="plus">+</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" form="calcolator" name="4">4</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="5">5</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="6">6</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="minus">-</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" form="calcolator" name="7">7</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="8">8</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="9">9</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="multiply">*</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" form="calcolator" name="0">0</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="point">.</button>
+
+                </td>
+                <td>
+                    <button type="button" form="calcolator" name="divide">/</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button type="submit" form="calcolator" name="equal">=</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

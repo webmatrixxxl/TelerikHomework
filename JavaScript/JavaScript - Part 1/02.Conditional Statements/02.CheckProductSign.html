@@ -1,0 +1,62 @@
+
+<!--Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+    <div id="console"></div>
+        <script src="scripts/js-console.js"></script>
+
+    <script>
+        var f = 4;
+        var s = -5;
+        var t = 7;
+        if (f < 0 || s < 0 || t < 0)
+        {
+            if (f>0 && s>0 && t<0)
+            {
+              jsConsole.writeLine("-");
+            }
+            else if (f<0 && s<0 && t<0)
+            {
+              jsConsole.writeLine("-");
+            }
+            else if (f < 0 && s < 0 && t > 0)
+            {
+              jsConsole.writeLine("+");
+            }
+
+            else if(f<0 && s>0 &&t>0)
+            {
+              jsConsole.writeLine("-");
+            }
+            else if (f < 0 && s > 0 && t < 0)
+            {
+              jsConsole.writeLine("+");
+            }
+            else if (f > 0 && s < 0 && t > 0) {
+                jsConsole.writeLine("-");
+            }
+            else if (f > 0 && s < 0 && t < 0)
+            {
+              jsConsole.writeLine("+");
+            }
+
+            
+
+        }
+        else
+        {
+          jsConsole.writeLine("+");
+
+        }
+           
+
+    </script>
+</body>
+</html>

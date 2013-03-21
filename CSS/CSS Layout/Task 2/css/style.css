@@ -1,0 +1,48 @@
+body {
+	background-color: #eeeeee;
+	font-family: Arial, Tahoma, Verdana, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+h1 {
+	font-family: Georgia;
+	font-weight: normal;
+}
+
+.category-container {
+	width: 392px;
+	height: 102px;
+	border: 1px solid #a5a5a5;
+	padding: 16px;
+	background-color: #fff;
+	margin-bottom: 40px;
+}
+	
+	.category-container .image {
+		display: block;
+		float: left;
+		border: 1px solid #a1a1a3;
+		margin-right: 16px;
+	}
+
+	.category-container .text {
+		float: left;
+		width: 228px;
+	}
+
+		.category-container .text p {
+			margin: 0 0 18px 0;
+		}
+
+		.category-container .text .button {
+			float: right;
+			width: 80px;
+			height: 30px;
+			background-image: url('../img/button.png');
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			text-decoration: none;
+			margin-right: 5px;
+		}

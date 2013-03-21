@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        nav a {
+            text-decoration: none;
+            color: black;
+            padding: 0 6px 0 6px;
+        }
+
+           nav a:hover {
+                border: 1px solid #9eb9d5;
+                background-color: #d3e5f1;
+            }
+
+        body {
+            width: 409px;
+            font-family: sans-serif;
+            color: #1e395b;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 5px;
+        }
+
+            table td {
+                border: 1px solid #7c8995;
+                border-radius: 3px;
+            }
+
+        #background {
+            width: 409px;
+            background-color: #9eb9d5;
+            border: 1px #7c8995 solid;
+            box-shadow: 0px 0px 2px #91a1b0;
+            padding: 0 6px 6px 6px;
+        }
+
+        #output {
+            padding: 0 10px 0px 10px !important;
+            /* Firefox 3.6+ */
+            background: -moz-linear-gradient(100% 100% 90deg, #D9E4F1, #ecf4fc);
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ecf4fc), to(#D9E4F1));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-linear-gradient(#D9E4F1, #ecf4fc));
+            /* Opera 11.10+ */
+            background: -o-linear-gradient(#D9E4F1, #ecf4fc);
+        }
+
+            #output > table {
+                width: 100%;
+                border-spacing: 0px;
+                font-family: Consolas;
+                padding: 5px;
+                letter-spacing: 1px;
+                border-radius: 3px;
+                border: 1px solid #7c8995;
+            }
+
+                #output > table td {
+                    border: none;
+                    line-height: 10px;
+                }
+
+            #output input {
+                font-size: x-large;
+                font-family: Consolas;
+                height: 48px;
+                border-radius: 3px;
+                border: 1px solid #7c8995;
+                text-align: right;
+                padding: 0 0px 0px 0px !important;
+                width: 100%;
+                margin-bottom: 6px;
+            }
+
+        #background > div {
+            background-color: #d9e4f1;
+        }
+
+        #background > * {
+            padding: 0 6px 6px 6px;
+        }
+
+        header {
+            text-align: center;
+            height: 25px;
+        }
+
+            header > img {
+                float: left;
+                margin-top: 5px;
+            }
+
+            header span {
+                line-height: 30px;
+                margin-left: 80px;
+                font-size: 15px;
+            }
+
+        #mini, #maxi, #exit {
+            float: right;
+            text-decoration: none;
+            height: 20px;
+            transition-property: all; /* Standard */
+            transition-duration: 0.8s;
+            -webkit-transition-property: all; /* Saf3.2+, Chrome */
+            -webkit-transition-duration: 0.8s;
+            transition: all 0.8s ease 0s;
+        }
+
+        #exit {
+            width: 45px;
+            background-color: #c75050;
+            color: white;
+            font-family: 'Lucida Console';
+        }
+
+            #exit:hover {
+                background-color: #e44144;
+            }
+
+        #maxi {
+            width: 26px;
+            background: url(images/maxi.png) no-repeat center;
+            color: white;
+            font-family: 'Lucida Console';
+        }
+
+        #mini {
+            width: 26px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: black;
+            line-height: 10px;
+        }
+
+            #mini:hover {
+                background-color: #3665b3;
+                color: white;
+            }
+
+        #buttons-table {
+            width: 100%;
+        }
+
+
+            #buttons-table td[rowspan="3"] {
+                width: 70px;
+                height: 89px;
+                font-size: 12px;
+            }
+
+            #buttons-table td:not([rowspan="3"]) {
+                text-align: center;
+                height: 25px;
+                width: 32px;
+            }
+
+        nav {
+            background-color: #f5f6f7;
+        }
+
+        .button {
+            background: -moz-repeating-linear-gradient(100% 95% 90deg, #f7fbff,#f7fbff) 0 15px;
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f7fbff), to(#f7fbff));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-linear-gradient(#f7fbff, #f7fbff);
+            /* Opera 11.10+ */
+            background: -o-linear-gradient(#f7fbff, #f7fbff);
+        }
+
+        .button-operators {
+            /* Firefox 3.6+ */
+            background: -moz-repeating-linear-gradient(100% 95% 90deg, #f0f5fb,#d7e1eb) 0 15px;
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d7e1eb), to(#f0f5fb));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-linear-gradient(#f0f5fb, #d7e1eb);
+            /* Opera 11.10+ */
+            background: -o-linear-gradient(#f0f5fb, #d7e1eb);
+            transition: all 0.8s ease 0s;
+        }
+
+            .button-operators:hover, .button:hover {
+                box-shadow: 0 0 5px #f6e98b;
+                border-color: #f6e56c;
+                opacity: 0.8;
+                /* Firefox 3.6+ */
+                background: -moz-repeating-linear-gradient(100% 95% 90deg, #f0f5fb,#edd667) 0 15px;
+                /* Safari 4-5, Chrome 1-9 */
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#edd667), to(#f0f5fb));
+                /* Safari 5.1+, Chrome 10+ */
+                background: -webkit-linear-gradient(#f0f5fb, #edd667);
+                /* Opera 11.10+ */
+                background: -o-linear-gradient(#f0f5fb, #edd667);
+                background: -ms-linear-gradient(#f0f5fb, #edd667);
+                transition-property: all; /* Standard */
+                transition-duration: 0.8s;
+                -webkit-transition-property: all; /* Saf3.2+, Chrome */
+                -webkit-transition-duration: 0.8s;
+            }
+
+        .button-mem {
+            transition: all 0.8s ease 0s;
+        }
+
+            .button-mem:hover {
+                box-shadow: 0 0 5px #f6e98b;
+                border-color: #f6e56c;
+                opacity: 0.8;
+                /* Firefox 3.6+ */ ¿ç;
+                background: -moz-repeating-linear-gradient(100% 100% 90deg, #f0f5fb,#fc6) 0 0px;
+                /* Safari 4-5, Chrome 1-9 */
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fc6), to(#f0f5fb));
+                /* Safari 5.1+, Chrome 10+ */
+                background: -webkit-linear-gradient(#f0f5fb, #fc6);
+                /* Opera 11.10+ */
+                background: -o-linear-gradient(#f0f5fb, #fc6);
+                background: -ms-linear-gradient(#f0f5fb, #fc6);
+                transition-property: all; /* Standard */
+                transition-duration: 0.8s;
+                -webkit-transition-property: all; /* Saf3.2+, Chrome */
+                -webkit-transition-duration: 0.8s;
+            }
+
+        .font-small {
+            font-size: small;
+        }
+
+        .none {
+            border-color: #b7c3cf;
+        }
+
+        #zero {
+            background: -moz-repeating-linear-gradient(100% 95% 90deg, #F0F5FB, #D7E1EB) repeat scroll 0 32px transparent;
+            font-size: x-large;
+        }
+
+            #zero:hover {
+                /* Firefox 3.6+ */
+                background: -moz-repeating-linear-gradient(100% 95% 90deg, #f0f5fb,#edd667) 0 32px;
+                /* Safari 4-5, Chrome 1-9 */
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#edd667), to(#f0f5fb));
+                /* Safari 5.1+, Chrome 10+ */
+                background: -webkit-linear-gradient(#f0f5fb, #edd667);
+                /* Opera 11.10+ */
+                background: -o-linear-gradient(#f0f5fb, #edd667);
+                background: -ms-linear-gradient(#f0f5fb, #edd667);
+            }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <header>
+            <img src="images/calc.png" alt="" />
+            <span>Calculator</span>
+            <a href="#" id="exit">x</a>
+            <a href="#" id="maxi"></a>
+            <a href="#" id="mini">_</a>
+        </header>
+        <nav>
+            <a href="#" class="font-small">View</a>
+            <a href="#" class="font-small">Edit</a>
+            <a href="#" class="font-small">Help</a>
+        </nav>
+        <div id="output">
+            <input type="text" name="input" value="0" />
+            <table class="font-small">
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                </tr>
+                <tr>
+                    <td>63</td>
+                    <td colspan="2">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>47</td>
+                    <td colspan="2">&nbsp;</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td colspan="2">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>15</td>
+                    <td colspan="2">&nbsp;</td>
+                    <td>0</td>
+                </tr>
+            </table>
+
+        </div>
+        <div>
+            <table id="buttons-table">
+                <tr>
+                    <td rowspan="3">
+                        <div>
+                            <input type="radio" name="sys" value=" " checked="checked" />
+                            Hex
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Dec
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Oct
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Bin
+                        </div>
+                    </td>
+                    <td class="">&nbsp;</td>
+                    <td class="button-operators font-small">Mod</td>
+                    <td class="button-operators">A</td>
+                    <td class="button-mem font-small">MC</td>
+                    <td class="button-mem  font-small">MR</td>
+                    <td class="button-mem font-small">MS</td>
+                    <td class="button-mem  font-small">M+</td>
+                    <td class="button-mem  font-small">M-</td>
+                </tr>
+                <tr>
+                    <td class="button-operators font-small">(</td>
+                    <td class="button-operators font-small">)</td>
+                    <td class="button-operators">B</td>
+                    <td class="button-operators" id="left-arrow">&larr;</td>
+                    <td class="button-operators font-small">CE</td>
+                    <td class="button-operators font-small">C</td>
+                    <td class="button-operators font-small">±</td>
+                    <td class="font-small none">&radic;</td>
+                </tr>
+                <tr>
+                    <td class="button-operators font-small">RoL</td>
+                    <td class="button-operators font-small">RoR</td>
+                    <td class="button-operators">C</td>
+                    <td class="button">7</td>
+                    <td class="button">8</td>
+                    <td class="button">9</td>
+                    <td class="button-operators font-small">/</td>
+                    <td class="font-small none">%</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">
+                        <div>
+                            <input type="radio" name="" value=" " checked="checked" />
+                            Qword
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Dword
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Word
+                        </div>
+                        <div>
+                            <input type="radio" name="sys" value=" " />
+                            Byte
+                        </div>
+                    </td>
+                    <td class="button-operators font-small">Or</td>
+                    <td class="button-operators font-small">Xor</td>
+                    <td class="button-operators">D</td>
+                    <td class="button">4</td>
+                    <td class="button">5</td>
+                    <td class="button">6</td>
+                    <td class="button-operators font-small">*</td>
+                    <td class="font-small none">1/x</td>
+                </tr>
+                <tr>
+                    <td class="button-operators font-small">Lsh</td>
+                    <td class="button-operators font-small">Rsh</td>
+                    <td class="button-operators">E</td>
+                    <td class="button">1</td>
+                    <td class="button">2</td>
+                    <td class="button">3</td>
+                    <td class="button-operators font-small">-</td>
+                    <td id="zero" class="button-operators font-small" rowspan="2">=</td>
+                </tr>
+                <tr>
+                    <td class="button-operators font-small">Not</td>
+                    <td class="button-operators font-small">And</td>
+                    <td class="button-operators">F</td>
+                    <td class="button font-small" colspan="2">0</td>
+                    <td class="font-small none">,</td>
+                    <td class="button-operators font-small">+</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

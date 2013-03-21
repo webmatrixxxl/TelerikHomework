@@ -1,0 +1,181 @@
+﻿
+
+<!--Write an expression that calculates trapezoid's area by given sides a and b and height h.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="num">Number: </label>
+	<input type="text" value="" id="i"/>							  
+	<br />
+	<a href="#" onclick="onFind()">Find trapezoid's area by given sides a and b and height h.</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+
+    <script>
+
+        function onFind() {
+
+           
+            var num = [ "Нула", "Едно", "Две", "Три", "Четири", "Пет", "Шест", "Седем", "Осем", "Девет", "Десет", "Еди", "Два", "Сто", "ста" ];
+            var na = "на";
+            var and = "и";
+            var tin = "тин";
+            jsConsole.writeLine("Въведете число: ");
+
+            var i = jsConsole.readFloat("#i");
+            if (i <= 999 && i >= 0) {
+
+
+                if (i >= 100) //Check if input is bigger then 100
+                {
+
+
+                    if (i / 100 == 1) //Check if input = 100 and use it to print all numbers form 100 to 199
+                    {
+                        jsConsole.writeLine(num[13]+" "); //Сто
+                    }
+                    else // If input is bigger then 100 
+                    {
+                        if (i >= 200 && i < 400) // Check if input is between 200 and 399 and print hundreds
+                        {
+                            jsConsole.writeLine(num[i / 100] + num[14] + " "); //Две + ста, три + ста
+                        }
+                        else // If input is between 400 and 999 and print hundreds
+                        {
+
+                            jsConsole.writeLine(num[i / 100] + num[13] + tin + " "); //Четиристотин, пет сто тин, шест сто тин .....
+                        }
+                    }
+
+                    if (i / 100.0 != i / 100) // Check if there are any tens and units. If no stop printing
+                    {
+
+                        if (i % 100 > 10 && i % 100 < 20) // Check if tens are between 10 and 20
+                        {
+                            if (i % 100 > 10 && i % 100 <= 12) // Check if input tens is > 10 for 11 and 12 cases 
+                            {
+                                 jsConsole.writeLine(" "+ and+" "+ num[i % 100] + na + num[10]); //ЕДИН + на + десетр, ДВА + на + десет,....
+                            }
+                            else {
+                                 jsConsole.writeLine(" "+ and+ ""+num[i % 100 % 10]+""+ na + num[10]); // три+на+десет, четири + на + десет,....
+                            }
+                        }
+
+                        else {
+                            if (i % 100 >= 20 && i % 100 < 30) // Check if number is between 20 and 30
+                            {
+                                if (i % 100 % 10 == 0) {
+                                     jsConsole.writeLine(num[12] + num[10]); //сто ДВА + десет и едно, три + ста ДВА + десет и две........
+
+                                }
+                                else {
+                                     jsConsole.writeLine(" "+ num[12] + num[10]+" "+ and+" "+ num[i % 100 % 10]); //сто ДВА + десет и едно, три + ста ДВА + десет и две........
+                                }
+
+                            }
+                            else if ((i % 100 % 10 != 0) && (i % 10 / 10 != 0)) // Check if units != 0 and
+                            {
+                                 jsConsole.writeLine(" "+ num[i % 100 / 10] + num[10]+" "+ an+" " +num[i % 100 % 10]); // три + ста четири + десет и пет,  осем + стотин четири + десет и две
+                            }
+                            else if (i % 100 / 10 == 0) {
+                                 jsConsole.writeLine(" "+ and+" "+ num[i % 100]); // три + ста четири + десет и пет,  осем + стотин четири + десет и две
+
+                            }
+                            else if ((i % 100 / 10 > 0) && (i % 100 % 10 == 0)) {
+                                if ((i % 100 / 10 == 1) && (i % 100 % 10 == 0)) {
+                                     jsConsole.writeLine(" "+ and+" "+ num[10]);
+
+                                }
+                                else {
+                                     jsConsole.writeLine(" "+ and+" "+ num[i % 100 / 10] + num[10]);
+                                }
+                            }
+                            else {
+                                 jsConsole.writeLine(" "+ num[i % 100 / 10] + num[10]+" "+ and+" "+ num[i % 100 % 10]); // три + ста четири + десет,  осем + стотин четири + десет
+                            }
+
+                        }
+
+                    }
+                }
+                if (i < 100 && i > 19) // If input is lower then 100
+                {
+
+
+                    if (i > 20 && i < 30) //  Check if input is between 20 and 30
+                    {
+                        jsConsole.writeLine(num[12] + num[10] + " "); // ДВА + десет
+
+                    }
+                    else {
+                        jsConsole.writeLine(num[i / 10] + num[10] + " "); //три + десет, осем + десет
+
+                    }
+
+                    if (i / 10.0 != i / 10) // Check if units != 0 10,20,30,40..... and print units
+                    {
+                         jsConsole.writeLine(" "+ and+" "+ num[i % 100 % 10]); // три + десет и осем, четири + десет и седем
+                    }
+
+
+
+                }
+                if (i <= 19) // Check if input is <=19
+                {
+
+                    if (i <= 12) // Check if input is <=12
+                    {
+                        if (i > 10) // Check if input is > 10 for 11 and 12 cases 
+                        {
+                             jsConsole.writeLine( num[i] + na + num[10]); //Print един + на + десет, два + на + десет
+
+                        }
+                        else {
+
+                             jsConsole.writeLine( num[i]); //Print едно, две, тре,...,девет, десет
+                        }
+                    }
+                    else {
+                         jsConsole.writeLine(num[i % 10] + na + num[10]); //Print тре + на + десет, четири + на + десет, ....
+                    }
+                }
+            }
+            else {
+                 jsConsole.writeLine("Please ENTER integer input value in interval 0 - 999");
+            }
+
+        }
+
+    </script>
+</body>
+</html>

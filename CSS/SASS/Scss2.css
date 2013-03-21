@@ -1,0 +1,39 @@
+body a {
+  width: 150px;
+  height: 100px;
+  display: inline-block;
+  background-size: 150px 100px !important; }
+body .img1 {
+  background: url("http://notlaura.com/wpfolio-two/wp-content/uploads/2011/07/Animals.jpg"); }
+  body .img1:focus ~ div {
+    background-image: url("http://notlaura.com/wpfolio-two/wp-content/uploads/2011/07/Animals.jpg");
+    background-repeat: no-repeat;
+    background-size: 750px 500px !important; }
+body .img2 {
+  background: url("http://upload.wikimedia.org/wikipedia/commons/8/80/Knut_IMG_8095.jpg"); }
+  body .img2:focus ~ div {
+    background-image: url("http://upload.wikimedia.org/wikipedia/commons/8/80/Knut_IMG_8095.jpg");
+    background-repeat: no-repeat;
+    background-size: 750px 500px !important; }
+body .img3 {
+  background: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQYaKHmHuMSx6Rij83z4OJhSAtNaivQjZMPvJ88ZaQ4_TzDdYHJQ"); }
+  body .img3:focus ~ div {
+    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQQYaKHmHuMSx6Rij83z4OJhSAtNaivQjZMPvJ88ZaQ4_TzDdYHJQ");
+    background-repeat: no-repeat;
+    background-size: 750px 500px !important; }
+body .img4 {
+  background: url("http://images5.fanpop.com/image/photos/31400000/Animals-animals-31476797-1366-768.jpg"); }
+  body .img4:focus ~ div {
+    background-image: url("http://images5.fanpop.com/image/photos/31400000/Animals-animals-31476797-1366-768.jpg");
+    background-repeat: no-repeat;
+    background-size: 750px 500px !important; }
+body .img5 {
+  background: url("http://greens.org.au/sites/greens.org.au/files/imagecache/policy/policypreviews/rsz_istock_animals.jpg"); }
+  body .img5:focus ~ div {
+    background-image: url("http://greens.org.au/sites/greens.org.au/files/imagecache/policy/policypreviews/rsz_istock_animals.jpg");
+    background-repeat: no-repeat;
+    background-size: 750px 500px !important; }
+body div {
+  width: 750px;
+  height: 500px; }
+

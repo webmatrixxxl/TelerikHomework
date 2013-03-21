@@ -1,0 +1,55 @@
+﻿
+
+<!--Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="num">Find the bit at position 3 of the third digit of: </label>
+	<input type="text" value="1740" id="num"/>							  
+	<br />
+	<a href="#" onclick="onFindOddOrEvenClick()">Find out</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+
+    <script>
+
+        function onFindOddOrEvenClick() {
+      
+            var num = jsConsole.readFloat("#num");
+            var num = (num & (1 << 3)) >> 3;
+            jsConsole.writeLine("Rectangle area is: "+ num);
+        }
+
+    </script>
+</body>
+</html>

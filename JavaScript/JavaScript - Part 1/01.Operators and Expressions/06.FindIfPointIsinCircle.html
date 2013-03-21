@@ -1,0 +1,58 @@
+﻿
+
+<!--Write an expression that checks if given print (x,  y) is within a circle K(O, 5).-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="x">x</label>
+	<input type="text" value="6" id="x"/>	
+    <label for="y">y</label>
+	<input type="text" value="1" id="y"/>							  
+	<br />
+	<a href="#" onclick="onFind()">Find out if given print (x,  y) is within a circle K(O, 5)</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+
+    <script>
+
+        function onFind() {
+      
+            var x = jsConsole.readFloat("#x");
+            var y = jsConsole.readFloat("#y");
+            var num = x>5 || y > 5;
+            jsConsole.writeLine(num);
+        }
+
+    </script>
+</body>
+</html>

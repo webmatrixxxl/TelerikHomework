@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.TrtIntAndFinally", "II - 04 - Обработка на изключения\01.TrtIntAndFinally.csproj", "{D82EAF27-1FF0-4529-8B16-280B7542B0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ReadNumber", "02.ReadNumber\02.ReadNumber.csproj", "{231176A3-91D4-4576-AC68-1EBCAA1BF6E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.ReadFileException", "03.ReadFileException\03.ReadFileException.csproj", "{0DC10FA2-E84D-4960-987A-C09358B8CB1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DownloadFileFormInternetException", "04.DownloadFileFormInternetException\04.DownloadFileFormInternetException.csproj", "{5DBB7FEC-A7D1-4F61-BA9C-CB4D7310B44B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D82EAF27-1FF0-4529-8B16-280B7542B0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82EAF27-1FF0-4529-8B16-280B7542B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82EAF27-1FF0-4529-8B16-280B7542B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82EAF27-1FF0-4529-8B16-280B7542B0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231176A3-91D4-4576-AC68-1EBCAA1BF6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231176A3-91D4-4576-AC68-1EBCAA1BF6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231176A3-91D4-4576-AC68-1EBCAA1BF6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231176A3-91D4-4576-AC68-1EBCAA1BF6E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC10FA2-E84D-4960-987A-C09358B8CB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC10FA2-E84D-4960-987A-C09358B8CB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC10FA2-E84D-4960-987A-C09358B8CB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC10FA2-E84D-4960-987A-C09358B8CB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBB7FEC-A7D1-4F61-BA9C-CB4D7310B44B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBB7FEC-A7D1-4F61-BA9C-CB4D7310B44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBB7FEC-A7D1-4F61-BA9C-CB4D7310B44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBB7FEC-A7D1-4F61-BA9C-CB4D7310B44B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
