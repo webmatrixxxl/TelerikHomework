@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _01.ClassStudentAndOvrObject
 {
-    class Student : IComparable, IComparable<Student>
+    class Student :  ICloneable, IComparable<Student>
     {
         private string p1;
         private string p2;
@@ -31,7 +31,7 @@ namespace _01.ClassStudentAndOvrObject
         public Enumeration.Faculty faculty { get; set; }
         public Enumeration.Specialty specialty { get; set; }
 
-        public Student(string firstName, string middleName, string lastName, int SSN, string address, int mobilephone, string email, Enumeration.University university, Enumeration.Faculty faculty, Enumeration.Specialty speciaty)
+        public Student(string firstName, string middleName, string lastName, int SSN, string address, int mobilePhone, string email, Enumeration.University university, Enumeration.Faculty faculty, Enumeration.Specialty specialty)
         {
             this.firstName = firstName;
             this.middleName = middleName;
@@ -109,24 +109,20 @@ namespace _01.ClassStudentAndOvrObject
         {
             Student clone = new Student
                 (
-                this.firstName,
-                this.middleName,
-                this.lastName,
-                this.address,
-                this.mobilePhone,
-                this.course,
-                this.SSN,
-                this.specialty,
-                this.university,
-                this.faculty
+               this.firstName,
+               this.middleName,
+               this.lastName,
+               this.SSN,
+               this.address,
+               this.mobilePhone,
+               this.email,
+               this.university,
+               this.faculty,
+               this.specialty
                 );
             return clone;
         }
 
-        object ICloneable.Clone()
-        {
-            return this.Clone();
-        }
 
         public int CompareTo(Student student)
         {
