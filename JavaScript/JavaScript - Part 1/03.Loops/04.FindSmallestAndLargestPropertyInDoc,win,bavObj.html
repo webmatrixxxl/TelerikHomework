@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function onCheckPrimeBtnClick() {
+
+			var number = jsConsole.readInteger("#tb-number");
+			var arr = new Array();
+			arr[0] = 100;
+			arr[1] = 0;
+			arr[2] = 50;
+			
+			var min = Math.min.apply(null, arr),
+    max = Math.max.apply(null, arr)
+			
+			jsConsole.writeLine("We have integer array with 3 elemehts: 100,0,50; Min = "+min +" Max = "+ max);
+
+		}
+
+
+	</script>
+</body>
+</html>

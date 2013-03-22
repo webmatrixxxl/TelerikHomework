@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    FindSmallestAndLargestProperty();
+
+	    function FindSmallestAndLargestProperty() {
+	        var smallest = "somelongtext";
+	        var largest = "";
+	        for (var prop in document) {
+	            if (prop.length > largest.length) {
+	                largest = prop;
+	            }
+	            if (prop.length < smallest.length) {
+	                smallest = prop;
+	            }
+	        }
+
+	        for (var prop in window) {
+	            if (prop.length > largest.length) {
+	                largest = prop;
+	            }
+	            if (prop.length < smallest.length) {
+	                smallest = prop;
+	            }
+	        }
+
+	        for (var prop in navigator) {
+	            if (prop.length > largest.length) {
+	                largest = prop;
+	            }
+	            if (prop.length < smallest.length) {
+	                smallest = prop;
+	            }
+	        }
+
+	        document.write("Smallest: " + smallest + "<br />");
+	        document.write("Largest: " + largest + "<br />");
+	    }
+
+	</script>
+</body>
+</html>

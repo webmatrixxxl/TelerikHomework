@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" id="tb-number" />
+    <a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+        function onCheckPrimeBtnClick() {
+
+            var count = 0;
+            var countbuff = 0;
+            var len = 1;
+            var num = null;
+            var numbuff = null;
+            var seq = [ 0, 1, 2, 8, 5, 3, 4 ];
+            for (var i = 0; i < seq.length - 1; i++)
+            {
+                if ((seq[i] + len != seq[i + len] && countbuff <= count && count >= len && seq[i] - len != seq[i - len]))
+                {
+                    numbuff = num;
+                    countbuff = count;
+                    num = null;
+                    count = 0;
+                }
+                if (i >= 1)
+                {
+                    if (seq[i] - len != seq[i - len] && count >= countbuff)
+                    {
+                        numbuff = num;
+                        countbuff = count;
+                        num = null;
+                        count = 0;
+                    }
+                    if (seq[i] + len == seq[i + len] || (seq[i] + len != seq[i + len] && seq[i] - len == seq[i - len]))
+                    {
+                        count++;
+                        num += seq[i];
+                    }
+                }
+                if (i == seq.length - 2 && seq[i] + len == seq[seq.length - len])
+                {
+                    count++;
+                    num += seq[i + len];
+                }
+
+                else if ((i == 0 && seq[i] + len == seq[i + len]))
+                {
+                    count++;
+                    num += seq[i];
+                }
+            }
+            if (countbuff >= count)
+            {
+                jsConsole.writeLine(numbuff);
+            }
+            else if (count >= countbuff)
+            {
+                jsConsole.writeLine(num);
+            }
+
+
+        }
+
+
+    </script>
+</body>
+</html>

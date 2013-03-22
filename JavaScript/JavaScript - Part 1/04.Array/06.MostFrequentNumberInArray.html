@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" id="tb-number" />
+    <a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+        function onCheckPrimeBtnClick() {
+            var counter;
+            var arraybuff = 0;
+            var counterbuff = 0;
+
+            var array = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+            for (var i = 0; i < array.length; i++) {
+                counter = 0;
+                for (var c = 0; c < array.length; c++) {
+                    if (array[i] == array[c]) {
+                        counter++;
+                        if (counter > counterbuff) {
+                            arraybuff = array[c];
+                            counterbuff = counter;
+
+                        }
+                    }
+
+                }
+
+            }
+
+            jsConsole.writeLine(arraybuff);
+
+
+        }
+
+
+    </script>
+</body>
+</html>

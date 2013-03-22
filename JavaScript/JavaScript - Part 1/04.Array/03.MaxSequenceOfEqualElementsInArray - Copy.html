@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" id="tb-number" />
+    <a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+        function onCheckPrimeBtnClick() {
+
+            var counter = 0; // Брояч на поредните еднакви числа.
+            var counterbuff = 0; // След като стигнем поредно число което е различно от предходните counter се нулира, а counterbuff пази наговата стойност.
+            var maxSeq = 0; // Пази стойността на последния член от най-дългата редицата с еднакви членове.
+            var keepCount = 0; // Пази броя от членове на най-дългата редицата с еднакви членове.
+            var array = [ 2, 1, 2, 1, 2, 1, 2, 2, 0, 2 ];
+            for (var i = 0; i < array.length; i++)
+            {
+                
+                if (i < array.length - 1)
+                {
+
+
+                    if (array[i] == array[i + 1])
+                    {
+
+                        counter++;
+
+                    }
+                    else if (0 == array[i] && array[i + 1] != 0)
+                    {
+
+                        counter++;
+                    }
+
+                    if (counter > counterbuff)
+                    {
+                        maxSeq = array[i];
+                        keepCount = counter;
+                    }
+                    if (array[i + 1] != array[i] && counter != 0)
+                    {
+                        counterbuff = counter;
+                        counter = 0;
+                    }
+                }
+                
+
+            }
+            for (var i = 0; i <= keepCount; i++)
+            {
+                jsConsole.write(maxSeq + ",");
+            }
+           
+
+        }
+
+
+    </script>
+</body>
+</html>

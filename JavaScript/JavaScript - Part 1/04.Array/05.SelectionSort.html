@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" id="tb-number" />
+    <a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+        function onCheckPrimeBtnClick() {
+
+            var n = 5;
+            /* a[0] to a[n-1] is the array to sort */
+            var a = [64, 25, 12, 22, 11];
+            for (var i = 0; i < a.length; i++) {
+                for (var c = i; c < a.length; c++) {
+                    var min = i;
+                    if (a[min] > a[c]) {
+                        min = c;
+                    }
+                    var temp = a[i]; // Copy the first position's element
+                    a[i] = a[min]; // Assign to the second element
+                    a[min] = temp; // Assign to the first element
+                }
+            }
+            for (var i = 0; i < a.length; i++) {
+                jsConsole.write(a[i] + " ");
+            }
+
+
+
+        }
+
+
+    </script>
+</body>
+</html>

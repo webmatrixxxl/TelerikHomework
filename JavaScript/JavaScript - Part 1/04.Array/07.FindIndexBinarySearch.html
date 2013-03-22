@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" id="tb-number" />
+    <a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+        function onCheckPrimeBtnClick() {
+            var myArray = [4, 3, 1, 4, 2, 5, 8, 21, 13, 180];
+            var key = 3;
+
+            myArray.sort();
+           
+            var Max = myArray.length - 1;
+            var Min = 0;
+            while (Max >= Min) {
+                var Mid = (Min + Max) / 2;
+                if (myArray[Mid] < key) {
+                    Min = Mid + 1;
+                }
+                else if (myArray[Mid] > key) {
+                    Max = Mid - 1;
+                } else {
+
+                    jsConsole.writeLine(parseInt(Mid));
+                    break;
+                }
+
+
+            }
+
+
+        }
+
+
+    </script>
+</body>
+</html>

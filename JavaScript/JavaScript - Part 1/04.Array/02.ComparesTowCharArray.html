@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Click</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function onCheckPrimeBtnClick() {
+
+		    var charArr1 = ["M", "T", "W", "S"];
+		    var charArr2 = ["F", "S", "A", "W", "T", "Q"];
+		    var matches = [];
+
+		    for (var i = 0; i < charArr1.length; i++)
+		        for (var j = 0; j < charArr2.length ; j++)
+		            if (charArr1[i] == charArr2[j]) {
+		                matches.push(charArr1[i]);
+		            }
+		    jsConsole.writeLine(matches.join(", "));
+
+		}
+
+
+	</script>
+</body>
+</html>
