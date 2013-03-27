@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--Write a function that reverses the digits of given decimal number. Example: 256  652
+-->
+
+<body>
+    <input type="text" id="input" />
+    <pre>
+    <script>
+        function print() {
+            var value = document.getElementById("input").value;
+
+            //Convert value ot char value by splitting it by nothing with .split(""), then reverse it, then again to string by .join("")
+            value = value.split("").reverse().join(""); 
+
+            document.write(value);
+        }
+        print();
+    </script>
+        </pre>
+
+</body>
+</html>

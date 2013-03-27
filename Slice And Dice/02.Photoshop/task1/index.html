@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        button {
+            background: url(button.png);
+            height: 61px;
+            width: 204px;
+            border: none;
+            color: black;
+            font-family: Consolas;
+            font-size: large;
+        }
+
+        .button {
+            height: 55px;
+            line-height: 50px;
+            color: black;
+            font-family: Consolas;
+        }
+
+            .button div {
+                height: 100%;
+                display: inline-block;
+                float: left;
+            }
+
+        .button-midpart {
+            background: url(midpart.png) repeat-x;
+            text-decoration: underline;
+        }
+
+        .button-rightpart {
+            background: url(sidepart.png);
+            width: 28px;
+        }
+
+        .button-leftpart {
+            background: url(leftsidepart.png);
+            width: 28px;
+        }
+    </style>
+</head>
+<body>
+    <button>OK</button>
+    <button>Cancle</button>
+    <a href="#">
+        <div class="button">
+            <div class="button-leftpart"></div>
+            <div class="button-midpart">
+                View More Information
+            </div>
+            <div class="button-rightpart"></div>
+        </div>
+    </a>
+</body>
+</html>

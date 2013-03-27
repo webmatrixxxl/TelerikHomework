@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+    Write a function that finds all the occurrences of word in a text
+    The search can case sensitive or case insensitive
+    Use function overloading
+-->
+
+<body>
+    <input type="text" id="input" value="Mr. Blue has a blue house" />
+    <input type="text" id="search" value="blue" />
+
+    <pre>
+    <script>
+
+        function print(source, word, caseIsSensitive) {
+
+            function printSensitive(source, word) {
+
+                var re = new RegExp(word, "g");
+                document.writeln(source.match(re).length);
+            }
+
+            function printInsensitive(source, word) {
+
+                var re = new RegExp(word, "gi");
+                document.writeln(source.match(re).length);
+
+            }
+            switch (arguments.length) {
+                case 2:
+                    return printSensitive(source, word);
+                case 3:
+                    if (caseIsSensitive == true) {
+                        return printInsensitive(source, word);
+                    }
+                    else {
+                        return printSensitive(source, word);
+
+                    }
+                   
+
+            }
+
+        }
+
+
+
+        print(document.getElementById("input").value, document.getElementById("search").value, true);
+    </script>
+        </pre>
+
+</body>
+</html>

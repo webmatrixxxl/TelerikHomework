@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .table1 {
+              width: 400px;
+        }
+        .table2 {
+          width: 300px;
+        }
+         .table3 {
+          width: 200px;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;       
+        }
+
+        td {
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            display: table;
+        }
+   
+        .top-right-corner {
+            width: 7px;
+            height: 8px;
+            background: url(right-top-corner.png) no-repeat;
+        }
+
+        .right-down-corner {
+            background: url(right-down-corner.png) no-repeat;
+            width: 8px;
+            height: 8px;
+        }
+
+        .right-mid {
+            background: url(right-mid.png) repeat-y;
+            width: 8px;
+        }
+
+        .left-down-corner {
+            background: url(left-down-corner.png) no-repeat;
+            width: 7px;
+            height: 8px;
+        }
+
+        .down-mid {
+            background: url(down-mid.png) repeat-x;
+            height: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table1;">
+        <tr>
+            <td class="img" colspan="2" rowspan="2">
+                <img src="http://s2.hubimg.com/u/3903849_f260.jpg" alt="" />
+            </td>
+            <td class="top-right-corner"></td>
+        </tr>
+        <tr>
+            <td class="right-mid">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left-down-corner"></td>
+            <td class="down-mid">&nbsp;</td>
+            <td class="right-down-corner"></td>
+        </tr>
+    </table>
+
+     <table class="table2">
+        <tr>
+            <td class="img" colspan="2" rowspan="2">
+                <img src="http://s2.hubimg.com/u/3903849_f260.jpg" alt="" />
+            </td>
+            <td class="top-right-corner"></td>
+        </tr>
+        <tr>
+            <td class="right-mid">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left-down-corner"></td>
+            <td class="down-mid">&nbsp;</td>
+            <td class="right-down-corner"></td>
+        </tr>
+    </table>
+     <table class="table3">
+        <tr>
+            <td class="img" colspan="2" rowspan="2">
+                <img src="http://s2.hubimg.com/u/3903849_f260.jpg" alt="" />
+            </td>
+            <td class="top-right-corner"></td>
+        </tr>
+        <tr>
+            <td class="right-mid">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left-down-corner"></td>
+            <td class="down-mid">&nbsp;</td>
+            <td class="right-down-corner"></td>
+        </tr>
+    </table>
+</body>
+</html>
