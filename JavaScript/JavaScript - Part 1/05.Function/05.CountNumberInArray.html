@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+   Write a function that counts how many times given number appears in given array. 
+   Write a test function to check if the function is working correctly.
+-->
+
+<body>
+    <input type="text" id="input" value="5" />
+    <pre>
+    <script>
+        function print() {
+            var value = document.getElementById("input").value;
+            var count = 0;
+            var arr = [0, 1, 1, 2, 3, 4, 5, 5, 5, 5];
+            for (var i in arr) {
+                if (arr[i] == value) {
+                    count++;
+                }
+            }
+            document.write(count);
+        }
+
+        print();
+    </script>
+        </pre>
+
+</body>
+</html>

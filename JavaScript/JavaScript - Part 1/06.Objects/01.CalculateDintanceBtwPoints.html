@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <pre>
+    <script>
+  
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        var P1 = new Point(4, 6);
+        var P2 = new Point(7, 8);
+        function Distance() {
+            var sum;
+
+          
+            for (var i in arguments) {
+                sum += (arguments[parseInt(i) + 1].x - arguments[i].x) * (arguments[parseInt(i) + 1].x - arguments[i].x) + (arguments[parseInt(i) + 1].y - arguments[i].y) * (arguments[parseInt(i) + 1].y - arguments[i].y);
+            }
+            return Math.sqrt(sum);
+        }
+        document.write(Distance(P1, P2));
+    </script>
+        </pre>
+</body>
+</html>

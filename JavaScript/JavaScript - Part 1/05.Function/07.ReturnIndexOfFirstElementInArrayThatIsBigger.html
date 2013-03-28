@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+   WWrite a Function that returns the index of the first element in array that is bigger than its neighbors,
+   or -1, if there’s no such element.
+   Use the function from the previous exercise.
+
+-->
+
+<body>
+
+    <pre>
+    <script>
+        function print() {
+
+            var arr = [0, 1, 1, 6, 3, 4, 5, 5, 5, 5];
+            for (var i in arr) {
+
+                if ((arr[parseInt(i) - 1] < arr[parseInt(i)] && arr[parseInt(i)] > arr[parseInt(i) + 1])) {
+                    document.writeln(i);
+                    return i;
+                } else if (i == arr.length - 1) {
+                    
+                    document.writeln(-1);
+                    return -1;
+                }
+            }
+
+        }
+
+        print();
+    </script>
+        </pre>
+
+</body>
+</html>

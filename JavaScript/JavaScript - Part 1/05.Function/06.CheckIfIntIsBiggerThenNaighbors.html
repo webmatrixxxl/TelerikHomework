@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+   Write a function that checks if the element at given position in given array of integers is
+   bigger than its two neighbors (when such exist).
+-->
+
+<body>
+    Element position in array:
+    <input type="text" id="input" value="5" />
+    <pre>
+    <script>
+        function print() {
+            var value = document.getElementById("input").value;
+            var check = false;
+
+            var arr = [0, 1, 1, 6, 3, 4, 5, 5, 5, 5];
+            if (value > arr.length - 1 || value < 0) {
+                document.writeln("Index out of range");
+            } else if (arr[value - 1] < arr[value] && arr[value] > arr[value + 1]) {
+                check = true;
+            }
+
+            document.write(check);
+        }
+
+        print();
+    </script>
+        </pre>
+
+</body>
+</html>
