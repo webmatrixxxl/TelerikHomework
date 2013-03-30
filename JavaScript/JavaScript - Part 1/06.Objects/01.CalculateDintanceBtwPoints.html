@@ -5,26 +5,50 @@
     <meta charset="utf-8" />
     <title></title>
 </head>
+<!--
+    Write functions for working with shapes in  standard Planar coordinate system
+    Points are represented by coordinates P(X, Y)
+    Lines are represented by two points, marking their beginning and ending
+    L(P1(X1,Y1),P2(X2,Y2))
+    Calculate the distance between two points
+    Check if three segment lines can form a triangle
+-->
+
 <body>
     <pre>
     <script>
-  
+
         function Point(x, y) {
             this.x = x;
             this.y = y;
         }
         var P1 = new Point(4, 6);
-        var P2 = new Point(7, 8);
+        var P2 = new Point(4, 6);
+        var P3 = new Point(6, 4);
         function Distance() {
             var sum;
 
-          
             for (var i in arguments) {
-                sum += (arguments[parseInt(i) + 1].x - arguments[i].x) * (arguments[parseInt(i) + 1].x - arguments[i].x) + (arguments[parseInt(i) + 1].y - arguments[i].y) * (arguments[parseInt(i) + 1].y - arguments[i].y);
+                if (parseInt(i) < arguments.length - 1) {
+                    sum = (arguments[parseInt(i) + 1].y - arguments[i].y) * (arguments[parseInt(i) + 1].y - arguments[i].y) + (arguments[parseInt(i) + 1].x - arguments[i].x) * (arguments[parseInt(i) + 1].x - arguments[i].x);
+
+                }
             }
             return Math.sqrt(sum);
         }
-        document.write(Distance(P1, P2));
+        function CheckIfTraiangle() {
+            var a = Distance(P1, P2);
+            var b = Distance(P2, P3);
+            var c = Distance(P3, P1);
+            document.writeln(a +" "+ b +" "+ c);
+            if (a+b>c && a+c>b && b+c >a) {
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+        document.writeln(CheckIfTraiangle());
     </script>
         </pre>
 </body>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+    Write a function that checks if a given object contains a given property
+    var obj  = …;
+    var hasProp = hasProperty(obj,"length");
+-->
+<body>
+    <pre>
+        <script>
+            var obj = new Object();
+            obj.name = "Kiril";
+            function hasProperty(obj, prop) {
+                if (obj.hasOwnProperty(prop)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            var hasProp = hasProperty(obj, "name");
+            document.writeln(hasProp);
+        </script>
+    </pre>
+</body>
+</html>
