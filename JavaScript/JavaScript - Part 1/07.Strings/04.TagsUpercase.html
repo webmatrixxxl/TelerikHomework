@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<!--
+    Write a JavaScript function that finds how many times a substring is contained in a given text 
+    (perform case insensitive search).
+	Example: The target substring is "in". The text is as follows:
+
+    We are living in an yellow submarine. We don't have anything else.
+    Inside the submarine is very tight. So we are drinking all the day. 
+    We will move out of it in 5 days.
+
+    The result is: 9.
+-->
+<body>
+ 
+    <pre>
+        <script>
+            function Tags(str) {
+                var indexOpen = 0;
+                var indexClose = 0;
+                var indexOld = 0;
+                var newText;
+
+                while (true)
+                {
+                    indexOpenU = str.indexOf("<upcase>", indexOpenU + 1);
+                    indexOpenL = str.indexOf("<lowcase>", indexOpenL + 1);
+                    indexOpenM = str.indexOf("<mixcase>", indexOpenM + 1);
+
+                    if (indexOpenU == -1 && indexOpenL == -1 && indexOpenM == -1)
+                    {
+                        break;
+                    }
+                    newText+=(str.substr(indexOld, indexOpenU - indexOld));
+                    indexClose = str.indexOf("</upcase>", indexClose + 1);
+                    newText+=(str.substr(indexOpen + 8, indexClose - indexOpenU - 8).toUpperCase());
+                    indexOld = indexClose + 9;
+
+                }
+                newText += str.substr(indexOld, str.Length - indexOld);
+                document.writeln(newText);
+            }
+            Tags("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.");
+        </script>
+    </pre>
+</body>
+</html>
