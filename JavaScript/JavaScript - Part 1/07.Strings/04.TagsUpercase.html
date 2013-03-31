@@ -28,14 +28,27 @@
 
                 while (true)
                 {
-                    indexOpenU = str.indexOf("<upcase>", indexOpenU + 1);
-                    indexOpenL = str.indexOf("<lowcase>", indexOpenL + 1);
-                    indexOpenM = str.indexOf("<mixcase>", indexOpenM + 1);
+                    var indexOpenU = str.indexOf("<upcase>", indexOpenU + 1);
+                    var indexOpenUc = str.indexOf("</upcase>", indexOpenU + 1);
+
+                    var indexOpenL = str.indexOf("<lowcase>", indexOpenL + 1);
+                    var indexOpenLc = str.indexOf("<lowcase>", indexOpenL + 1);
+
+                    var indexOpenM = str.indexOf("<mixcase>", indexOpenM + 1);
+                    var indexOpenMc = str.indexOf("<mixcase>", indexOpenM + 1);
+
+                    var arr = [indexOpenU, indexOpenM, indexOpenL, indexOpenUc, indexOpenMc, indexOpenLc];
+                    var tags = {};
+                    tags["<upcase>"] = indexOpenU;
+                    tags["<lowcase>"] = indexOpenL;
+                    tags["<mixcase>"] = indexOpenM;
 
                     if (indexOpenU == -1 && indexOpenL == -1 && indexOpenM == -1)
                     {
                         break;
                     }
+                    arr.sort();
+                    newText += str.substr(indexOld, arr[0]);
                     newText+=(str.substr(indexOld, indexOpenU - indexOld));
                     indexClose = str.indexOf("</upcase>", indexClose + 1);
                     newText+=(str.substr(indexOpen + 8, indexClose - indexOpenU - 8).toUpperCase());

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<!--    
+    Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+-->
+
+<body>
+    <pre>
+        <script>
+            function Text(str) {
+
+                while (str.indexOf("<html>") != -1) {
+                    str = str.replace("<html>", "");
+                }
+                while (str.indexOf("</html>") != -1) {
+                    str = str.replace("</html>", "");
+                }
+                while (str.indexOf("<head>") != -1) {
+                    str = str.replace("<head>", "");
+                }
+                while (str.indexOf("</head>") != -1) {
+                    str = str.replace("</head>", "");
+                }
+                while (str.indexOf("<title>") != -1) {
+                    str = str.replace("<title>", "");
+                }
+                while (str.indexOf("</title>") != -1) {
+                    str = str.replace("</title>", "");
+                }
+                while (str.indexOf("<body>") != -1) {
+                    str = str.replace("<body>", "");
+                } while (str.indexOf("</body>") != -1) {
+                    str = str.replace("</body>", "");
+                } while (str.indexOf("</div>") != -1) {
+                    str = str.replace("</div>", "");
+                } while (str.indexOf("</div>") != -1) {
+                    str = str.replace("</div>", "");
+                }
+
+
+
+
+                document.write(str);
+
+            }
+            Text("<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>");
+            </script>
+        </pre>
+</body>
+</html>

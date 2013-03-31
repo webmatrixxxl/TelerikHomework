@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <pre>
+        <script>
+
+            function Solve(args) {
+                var field = args[0].split(", ");
+                var maxSum = Number.MIN_VALUE;
+
+                for (var i = 2; i < args.length; i++) {
+
+                    var currentPattren = args[i].split(", ");
+                    var sum = 1;
+                    var tempArr = field.slice(0);
+                    var indexer = 0;
+
+                    for (var c = 0; c < currentPattren.length;) {
+
+                        if (tempArr[indexer] == null || indexer >= field.length) {
+                            if (maxSum < sum) {
+                                maxSum = sum;
+                            }
+                            break;
+                        }
+
+                        tempArr[indexer] = null;
+                        indexer += parseInt(currentPattren[c]);
+
+                        if (tempArr[indexer] != null) {
+                            sum += parseInt(tempArr[indexer]);
+                        }
+
+                        if (c == currentPattren.length - 1) {
+                            c = 0;
+                        }
+                        else {
+                            c++;
+                        }
+
+
+
+
+
+                    }
+
+
+
+                }
+                return maxSum;
+
+            }
+            function SolverIO() {
+                var args = [];
+                args[0] = "1, 3, -6, 7, 4, 1, 12";
+                args[1] = "3";
+                args[2] = "1, 2, -3";
+                args[3] = "1, 3, -2";
+                args[4] = "1, -1";
+
+                Solve(args);
+            }
+            SolverIO();
+        </script>
+    </pre>
+</body>
+</html>

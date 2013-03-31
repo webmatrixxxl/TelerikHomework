@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<!--    Write a function that replaces non breaking white-spaces in a text with &nbsp;-->
+
+<body>
+    <pre>
+        <script>
+            function Text(str) {
+
+                while (str.indexOf("&nbsp") != -1) {
+                    str = str.replace("&nbspc;", " ");
+                }
+
+
+                document.writeln(str);
+
+            }
+            Text("We are &nbspc;living &nbspc; in a&nbspc;yellow submarine&nbspc;. We &nbspc;don't&nbspc; have &nbspc;anything&nbspc; else.");
+            </script>
+        </pre>
+</body>
+</html>

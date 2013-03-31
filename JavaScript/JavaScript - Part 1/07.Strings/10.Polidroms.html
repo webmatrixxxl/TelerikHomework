@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<!--    
+    Write a function for extracting all email addresses from given text. 
+    All substrings that match the format <identifier>@<host>…<domain> 
+    should be recognized as emails. Return the emails as array of strings.
+-->
+
+<body>
+    <pre>
+    <script>
+        function Text(text) {
+
+
+            text = text.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+            var words = text.split(" ");
+            var palidrome = true;
+            for (var i = 0; i < words.Length; i++) {
+                for (var c = 0; c < words[i].Length; c++) {
+                    if (words[i][c] != words[i][words[i].Length - 1 - c]) {
+                        palidrome = false;
+                        break;
+                    }
+
+                }
+                if (palidrome==false) {
+                    document.writeln(words[i]);
+
+                }
+                palidrome = true;
+            }
+            document.writeln(words);
+
+        }
+        Text('ABBA, lamal, exe, not');
+    </script>
+        </pre>
+</body>
+</html>

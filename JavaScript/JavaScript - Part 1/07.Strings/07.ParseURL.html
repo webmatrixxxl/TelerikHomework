@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <pre>
+    <script>
+        function Text(str) {
+
+            document.write('Write a script that parses an URL address.');
+
+            var url = 'http://www.devbg.org/forum/index.php';
+
+            document.writeln('url:', url);
+
+            var match = (/(\w+):\/\/([^\/]+)\/(.*)/).exec(url),
+              result = {
+                  protocol: match[1],
+                  server: match[2],
+                  resource: match[3]
+              };
+
+            document.writeln(JSON.stringify(result));
+
+        }
+        Text();
+    </script>
+        </pre>
+</body>
+</html>
