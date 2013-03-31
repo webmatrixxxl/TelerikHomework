@@ -18,27 +18,27 @@
         var t = 7;
         if (f > s && f > t) {
             if (s > t) {
-                jsConsole.writeLine("{0} {1} {2}", f, s, t);
+                jsConsole.writeLine(f + " " + s + " " + t);
             }
             else {
-                jsConsole.writeLine("{0} {1} {2}", f, t, s);
+                jsConsole.writeLine(f + " " + t + " " + s);
             }
 
         }
         else if (s > f && s > t) {
             if (f > t) {
-                jsConsole.writeLine("{0} {1} {2}", s, f, t);
+                jsConsole.writeLine(s + " " + f + " " + t);
             }
             else {
-                jsConsole.writeLine("{0} {1} {2}", s, t, f);
+                jsConsole.writeLine(s + " " + t + " " + f);
             }
         }
         else if (t > s && t > f) {
             if (f > s) {
-                jsConsole.writeLine("{0} {1} {2}", t, f, s);
+                jsConsole.writeLine(t + " " + f + " " + s);
             }
             else {
-                jsConsole.writeLine("{0} {1} {2}", t, s, f);
+                jsConsole.writeLine(t + " " + s + " " + f);
             }
         }
 

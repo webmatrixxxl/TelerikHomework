@@ -7,9 +7,7 @@
 </head>
 
 <!--    
-    Write a function for extracting all email addresses from given text. 
-    All substrings that match the format <identifier>@<host>…<domain> 
-    should be recognized as emails. Return the emails as array of strings.
+    Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
 -->
 
 <body>
@@ -18,27 +16,35 @@
         function Text(text) {
 
 
-            text = text.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-            var words = text.split(" ");
+            var words = text.split(", ");
             var palidrome = true;
-            for (var i = 0; i < words.Length; i++) {
-                for (var c = 0; c < words[i].Length; c++) {
-                    if (words[i][c] != words[i][words[i].Length - 1 - c]) {
+            
+            for (var i = 0; i < words.length; i++) {
+                var pol  = '';
+                for (var c = 0; c < words[i].length; c++) {
+                    
+                    if (words[i][c] != words[i][words[i].length - 1 - c]) {
                         palidrome = false;
+                      
                         break;
+                    }
+                    else {
+                        pol += words[i][c];
                     }
 
                 }
-                if (palidrome==false) {
-                    document.writeln(words[i]);
+                if (pol != "") {
+                    document.write(pol + ",");
 
                 }
-                palidrome = true;
+             
+               
             }
-            document.writeln(words);
+
 
         }
-        Text('ABBA, lamal, exe, not');
+        Text('ABBA, aal, exe');
+
     </script>
         </pre>
 </body>

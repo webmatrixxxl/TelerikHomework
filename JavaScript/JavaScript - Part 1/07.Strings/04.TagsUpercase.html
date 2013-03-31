@@ -6,59 +6,43 @@
     <title></title>
 </head>
 <!--
-    Write a JavaScript function that finds how many times a substring is contained in a given text 
-    (perform case insensitive search).
-	Example: The target substring is "in". The text is as follows:
+  You are given a text. Write a function that changes the text in all regions:
+  <upcase>text</upcase> to uppercase.
+  <lowcase>text</lowcase> to lowercase
+  <mixcase>text</mixcase> to mix casing(random)
 
-    We are living in an yellow submarine. We don't have anything else.
-    Inside the submarine is very tight. So we are drinking all the day. 
-    We will move out of it in 5 days.
+  We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.
 
-    The result is: 9.
+  The expected result:
+  We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.
+
+   Regions can be nested
+
 -->
 <body>
- 
     <pre>
         <script>
-            function Tags(str) {
-                var indexOpen = 0;
-                var indexClose = 0;
-                var indexOld = 0;
-                var newText;
+            function toMixCase(str) {
+                var replaced = ''
+                  , i;
 
-                while (true)
-                {
-                    var indexOpenU = str.indexOf("<upcase>", indexOpenU + 1);
-                    var indexOpenUc = str.indexOf("</upcase>", indexOpenU + 1);
+                for (i = 0; i < str.length; i++)
+                    replaced += str.charAt(i)[Math.round((Math.random())) ? 'toLowerCase' : 'toUpperCase']()
 
-                    var indexOpenL = str.indexOf("<lowcase>", indexOpenL + 1);
-                    var indexOpenLc = str.indexOf("<lowcase>", indexOpenL + 1);
-
-                    var indexOpenM = str.indexOf("<mixcase>", indexOpenM + 1);
-                    var indexOpenMc = str.indexOf("<mixcase>", indexOpenM + 1);
-
-                    var arr = [indexOpenU, indexOpenM, indexOpenL, indexOpenUc, indexOpenMc, indexOpenLc];
-                    var tags = {};
-                    tags["<upcase>"] = indexOpenU;
-                    tags["<lowcase>"] = indexOpenL;
-                    tags["<mixcase>"] = indexOpenM;
-
-                    if (indexOpenU == -1 && indexOpenL == -1 && indexOpenM == -1)
-                    {
-                        break;
-                    }
-                    arr.sort();
-                    newText += str.substr(indexOld, arr[0]);
-                    newText+=(str.substr(indexOld, indexOpenU - indexOld));
-                    indexClose = str.indexOf("</upcase>", indexClose + 1);
-                    newText+=(str.substr(indexOpen + 8, indexClose - indexOpenU - 8).toUpperCase());
-                    indexOld = indexClose + 9;
-
-                }
-                newText += str.substr(indexOld, str.Length - indexOld);
-                document.writeln(newText);
+                return replaced
             }
-            Tags("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.");
+
+            function changeText(str) {
+                return str.replace(/<upcase>(.*?)<\/upcase>/g, function (match, p1) {
+                    return p1.toUpperCase()
+                }).replace(/<lowcase>(.*?)<\/lowcase>/g, function (match, p1) {
+                    return p1.toLowerCase()
+                }).replace(/<mixcase>(.*?)<\/mixcase>/g, function (match, p1) {
+                    return toMixCase(p1)
+                })
+            }
+
+            document.write(changeText("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else."));
         </script>
     </pre>
 </body>
