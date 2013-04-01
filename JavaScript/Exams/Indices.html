@@ -10,42 +10,31 @@
         <script>
 
             function Solve(args) {
-
-                var terrain = args[0].split(", ");
-                for (var i = 0; i < terrain.length; i++) {
-                    terrain[i] = parseInt(terrain[i]);
-                }
-
-                var bestResult = 1;
-
-                for (var startPosition = 0; startPosition < terrain.length; startPosition++) {
-                    for (var step = 1; step < terrain.length; step++) {
-                        var result = 0;
-                        var lastPositionNumber = -1001;
-                        var currentPosition = startPosition;
-                        while (terrain[currentPosition] > lastPositionNumber) {
-                            lastPositionNumber = terrain[currentPosition];
-                            result++;
-                            currentPosition += step;
-                            if (currentPosition >= terrain.length) {
-                                currentPosition -= terrain.length;
-                            }
-                        }
-                        if (result > bestResult) {
-                            bestResult = result;
-                        }
-                    }
-                }
-                return bestResult;
-            }
-            function SolverIO() {
                 var args = [];
-                args[0] = "1, 1, 1";
 
+                args[1] = "1 2 3 5 7 1";
 
-                console.log(Solve(args));
+                var indices = args[1].split(" ");
+                var currentIndex = 0;
+                var output = "";
+                var i = 0;
+                while (currentIndex >= 0 && currentIndex <= indices.length) {
+                 
+                    currentIndex = indices[indices[i]];
+                    if (indices[i] == null) {
+                        return "0 ("+output+")";
+
+                    }
+                    i = indices[i];
+                  
+                    output += i + " ";
+                    indices[i-1] = null;
+                    indices[0] = null;
+                }
+                return "0 "+output;
             }
-            SolverIO();
+
+            document.write(Solve());
         </script>
     </pre>
 </body>
