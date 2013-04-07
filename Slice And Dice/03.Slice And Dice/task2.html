@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        html {
+            background-image: linear-gradient(bottom, rgb(223,211,182) 0%, rgb(255,255,255) 54%);
+            background-image: -o-linear-gradient(bottom, rgb(223,211,182) 0%, rgb(255,255,255) 54%);
+            background-image: -moz-linear-gradient(bottom, rgb(223,211,182) 0%, rgb(255,255,255) 54%);
+            background-image: -webkit-linear-gradient(bottom, rgb(223,211,182) 0%, rgb(255,255,255) 54%);
+            background-image: -ms-linear-gradient(bottom, rgb(223,211,182) 0%, rgb(255,255,255) 54%);
+            background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(223,211,182)), color-stop(0.54, rgb(255,255,255)) );
+            height: 100%;
+        }
+
+        body {
+            margin: auto;
+            width: 715px;
+            border: 10px solid #9a8a65;
+            border-top: none;
+            border-radius: 10px;
+            font-family: Verdana;
+            font-size: x-small;
+            color: #5a481a;
+            background-color: #fff;
+        }
+
+        header {
+            background: url(images/header.png);
+            width: 735px;
+            height: 265px;
+            margin-left: -10px;
+        }
+
+        nav {
+            position: relative;
+            top: -121px;
+            width: 31%;
+            left: -1px;
+            float: left;
+        }
+
+            nav > a {
+                background: url(images/arr_white.gif) no-repeat;
+                background-position: 180px;
+                display: inline-block;
+                width: 89%;
+                text-decoration: none;
+                background-color: #2a2a2a;
+                color: #fcfcfc;
+                padding-left: 25px;
+                border-bottom: 1px solid #fcfcfc;
+                height: 30px;
+                line-height: 30px;
+                font-family: Georgia;
+                font-size: small;
+            }
+
+                nav > a:hover {
+                    background: url(images/arr_orange.gif) no-repeat;
+                    background-color: #2a2a2a;
+                    color: #f3bd4d;
+                    background-position: 180px;
+                    width: 89%;
+                }
+
+                    nav > a:hover span {
+                        color: #fff;
+                    }
+
+
+
+            nav > aside {
+                border-top: 20px solid #cdc4aa;
+                width: 100%;
+                background-image: linear-gradient(right, rgb(235,229,210) 0%, rgb(253,251,242) 20%);
+                background-image: -o-linear-gradient(right, rgb(235,229,210) 0%, rgb(253,251,242) 20%);
+                background-image: -moz-linear-gradient(right, rgb(235,229,210) 0%, rgb(253,251,242) 20%);
+                background-image: -webkit-linear-gradient(right, rgb(235,229,210) 0%, rgb(253,251,242) 20%);
+                background-image: -ms-linear-gradient(right, rgb(235,229,210) 0%, rgb(253,251,242) 20%);
+                background-image: -webkit-gradient( linear, right bottom, left bottom, color-stop(0, rgb(235,229,210)), color-stop(0.2, rgb(253,251,242)) );
+                padding-top: 40px;
+            }
+
+                nav > aside > .news {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    border-bottom: 1px dotted #cdc4aa;
+                }
+
+                    nav > aside > .news > span {
+                        font-weight: bold;
+                    }
+
+                nav > aside #support {
+                    background: url("images/support.png") no-repeat scroll -22px 0 transparent;
+                    height: 101px;
+                    margin-top: 35px;
+                    text-align:center;
+                }
+
+                nav > aside > a:last-of-type {
+                    float: right;
+                    margin-right: 30px;
+                }
+
+        section {
+            float: right;
+            width: 66%;
+        }
+
+            section > a:last-of-type {
+                float: right;
+                margin-right: 25px;
+            }
+
+            section > article {
+                border-top: solid 1px #d8c9a7;
+                padding: 20px 20px 10px 0;
+                float: left;
+            }
+
+                section > article > div {
+                    width: 42%;
+                }
+
+                section > article > img, section > article > div {
+                    float: left;
+                    border: 5px solid #e7e0ce;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 0px 1px #dad0b7;
+                    padding: 5px;
+                    margin-right: 15px;
+                    text-align: center;
+                }
+
+                section > article > p {
+                    display: table;
+                    margin-top: 0;
+                }
+
+
+                    section > article > p:last-of-type > a {
+                        float: right;
+                    }
+
+            section > h1, h3 {
+                color: #f3bd4d;
+            }
+
+        .columns {
+            width: 45%;
+        }
+
+        footer {
+            clear: right;
+            margin-top: 20px;
+            background: none repeat scroll 0 0 #DFD4B5;
+            height: 55px;
+            line-height: 55px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <nav>
+        <a href="#"><span>|</span> Home</a>
+        <a href="#"><span>|</span> Recent Projects</a>
+        <a href="#"><span>|</span> Sercices</a>
+        <a href="#"><span>|</span> Clients</a>
+        <a href="#"><span>|</span> Solutions</a>
+        <a href="#"><span>|</span> Contact us</a>
+        <aside>
+            <div class="news">
+                <span>02/03/07</span>
+                <p>Even more websites all about website templates on Just Web Templates.</p>
+            </div>
+            <div class="news">
+                <span>02/03/07</span>
+                <p>Even more websites all about website templates on Just Web Templates.</p>
+            </div>
+            <a href="#">more</a>
+            <div id="support">
+                Call: +3265-9856-789
+            </div>
+        </aside>
+    </nav>
+    <section>
+        <h1>Welcome to Our Site!</h1>
+        <article>
+            <img src="images/pic_1.jpg" alt="Alternate Text" />
+            <p>Don't forget to check <a href="#">free website templates</a> every day, because we add  a new free website template almost daily.</p>
+            <p>You can remove any link to our websites from this template you're free to use the template without linking back to us.</p>
+            <p>This is just a place holder so you can see how the site would look like.<a href="#">more</a></p>
+
+        </article>
+        <h3>Company Profile</h3>
+        <article class="columns">
+            <div>
+                <img src="images/pic_2.jpg" alt="Alternate Text" />
+                <hr />
+                Corporate Building
+            </div>
+            <p>If you're having problems editing the template please don't hesitate to ask for help on the forum.</p>
+        </article>
+        <article class="columns">
+            <div>
+                <img src="images/pic_3.jpg" alt="Alternate Text" />
+                <hr />
+                Industrual
+            </div>
+            <p>This is a template designed by free website templates for you for free you can replace all the text by your own text.</p>
+
+        </article>
+        <a href="#">View Details</a>
+    </section>
+    <footer>
+        <p>Copyright © 2007 Company Name All right reserved.</p>
+    </footer>
+
+
+</body>
+</html>
