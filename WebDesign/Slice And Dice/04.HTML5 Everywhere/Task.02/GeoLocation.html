@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=620">
     <title>HTML5 Demo: geolocation</title>
     <!-- dependencies: jQuery + Modernizr with yepnope -->
-    <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="modernizr.custom.28038.js"></script>
     <!-- reference the base script -->
     <script src="js-webshim/minified/polyfiller.js"></script>
-    <script>   $.webshims.polyfill('json-storage geolocation');</script>
+    <script>   $.webshims.polyfill('geolocation');
+
+    </script>
 </head>
 <body>
     <section id="wrapper">
