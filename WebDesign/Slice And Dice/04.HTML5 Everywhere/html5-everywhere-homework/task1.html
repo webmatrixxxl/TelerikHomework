@@ -6,6 +6,7 @@
     <!-- My edit for the homework-->
     <!--[if lt IE 9]>
     <script src="html5shiv.js"></script>
+        <script src="modernizr.custom.90804.js"></script>
   
     <style type="text/css">
     body div#wrapper aside {
@@ -15,6 +16,7 @@
     <![endif]-->
     <script src="PIE_uncompressed.js"></script>
     <script>
+
         document.createElement("article");
         document.createElement("aside");
         document.createElement("header");
@@ -41,6 +43,11 @@
         body div#wrapper section {
             zoom: 0;
             width: auto;
+        }
+
+        .no-cssgradients body div#wrapper aside {
+            background: url(images/asideBg.jpg) repeat-x;
+            background-color: #fff;
         }
     </style>
 </head>
