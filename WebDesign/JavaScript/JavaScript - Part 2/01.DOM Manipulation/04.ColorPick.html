@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<!--Task 04-->
+<!--Create a text area and two inputs with type="color"
+Make the font color of the text area as the value of the first color input
+Make the background color of the text area as the value of the second input-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="color" name="background" onchange="setBackground()" />
+    <input type="color" name="font" onchange="setFontColor()" />
+    <textarea id="area">
+        На баба Хола и тече сопола! А хахахах :D НЕам думи!
+    </textarea>
+    <script>
+        var textarea = document.getElementsByTagName('textarea')[0];
+
+        function setBackground() {
+            return textarea.style.backgroundColor = document.getElementsByName('background')[0].value;
+        }
+        function setFontColor() {
+            return textarea.style.color = document.getElementsByName('font')[0].value;
+
+        }
+    </script>
+
+</body>
+</html>
