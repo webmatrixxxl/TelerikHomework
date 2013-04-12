@@ -8,9 +8,21 @@ Make the background color of the text area as the value of the second input-->
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="modernizr.custom.59446.js"></script>
+    <style>
+        input {
+            display:block;
+        }
+        #area {
+            width:200px;
+            height:200px;
+        }
+    </style>
 </head>
 <body>
+    Background Color:
     <input type="color" name="background" onchange="setBackground()" />
+    Font Color:
     <input type="color" name="font" onchange="setFontColor()" />
     <textarea id="area">
         На баба Хола и тече сопола! А хахахах :D НЕам думи!
