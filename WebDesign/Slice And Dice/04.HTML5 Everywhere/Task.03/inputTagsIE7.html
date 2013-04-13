@@ -1,172 +1,157 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>content</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <style>
+        html {
+            background-color: #e0dcdc;
+        }
+
+        body {
+            background-color: transparent;
+            margin: auto;
+        }
+
+        .form-element {
+            display: table;
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            float: left;
+            height: 100px;
+            width: 190px;
+        }
+    </style>
+    <link href="spectrum.css" rel="stylesheet" type="text/css" />
     <!-- dependencies: jQuery + Modernizr with yepnope -->
-    <!--[if lt IE 9]>
-        <script src="modernizr.custom.59597.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="js-webshim/minified/polyfiller.js"></script>
-    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script src="js/modernizr.custom.12744.js"></script>
+    <!-- reference the base script -->
+    <script src="js-webshim/minified/polyfiller.js"></script>
     <script>
-        // Polyfill all unsupported features
-        $.webshims.polyfill('forms');
+        $.webshims.debug = true;
+        $.webshims.polyfill();
     </script>
+
+    <!-- Polyfill for color type -->
+    <script src="js/spectrum.js"></script>
+
+    <!-- Polyfill for week type -->
+    <script src="js/week-polyfill.min.js"></script>
+
+    <!-- Polyfill for datetime type -->
+    <script src="js/datetime-polyfill.js"></script>
+
+    <!-- Needed for week and datetime polyfills ui -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery.ui.all.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 </head>
-<body>
-    <form id="form" action="#">
-        <p class="required"><span>*</span> Required fields</p>
-        <fieldset>
-            <div class="form-element">
-                <label for="number" id="ID-1365418964460">
-                    number: <dfn title="required">*</dfn>
-                </label>
-                <input type="number" form="form" id="number" placeholder="number" required="required" name="number" style="display: none;" /><input type="text" class="ws-number has-input-buttons" title="" placeholder="number" autocomplete="off" role="spinbutton" aria-labelledby="ID-1365418964460" style="margin-left: 0px; margin-right: 0px; width: 157.4px; padding-right: 20px;" /><span class="input-buttons number-input-buttons input-button-size-1" style="margin-right: 5px;"><span class="step-controls" unselectable="on"><span class="step-up"></span><span class="step-down"></span></span></span>
-            </div>
-            <div class="form-element">
-                <label for="range" id="Label1">
-                    range:
-						
-                </label>
-                <input type="range" id="range" name="range" style="display: none;"><span class="ws-range" role="slider" aria-readonly="false" title="" tabindex="0" aria-disabled="false" aria-valuenow="50" aria-valuetext="50" aria-labelledby="ID-1365418964461" style="margin-left: 0px; margin-right: 0px; width: 162.4px;"><span class="ws-range-min" style="width: 50%;" /></span><span class="ws-range-rail"><span class="ws-range-thumb" style="left: 50%;"></span></span></span>
-            </div>
+<body id="my-id">
 
-            <div class="form-element">
-                <label for="time" id="Label2">
-                    Time: 
-						
-                </label>
-                <input type="time" id="time" name="time" style="display: none;" /><input type="text" class="ws-time has-input-buttons" title="" placeholder="" autocomplete="off" role="spinbutton" aria-labelledby="ID-1365418964462" style="margin-left: 0px; margin-right: 0px; width: 157.4px; padding-right: 20px;" /><span class="input-buttons time-input-buttons input-button-size-1" style="margin-right: 5px;"><span class="step-controls" unselectable="on"><span class="step-up"></span><span class="step-down"></span></span></span>
-            </div>
-
-            <div class="form-element">
-                <label for="password">
-                    password: 
-						
-                </label>
-                <input type="password" id="password" name="password" placeholder="password" />
-            </div>
-
-            <div class="form-element">
-                <label for="textarea">
-                    textarea: * ([maxlength="6"])
-						
-                </label>
-                <textarea id="textarea" name="textarea" required="required" maxlength="6" placeholder="hello this is a textbox"></textarea>
-            </div>
-
-            <div class="form-element">
-                <label for="select">
-                    select: *
-						
-                </label>
-                <select id="select" name="select" required="required">
-                    <option value="">Please choose</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+    <h3>Simple Demo </h3>
+    <fieldset>
+        <h6>Form tags range, number, email, date, color, datetime, month, search, tel, time, url, week
+And it must work on all desktop browsers (IE7+)
+        </h6>
+        <div class="form-element">
+            <label for="range">
+                range:
+            </label>
+            <input name="range" type="range" id="range" min="0" max="100" step="20" value="50" />
+        </div>
+        <div class="form-element">
+            <label for="number">
+                Number:
+            </label>
+            <input type="number" min="0" step="0.01" name="price" />
+        </div>
+        <div class="form-element">
+            <label for="email">
+                E-Mail + datalist:
+            </label>
+            <input type="email" list="datalist" name="email" title="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" />
+            <datalist id="datalist">
+                <select>
+                    <option value="yourmail@gmail.com"></option>
+                    <option value="yourmail@yahoo.com"></option>
+                    <option value="mail@some-example-domain.com"></option>
+                    <option value="foo@bar.baz"></option>
                 </select>
-            </div>
+            </datalist>
+        </div>
+        <div class="form-element">
+            <label for="date">
+                Date:
+            </label>
+            <input name="date" data-placeholder="year-month-day" type="date" />
 
-            <div class="form-element">
-                <label for="number2" id="Label3">
-                    number + number = output:
-						
-                </label>
-                <input type="number" id="number2" name="number2" value="0" step="0.5" style="display: none;" /><input type="text" class="ws-number has-input-buttons" title="" placeholder="" autocomplete="off" role="spinbutton" aria-labelledby="ID-1365418964463" style="margin-left: 0px; margin-right: 0px; width: 157.4px; padding-right: 20px;"><span class="input-buttons number-input-buttons input-button-size-1" style="margin-right: 5px;" /><span class="step-controls" unselectable="on"><span class="step-up"></span><span class="step-down"></span></span></span>
-                <input type="number" value="0" id="number3" name="number3" style="display: none;" /><input type="text" class="ws-number has-input-buttons" title="" placeholder="" autocomplete="off" role="spinbutton" aria-labelledby="" style="margin-left: 0px; margin-right: 0px; width: 157.4px; padding-right: 20px;"><span class="input-buttons number-input-buttons input-button-size-1" style="margin-right: 5px;" /><span class="step-controls" unselectable="on"><span class="step-up"></span><span class="step-down"></span></span></span>
-                <output id="output2"></output>
+        </div>
+        <div class="form-element">
+            <label for="color">
+                Color:
+            </label>
 
-                <script>
-                    $('#number2').bind('input', function () {
-                        $('#output2').prop('value', ($(this).prop('valueAsNumber') || 0) + ($('#number3').prop('valueAsNumber') || 0));
-                    });
+            <input type='color' class='basic' value='#f594d0' />
+        </div>
+        <div class="form-element">
+            <label for="datetime">
+                Data time:
+            </label>
+            <input name="datetime" type="datetime" />
+        </div>
+        <div class="form-element">
+            <label for="month">
+                Month:
+            </label>
+            <input name="month" type="month" />
+        </div>
+        <div class="form-element">
+            <label for="search">
+                Search:
+            </label>
+            <input name="search" type="search" />
+        </div>
+        <div class="form-element">
+            <label for="tel">
+                Tel:
+            </label>
+            <input type="tel" pattern="(\+?([0-9]+))\b" title="Format +359846" id="tel" />
+        </div>
+        <div class="form-element">
+            <label for="time">
+                Time: 
+            </label>
+            <input name="time" type="time" id="time" />
+        </div>
+        <div class="form-element">
+            <label for="url">
+                URL: 
+            </label>
+            <input type="url" name="location" list="urls" />
+            <datalist id="urls">
+                <option label="MIME: Format of Internet Message Bodies" value="http://tools.ietf.org/html/rfc2045"></option>
+                <option label="HTML 4.01 Specification" value="http://www.w3.org/TR/html4/"></option>
+                <option label="Form Controls" value="http://www.w3.org/TR/xforms/slice8.html#ui-commonelems-hint"></option>
+                <option label="Scalable Vector Graphics (SVG) 1.1 Specification" value="http://www.w3.org/TR/SVG/"></option>
+                <option label="Feature Sets - SVG 1.1 - 20030114" value="http://www.w3.org/TR/SVG/feature.html"></option>
+                <option label="The Single UNIX Specification, Version 3" value="http://www.unix-systems.org/version3/"></option>
+            </datalist>
+        </div>
+        <div class="form-element">
+            <label for="time">
+                Week: 
+            </label>
+            <input name="week" type="week" id="week" />
+        </div>
 
-                    $('#number3').bind('input', function () {
-                        $('#output2').prop('value', ($(this).prop('valueAsNumber') || 0) + ($('#number2').prop('valueAsNumber') || 0));
-                    });
-							</script>
-            </div>
 
-            <div class="form-element">
-                <fieldset>
-                    <legend>date +oninput+ range</legend>
-                    <input type="date" max="2011-12-31" min="2011-01-01" value="2011-01-01" id="dateControlledByRange" style="display: none;" /><input type="text" class="ws-date has-input-buttons" title="" placeholder="" autocomplete="off" role="spinbutton" aria-labelledby="" style="margin-left: 0px; margin-right: 0px; width: 136.4px; padding-right: 41px;" /><span class="input-buttons date-input-buttons input-button-size-2" style="margin-right: 3px;"><span class="step-controls" unselectable="on"><span class="step-up"></span><span class="step-down"></span></span>
-                        <button class="ws-popover-opener" type="button" aria-labelledby="" tabindex="-1"><span></span></button>
-                    </span>
-                    <input type="range" style="margin-left: 5px; width: 400px; display: none;" step="86400000" max="1325289600000" min="1293840000000" value="1293840000000" id="rangeControlledByDate" /><span class="ws-range" role="slider" aria-readonly="false" title="" tabindex="0" aria-disabled="false" aria-valuenow="1293840000000" aria-valuetext="1293840000000" aria-labelledby="" style="margin-left: 5px; margin-right: 0px; width: 401.4px;"><span class="ws-range-min" style="width: 0%;"></span><span class="ws-range-rail"><span class="ws-range-thumb" style="left: 0%;"></span></span></span>
 
-                    <script>
-                        $('#dateControlledByRange').bind('input', function () {
-                            $('#rangeControlledByDate').prop('valueAsNumber', $.prop(this, 'valueAsNumber'))
-                        });
 
-                        $('#rangeControlledByDate').bind('input', function () {
-                            $('#dateControlledByRange').prop('valueAsNumber', $.prop(this, 'valueAsNumber'))
-                        });
-							</script>
-                </fieldset>
-            </div>
 
-            <div class="form-item">
-                <label for="progress">
-                    progress
-						
-                </label>
-                <progress max="100" value="30" id="progress">100%</progress>
-                <button data-increase="10" type="button">increase by 10</button>
-                <button data-increase="-10" type="button">increase by -10</button>
-                <button class="remove-value" type="button">remove value</button>
-                <script>
-                    $('button[data-increase]').on('click', function () {
-                        var val = $('#progress').prop('value') || 0;
-                        var step = $(this).data('increase');
-                        $('#progress').prop('value', val + step);
+    </fieldset>
 
-                        return false;
-                    });
-                    $('button.remove-value').on('click', function () {
-                        $('#progress').removeAttr('value');
-                        return false;
-                    });
-
-							</script>
-            </div>
-
-            <div>
-                <h4>Radio-Group Headline Short Labels  <dfn title="required">*</dfn></h4>
-                <fieldset class="mod">
-                    <legend>Legend Short Labels  <dfn title="required">*</dfn></legend>
-                    <div class="form-item">
-                        <input type="radio" required="" name="radio-grp1-1" id="field6-1" />
-                        <label for="field6-1">
-                            Radiooption 2
-								
-                        </label>
-                    </div>
-                    <div class="form-item">
-                        <input type="radio" name="radio-grp1-1" id="field7-1" />
-                        <label for="field7-1">
-                            Radiooption 2
-								
-                        </label>
-                    </div>
-                    <div class="form-item">
-                        <input type="radio" name="radio-grp1-1" id="field8-1" />
-                        <label for="field8-1">
-                            Radiooption 3
-								
-                        </label>
-                    </div>
-                </fieldset>
-            </div>
-
-            <div class="button-wrapper">
-                <input type="submit" value="Send" />
-            </div>
-        </fieldset>
-    </form>
 </body>
 </html>
