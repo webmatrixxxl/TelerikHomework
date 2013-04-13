@@ -28,7 +28,7 @@
         </article>
         <script>
             function success(position) {
-                var s = document.querySelector('#status');
+                var s = $('#status')[0];
 
                 if (s.className == 'success') {
                     // not sure why we're hitting this twice in FF, I think it's to do with a cached result coming back    
@@ -43,7 +43,7 @@
                 mapcanvas.style.height = '400px';
                 mapcanvas.style.width = '560px';
 
-                document.querySelector('article').appendChild(mapcanvas);
+                $('article')[0].appendChild(mapcanvas);
 
                 var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                 var myOptions = {
