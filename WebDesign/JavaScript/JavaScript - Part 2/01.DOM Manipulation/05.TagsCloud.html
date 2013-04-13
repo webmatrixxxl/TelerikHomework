@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<!--Task 05-->
+<!--Create a tag cloud:
+Visualize a string of tags (strings) in a given container
+By given minFontSize and maxFontSize, generate the tags with different font-size, depending on the number of occurrences-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="tags"></div>
+    <script>
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"]
+        var div = document.getElementById('tags');
+
+        Array.prototype.remove = function remove(num) {
+            for (var i in this) {
+                if (num == this[i]) {
+                    this.splice(i, 1);
+                }
+            }
+
+        }
+
+        var tagCloud = generateTagCloud(tags, 17, 42);
+
+        function generateTagCloud(tags, minFontSize, maxFontSize) {
+            div.style.width = 200 + 'px';
+            var counterArr = [];
+
+            for (var i = 0; i < tags.length; i++) {
+                var count = 0;
+
+                for (var c = i+1; c < tags.length; c++) {
+                    if (tags[i].toLowerCase == tags[c].toLowerCase) {
+                        count++;
+
+                        tags[c] = 0;
+                    }
+
+                    counterArr.push(count);
+                }
+                document.write(tags[i] + " ");
+
+
+            }
+            //for (var i = 0; i < tags.length; i++) {
+               
+            //        console.log(counterArr[i]);
+            //        var result = document.createElement('span');
+            //        result.style.fontSize =  counterArr[i] + 'px';
+            //        result.appendChild(document.createTextNode(tags[i] + ' '));
+            //        div.appendChild(result);
+
+                
+            //}
+            return false;
+        }
+
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random number between min and max
+        }
+    </script>
+</body>
+</html>
