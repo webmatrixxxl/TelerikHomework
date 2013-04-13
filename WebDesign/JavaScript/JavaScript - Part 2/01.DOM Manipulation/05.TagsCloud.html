@@ -31,9 +31,8 @@ By given minFontSize and maxFontSize, generate the tags with different font-size
 
             for (var i = 0; i < tags.length; i++) {
                 var count = 0;
-
-                for (var c = i+1; c < tags.length; c++) {
-                    if (tags[i].toLowerCase == tags[c].toLowerCase) {
+                for (var c = i + 1; c < tags.length; c++) {
+                    if (tags[i].toLowerCase() == tags[c].toLowerCase()) {
                         count++;
 
                         tags[c] = 0;
