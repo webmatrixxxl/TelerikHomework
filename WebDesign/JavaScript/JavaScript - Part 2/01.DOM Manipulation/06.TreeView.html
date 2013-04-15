@@ -16,23 +16,23 @@
 <body>
     <ul id="tree">
         <li>Item</li>
-        <li class="click">Item
+        <li class="open">Item
             <ul>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li  class="open">Item
             <ul>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
-                <li>Sub Item
+                <li>Suv Item
                 </li>
             </ul>
                 </li>
@@ -42,14 +42,25 @@
         <li>Item</li>
     </ul>
     <script>
-        $('.click').on('click', function (e) {
+        $('.open').on('click', function (e) {
             e.preventDefault();
             var $el = $(this);
 
-            $('li ul').css('display', 'block');
+            $el.children('ul').show();
+            $el.attr('class', 'close');
 
             //alert($el.attr('href'));
         });
+        $('.close').on('click', function (e) {
+            e.preventDefault();
+            var $el = $(this);
+
+            $el.children('ul').hide();
+            $el.attr('class', 'open');
+
+            //alert($el.attr('href'));
+        });
+
     </script>
 </body>
 </html>
