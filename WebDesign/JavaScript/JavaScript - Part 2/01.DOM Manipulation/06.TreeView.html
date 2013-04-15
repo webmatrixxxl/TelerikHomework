@@ -10,8 +10,6 @@
         }
     </style>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-
 </head>
 <body>
     <ul id="tree">
@@ -24,7 +22,7 @@
                 </li>
                 <li>Suv Item
                 </li>
-                <li  class="open">Item
+                <li class="open">Item
             <ul>
                 <li>Suv Item
                 </li>
@@ -41,6 +39,27 @@
         <li>Item</li>
         <li>Item</li>
     </ul>
+<!--    <script>
+        var liTags = document.querySelectorAll('#tree li'); // Get Element with ID #three and all nested <li> in it
+
+        subList();
+
+        function subList() {
+            for (i = 0; i < liTags.length; i++) {
+                liTags[i].addEventListener('click', funSubList);
+                liTags[i].class = 'expand';
+            }
+
+            function funSubList(event) {
+                if (this === event.target && this.getElementsByTagName('ul')[0].style.display == 'block') {
+                    this.getElementsByTagName('ul')[0].style.display = 'none';
+                }
+                else {
+                    this.getElementsByTagName('ul')[0].style.display = 'block';
+                }
+            }
+        }
+    </script>-->
     <script>
         $('.open').on('click', function (e) {
             e.preventDefault();
@@ -60,7 +79,6 @@
 
             //alert($el.attr('href'));
         });
-
     </script>
 </body>
 </html>
