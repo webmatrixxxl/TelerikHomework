@@ -10,6 +10,7 @@ var off = 0;
 var txt = "";
 var pX = 0;
 var pY = 0;
+var theLayer;
 
 document.onmousemove = mouseMove;
 
