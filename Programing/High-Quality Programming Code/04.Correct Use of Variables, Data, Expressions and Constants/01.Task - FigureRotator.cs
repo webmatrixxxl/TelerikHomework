@@ -53,7 +53,7 @@ namespace FigureRotator
         }
 
         // methods
-        public static Figure GetRotatedSize(Figure shape, double Angle)
+        public static Figure GetRotatedFigure(Figure shape, double Angle)
         {
             double newWidth = (Math.Abs(Math.Cos(angleOfFigure)) * currentSize.Width) +
                  (Math.Abs(Math.Sin(angleOfFigure)) * currentSize.Height);
