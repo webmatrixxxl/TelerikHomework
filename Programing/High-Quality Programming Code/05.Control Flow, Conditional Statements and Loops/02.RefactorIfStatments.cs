@@ -8,7 +8,7 @@ if (potato != null)
     }
 }
 
-if (x == minX && y == minY && !isVisitedCell)
+if ((x >= minX && x <= maxX) && (y >= minY && y <= maxY)  && !isVisitedCell)
 {
     VisitCell();
 }
