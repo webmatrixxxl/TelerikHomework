@@ -27,17 +27,14 @@
                 style.borderStyle = ['solid', 'dashed', 'dotted'][getRandomInt(0, 2)];
 
                 el.appendChild(node);
+                moveElementInCircle(node);
             }
 
-            function moveElementInCircle() {
+            function moveElementInCircle(node) {
 
-
-                while (true) {
-                    style.top += 10 + 'px';
-                    if (style.top == 1000) {
-                        break;
-                    }
-
+                var style = node.style;
+                for (var i = 0; i < 1000; i++) {
+                    style.top += i;
                 }
             }
 
