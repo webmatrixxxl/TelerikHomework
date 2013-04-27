@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+    </ul>
+    <div>
+        <p>Opa</p>
+    </div>
+    <script>
+        var domWorker = (function () {
+            var elArray = [];
+            var nodesArray = [];
+            var countBuff = 0;
+
+            function addElementToPerrent(selector, element, text) {
+                var el = document.querySelector(selector);
+                var node = document.createElement(element);
+                node.innerHTML = text;
+                el.appendChild(node);
+            }
+            //addElementToPerrent("div", "p", "This is new !");
+
+            function removeElement(selector) {
+                var el = document.querySelector(selector);
+                el.parentNode.removeChild(el);
+            }
+
+            function eventAttach(selector, eventType, eventHandler) {
+                document.querySelector(selector).addEventListener(eventType, eventHandler, false);
+            }
+
+            //eventAttach("p", 'click', function () {
+            //    alert('Clicked');
+            //})
+
+
+
+            function appendToBuffer(selector, element, count, text) {
+                elArray.push(document.querySelector(selector));
+
+                for (var c = countBuff; c < count + countBuff; c++) {
+                    nodesArray.push(document.createElement(element));
+                    nodesArray[c].innerHTML = text;
+                }
+
+                countBuff += count;
+
+                if (countBuff >= 100) {
+                    for (var i = 0; i < elArray.length; i++) {
+                        for (var c = 0; c < nodesArray.length; c++) {
+                            elArray[i].appendChild(nodesArray[c]);
+                        }
+                    }
+                }
+            }
+            //appendToBuffer("div", "p", 10, "This 10 p buffer");
+            //appendToBuffer("div", "p", 90, "This 90 p buffer");
+            return {
+                appendToBuffer: appendToBuffer,
+                addElementToPerrent: addElementToPerrent,
+                removeElement: removeElement,
+                eventAttach: eventAttach
+            };
+        })
+        
+        domWorker.addElementToPerrent("div", "p", "This is new !");
+
+    </script>
+</body>
+</html>
