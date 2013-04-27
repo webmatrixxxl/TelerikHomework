@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var movingShapes = (function () {
+
+            function addElementToPerrent(selector, element, text) {
+                var el = document.querySelector(selector);
+                var node = document.createElement(element);
+                node.innerHTML = text;
+                var style = node.style;
+                style.display = 'table-cell';
+                style.verticalAlign = 'middle';
+                style.width = 50 + 'px';
+                style.height = 50 + 'px';
+                style.borderRadius = '50%';
+                style.textAlign = 'center';
+                style.margin = 'auto'
+                style.color = getRandomColor();
+                style.borderColor = getRandomColor();
+                style.borderWidth = getRandomInt(1, 20) + 'px';
+                style.borderStyle = ['solid', 'dashed', 'dotted'][getRandomInt(0, 2)];
+
+                el.appendChild(node);
+            }
+
+            function moveElementInCircle() {
+
+
+                while (true) {
+                    style.top += 10 + 'px';
+                    if (style.top == 1000) {
+                        break;
+                    }
+
+                }
+            }
+
+            function getRandomColor() {
+                return 'rgba(' + [
+                    getRandomInt(0, 255),
+                    getRandomInt(0, 255),
+                    getRandomInt(0, 255),
+                    getRandomInt(0, 255)
+                ].join(', ') + ')';
+            }
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random number between min and max
+            }
+
+
+            return {
+                addElementToPerrent: addElementToPerrent,
+
+            };
+        })();
+
+        movingShapes.addElementToPerrent("body", "div", "Text");
+    </script>
+</body>
+</html>
