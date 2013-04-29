@@ -1,41 +1,142 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--Task 02-->
+<!--Create a module that works with moving div elements. Implement functionality for:
+Add new moving div element to the DOM
+The module should generate random background, font and border colors
+All the div elements are with the same width and height
+The movements of the div elements can be either circular or rectangular
+The elements should be moving all the time
+-->
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Rotated elements</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: helvetica,arial,sans-serif;
+        }
+
+        footer, section, header {
+            display: block;
+        }
+
+        h1 {
+            margin: 1em 2em;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            margin: 2em;
+            float: left;
+            position: relative;
+            border: 1px black solid;
+            border-radius: 200px;
+        }
+
+        .rectangle {
+            width: 400px;
+            height: 400px;
+            margin: 2em;
+            float: left;
+            position: relative;
+            border: 1px black solid;
+        }
+
+        .add_circles {
+            display: table;
+            margin: auto;
+            position: relative;
+            top: 50%;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Rotated elements circle</h1>
+    </header>
+    <section class="circle">
+        <input type="button" class="add_circles" onclick="elementsRotation.addCircle()" value="add circles" />
+    </section>
+    <section class="rectangle">
+        <input type="button" class="add_circles" onclick="elementsRotation.addRactangle()" value="add circles" />
+    </section>
+    <script src="domplotter.js"></script>
     <script>
-        var movingShapes = (function () {
+        var elementsRotation = (function () {
+            function addRactangle() {
+                var stage = document.querySelector('.rectangle'),
+                plots = 1,
+                increase = Math.PI * 2 / plots,
+                angle = 0,
+                x = 0,
+                y = 0,
+                plotcache = [];
 
-            function addElementToPerrent(selector, element, text) {
-                var el = document.querySelector(selector);
-                var node = document.createElement(element);
-                node.innerHTML = text;
-                var style = node.style;
-                style.display = 'table-cell';
-                style.verticalAlign = 'middle';
-                style.width = 50 + 'px';
-                style.height = 50 + 'px';
-                style.borderRadius = '50%';
-                style.textAlign = 'center';
-                style.margin = 'auto'
-                style.color = getRandomColor();
-                style.borderColor = getRandomColor();
-                style.borderWidth = getRandomInt(1, 20) + 'px';
-                style.borderStyle = ['solid', 'dashed', 'dotted'][getRandomInt(0, 2)];
+                var p = new Plot(stage);
+                p.zindex = 100;
+                p.setBackground(getRandomColor());
+                p.elm.style.color = getRandomColor();
+                p.elm.style.borderRadius = 100 + 'px';
+                p.elm.style.border = "2px solid " + getRandomColor();
+                p.elm.innerHTML = "Div";
+                p.elm.style.textAlign = 'center';
+                p.setDimensions(40, 40);
+                plotcache.push(p);
 
-                el.appendChild(node);
-                moveElementInCircle(node);
+                function rotate() {
+                    for (var i = 0; i < plots; i++) {
+                        if (x < 400 && y == 0) {
+                            x++;
+                        } else if (y < 400 && x == 400) {
+                            y++;
+                        } else if (x > 0 && y == 400) {
+                            x--;
+                        } else if (y > 0 && x == 0) {
+                            y--;
+                        }
+
+                        plotcache[i].position(x, y);
+                    }
+                }
+                setInterval(rotate, 1);
             }
 
-            function moveElementInCircle(node) {
+            function addCircle() {
+                var stage = document.querySelector('.circle'),
+                  plots = 1,
+                  increase = Math.PI * 2 / plots,
+                  angle = 0,
+                  x = 0,
+                  y = 0,
+                  plotcache = [];
 
-                var style = node.style;
-                for (var i = 0; i < 1000; i++) {
-                    style.top += i;
+                var p = new Plot(stage);
+                p.setBackground(getRandomColor());
+                p.elm.style.borderRadius = 100 + 'px';
+                p.elm.style.color = getRandomColor();
+                p.elm.style.borderRadius = 100 + 'px';
+                p.elm.style.border = "2px solid " + getRandomColor();
+                p.elm.innerHTML = "Div";
+                p.elm.style.textAlign = 'center';
+                p.setDimensions(40, 40);
+                plotcache.push(p);
+
+                function rotate() {
+                    for (var i = 0; i < plots; i++) {
+                        x = 100 * Math.cos(angle) + 100;
+                        y = 100 * Math.sin(angle) + 100;
+                        plotcache[i].position(x, y);
+                        angle += increase;
+                    }
+                    angle += 0.06;
                 }
+                setInterval(rotate, 50);
             }
 
             function getRandomColor() {
@@ -51,14 +152,14 @@
                 return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random number between min and max
             }
 
-
             return {
-                addElementToPerrent: addElementToPerrent,
-
+                addRactangle: addRactangle,
+                addCircle: addCircle
             };
         })();
 
-        movingShapes.addElementToPerrent("body", "div", "Text");
+        elementsRotation.addCircle();
+        elementsRotation.addRactangle();
     </script>
 </body>
 </html>
