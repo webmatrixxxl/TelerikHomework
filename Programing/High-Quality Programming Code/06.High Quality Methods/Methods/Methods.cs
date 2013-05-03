@@ -78,7 +78,6 @@ namespace Methods
             }
         }
 
-
         static double CalcDistance(double x1, double y1, double x2, double y2,
             out bool isHorizontal, out bool isVertical)
         {
@@ -92,9 +91,7 @@ namespace Methods
         static void Main()
         {
             Console.WriteLine(CalcTriangleArea(3, 4, 5));
-
             Console.WriteLine(NumberToDigit(5));
-
             Console.WriteLine(FindMaxNumber(5, -1, 3, 2, 14, 2, 3));
 
             PrintAsNumber(1.3, "f");
@@ -107,7 +104,6 @@ namespace Methods
             Console.WriteLine(CalcDistance(3, -1, 3, 2.5, out isHorizontal, out isVertical));
             Console.WriteLine("Horizontal? " + isHorizontal);
             Console.WriteLine("Vertical? " + isVertical);
-
 
             Student peter = new Student("Peter", "Ivanov", "17.03.1992", "From Sofia");
             Student stella = new Student("Stella", "Markova", "03.11.1993", "From Vidin, gamer, high results");

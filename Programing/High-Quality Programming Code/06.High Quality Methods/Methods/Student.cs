@@ -16,8 +16,8 @@ namespace Methods
             this.LastName = lastName;
             this.City = city;
             this.Hobby = hobby;
-
             DateTime parsedDataTime;
+
             if (!DateTime.TryParse(birthDate, out parsedDataTime))
             {
                 throw new ArgumentException("Date format is incorect !");
@@ -25,7 +25,6 @@ namespace Methods
         }
         public bool IsOlderThan(Student student)
         {
-
             bool isOlder = false;
             DateTime firstStudent = this.BirthDate;
             DateTime secondStudent = student.BirthDate;
