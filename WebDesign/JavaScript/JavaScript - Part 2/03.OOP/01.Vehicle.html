@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var vehicles = (function () {
+
+            // enumerations
+
+            var AfterburnerState = Object.freeze({
+                "ACTIVATED": 1,
+                "DEACTIVATED": 2
+            });
+
+            var RotationDirection = Object.freeze({
+                "CLOCKWISE": 1,
+                "COUNTERCLOCKWISE": 2
+            });
+
+            var AmphibianMode = Object.freeze({
+                "LAND": 1,
+                "WATER": 2
+            });
+
+            Function.prototype.inherits = function (parent) {
+                this.prototype = new parent();
+                this.prototype.constructor = parent;
+            };
+
+            Function.prototype.extends = function (parent) {
+                for (var i = 1  ; i < arguments.length; i++) {
+                    var name = arguments[i];
+                    this.prototype[name] = parent.prototype[name];
+                }
+
+                return this;
+            }
+
+            function PropulsionUnit() {
+            }
+
+            PropulsionUnit.prototype.getAcceleration = function () {
+                throw new Error("Function not implemented in 'PropulsionUnit' prototype.");
+            }
+
+            // Wheel inherits from ProplsionUnit.
+            function Wheel(radius) {
+                this.radius = radius;
+            }
+
+            Wheel.inherits(PropulsionUnit);
+
+            Wheel.prototype.getAcceleration = function () {
+                return parseInt(2 * Math.PI * this.radius);
+            }
+
+            // PropellingNozzle inherits form PropulsionUnit.
+            function PropellingNozzle(power, afterburnerState) {
+                this.power = power;
+                this.afterburnerState = afterburnerState;
+            }
+
+            PropellingNozzle.inherits(PropulsionUnit);
+
+            PropellingNozzle.prototype.getAcceleration = function () {
+                if (this.afterburnerState === AfterburnerState.ACTIVATED) {
+                    return 2 * this.power;
+                } else {
+                    return this.power;
+                }
+            }
+
+            // Propeller inherits from PropulsionUnit.
+            function Propeller(bladesNumber, rotationDirection) {
+                this.bladesNumbers = bladesNumber;
+                this.rotationDirection = rotationDirection;
+            }
+
+            Propeller.inherits(PropulsionUnit);
+
+            Propeller.prototype.getAcceleration = function () {
+                if (this.rotationDirection === RotationDirection.CLOCKWISE) {
+                    return this.bladesNumber;
+                } else {
+                    return -this.bladesNumbers;
+                }
+            }
+
+            // Represents a vehicle.
+            function Vehicle(speed, propulsionUnits) {
+                this.speed = speed;
+                this.propulsionUnits = propulsionUnits;
+            }
+
+            Vehicle.prototype.accelerate = function () {
+                for (var i = 0, len = this.propulsionUnits.length; i < len; i++) {
+                    this.speed += this.propulsionUnits[i].getAcceleration();
+                }
+            }
+
+            // LandVehicle inherits form Vehicle.
+            function LandVehicle(speed, wheels) {
+                Vehicle.apply(this, arguments);
+            }
+
+            LandVehicle.inherits(Vehicle);
+
+            // Aircraft inherits form Vehicle.
+            function Aircraft(speed, propellingNozzles) {
+                Vehicle.apply(this, arguments);
+            }
+
+            Aircraft.inherits(Vehicle);
+
+            Aircraft.prototype.switchAfterburners = function (afterburnerStare) {
+                for (var i = 0, len = this.propulsionUnits.length; i < len; i++) {
+                    if (this.propulsionUnits[i] instanceof PropellingNozzle) {
+                        this.propulsionUnits[i].afterburnerState = afterburnerStare;
+                    }
+                }
+            }
+
+            // Watercraft inherits form Vehicle
+            function Watercraft(speed, propellers) {
+                Vehicle.apply(this, arguments);
+            }
+
+            Watercraft.inherits(Vehicle);
+
+            Watercraft.prototype.setPropellersRotationDirection = function (rotationDirection) {
+                for (var i = 0; i < this.propulsionUnits; i++) {
+                    if (this.propulsionUnits[i] instanceof Propeller) {
+                        this.propulsionUnits[i].rotationDirection = rotationDirection;
+                    }
+                }
+            }
+
+            // Amphibia inherits form Vehicle and extends Watercraft.
+
+            function Amphibian(speed, propellers, wheels, mode) {
+                var propulsionUnits = [];
+
+                for (var i = 0; i < propellers.length; i++) {
+                    propulsionUnits.push(propellers[i]);
+                }
+
+                for (var j = 0; j < wheels.length; j++) {
+                    propulsionUnits.push(wheels[i]);
+                }
+
+                Vehicle.call(this, speed, propulsionUnits);
+                this.mode = mode;
+            }
+
+            Amphibian.inherits(Vehicle);
+            Amphibian.extends(Watercraft, "setPropellersRotationDirection");
+
+            Amphibian.prototype.accelerate = function () {
+                if (this.mode === AmphibianMode.LAND) {
+                    for (var i = 0; i < this.propulsionUnits.length; i++) {
+                        if (this.propulsionUnits[i] instanceof Wheel) {
+                            this.speed += this.propulsionUnits[i].getAcceleration();
+                        }
+                    }
+                } else {
+                    for (var i = 0; i < this.propulsionUnits.length; i++) {
+                        if (this.propulsionUnits[i] instanceof Propeller) {
+                            this.speed += this.propulsionUnits[i].getAcceleration();
+                        }
+                    }
+                }
+            }
+
+            return {
+                AfterburnerState: AfterburnerState,
+                RotationDirection: RotationDirection,
+                AmphibianMode: AmphibianMode,
+                Wheel: Wheel,
+                PropellingNozzle: PropellingNozzle,
+                Propeller: Propeller,
+                LandVehicle: LandVehicle,
+                Aircraft: Aircraft,
+                Watercraft: Watercraft,
+                Amphibian: Amphibian
+            };
+
+        })();
+    </script>
+     <script>
+         var wheels = [
+             new vehicles.Wheel(10),
+             new vehicles.Wheel(10),
+             new vehicles.Wheel(10),
+             new vehicles.Wheel(10)
+         ];
+
+         var propellingNozzles = [
+             new vehicles.PropellingNozzle(200, vehicles.AfterburnerState.DEACTIVATED)
+         ];
+
+         var propellers = [
+             new vehicles.Propeller(8, vehicles.RotationDirection.CLOCKWISE),
+             new vehicles.Propeller(8, vehicles.RotationDirection.CLOCKWISE),
+             new vehicles.Propeller(8, vehicles.RotationDirection.CLOCKWISE),
+             new vehicles.Propeller(8, vehicles.RotationDirection.CLOCKWISE),
+             new vehicles.Propeller(8, vehicles.RotationDirection.CLOCKWISE)
+         ];
+
+         var landVehicle = new vehicles.LandVehicle(50, wheels);
+         console.log("Land vehicle speed initially: " + landVehicle.speed + "mph");
+         // accelerate the vehicle
+         landVehicle.accelerate();
+         console.log("Land vehicle speed after acceleration: " + landVehicle.speed + "mph");
+
+         var aircraft = new vehicles.Aircraft(100, propellingNozzles);
+         console.log("Aircraft speed initially: " + aircraft.speed + "mph");
+         // accelerate the aircraft with afterburners deactivated
+         aircraft.accelerate();
+         console.log("Aircraft speed after acceleration with afterburners deactivated: " + aircraft.speed + "mph");
+
+         // activate the afterburners
+         aircraft.switchAfterburners(vehicles.AfterburnerState.ACTIVATED);
+         aircraft.accelerate();
+         console.log("Aircraft speed after acceleration with afterburners activated: " + aircraft.speed + "mph");
+
+         var watercraft = new vehicles.Watercraft(25, propellers);
+         console.log("Watercraft speed initially: " + watercraft.speed + "mph");
+
+         // accelerate the watercraft
+         watercraft.accelerate();
+         console.log("Watercraft speed after acceleration with propellers rotating clockwise: " + watercraft.speed + "mph");
+
+         // change the propellers rotation direction
+         watercraft.setPropellersRotationDirection(vehicles.RotationDirection.COUNTERCLOCKWISE);
+         watercraft.accelerate();
+         console.log("Watercraft speed after acceleration with propellers rotating counterclockwise: " + watercraft.speed + "mph");
+
+         var amphibianPropellers = [
+             new vehicles.Propeller(4, vehicles.RotationDirection.CLOCKWISE)
+         ];
+
+         var amphibian = new vehicles.Amphibian(5, amphibianPropellers, wheels, vehicles.AmphibianMode.LAND);
+         console.log("Amphibian speed initially: " + amphibian.speed + "mph");
+
+         // accelerate the amphibian
+         amphibian.accelerate();
+         console.log("Amphibian speed after acceleration on land: " + amphibian.speed + "mph");
+
+         // change amphibian mode to water
+         amphibian.mode = vehicles.AmphibianMode.WATER;
+         amphibian.accelerate();
+         console.log("Amphibian speed after acceleration on water with propellers rotating clockwise: " + amphibian.speed + "mph");
+
+         // change the propellers rotation direction
+         amphibian.setPropellersRotationDirection(vehicles.RotationDirection.COUNTERCLOCKWISE);
+         amphibian.accelerate();
+         console.log("Amphibian speed after acceleration on water with propellers rotating counterclockwise: " + amphibian.speed + "mph");
+    </script>
+</body>
+</html>

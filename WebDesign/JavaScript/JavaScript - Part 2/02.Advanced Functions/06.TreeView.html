@@ -70,36 +70,52 @@
                 if (element.indexOf(".") > 0) {
                     el = element.substring(0, element.indexOf("."));
                     el = document.createElement(el);
-                    el.className = element.substring(element.indexOf(".") + 1, element.length);
+                    elSelector = element.substring(element.indexOf("."), element.length);
+                    el.className = elSelector.substring(1, elSelector.length);
                 } else if (element.indexOf("#") > 0) {
                     el = element.substring(0, element.indexOf("#"));
                     el = document.createElement(el);
-                    el.id = element.substring(element.indexOf("#") + 1, element.length);
+                    elSelector = element.substring(element.indexOf("#"), element.length);
+                    el.id = elSelector.substring(1, elSelector.length);
                 } else {
                     el = document.createElement(element);
                 }
 
                 document.body.appendChild(el);
-                var ul = document.createElement("ul");
 
-                return el.appendChild(ul);
+                return this;
             }
 
             function addNode() {
+                if (this.get) {
+
+                }
+                var ul = document.createElement("ul");
+                el.appendChild(ul);
                 var li = document.createElement("li");
-                this.appendChild(li);
+                var ul = document.querySelector(elSelector + ' > ul');
+                ul.appendChild(li);
+
+                return this;
             }
 
+            function content() {
+                console.log(this.addNode);
+                this.addNode.innerHTML = "s";
+            }
        
 
             return {
                 treeView: treeView,
-                addNode:addNode
+                addNode: addNode,
+                content: content
             };
         })();
 
         var treeView = controls.treeView("div.tree-view");
         var jsnode = treeView.addNode();
+        var jsnode = treeView.addNode();
+        var node = jsnode.addNode();
         jsnode.content("JavaScript");
 
     </script>
