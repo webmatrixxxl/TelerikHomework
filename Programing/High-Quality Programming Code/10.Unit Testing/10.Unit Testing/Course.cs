@@ -8,7 +8,7 @@ namespace UnitTesting
 {
     public class Course : School
     {
-        private List<Student> students;
+        private List<Student> students = new List<Student>();
         private byte maxStudents = 30;
 
         public Course(string name)
@@ -30,7 +30,7 @@ namespace UnitTesting
 
         public void AddStudent(Student students)
         {
-            if (this.students.Count<=maxStudents)
+            if (this.students.Count<=maxStudents-1)
             {
                 this.students.Add(students);
             }

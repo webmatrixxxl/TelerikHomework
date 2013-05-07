@@ -9,9 +9,11 @@ namespace UnitTesting
     public class Student : School
     {
         private string name;
-        private int id = 999;
+        private static int minId = 10000;
+        private static int maxId = 99999;
+        private int id = minId;
 
-        public Student(string name, int id)
+        public Student(string name)
             : base(name)
         {
             this.Name = name;
@@ -24,17 +26,20 @@ namespace UnitTesting
             {
                 return this.id;
             }
-            private set
-            {
-                this.id = value;
-            }
         }
 
         private int GenerateId()
         {
-            this.id++;
+            if (this.id >= minId && this.id <= maxId)
+            {
+                this.id++;
+                return this.id;
 
-            return this.id;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Student ID out of range " + minId + " to " + maxId);
+            }
         }
     }
 }
