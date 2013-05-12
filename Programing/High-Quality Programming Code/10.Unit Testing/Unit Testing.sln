@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Testing", "10.Unit Testing\Unit Testing.csproj", "{22214DBB-DADA-442C-8633-EBE3AA064A55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolCourses", "10.Unit Testing\SchoolCourses.csproj", "{22214DBB-DADA-442C-8633-EBE3AA064A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolCourses.Tests", "SchoolCourses.Tests\SchoolCourses.Tests.csproj", "{B6A05C34-BE86-4C19-8CEC-35B7F1A76C57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{22214DBB-DADA-442C-8633-EBE3AA064A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22214DBB-DADA-442C-8633-EBE3AA064A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22214DBB-DADA-442C-8633-EBE3AA064A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A05C34-BE86-4C19-8CEC-35B7F1A76C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A05C34-BE86-4C19-8CEC-35B7F1A76C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A05C34-BE86-4C19-8CEC-35B7F1A76C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A05C34-BE86-4C19-8CEC-35B7F1A76C57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

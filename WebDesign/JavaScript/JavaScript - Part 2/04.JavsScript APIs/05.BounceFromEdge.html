@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="520" height="410" id="canvas"></canvas>
+    <script>
+
+        var x = 200;
+        var y = 10;
+        var radius = 15;
+        var moveRight = true;
+        var moveLeft = false;
+        var moveUp = false;
+        var moveDown = true;
+
+        function ballMovement() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            // drow ball
+            context.beginPath();
+            context.lineWidth = "2";
+            if (x === canvas.width - radius) {
+                moveLeft = true;
+                moveRight = false;
+            }
+            else if (x === radius) {
+                moveLeft = false;
+                moveRight = true;
+            }
+
+            if (y === canvas.height - radius) {
+                moveUp = true;
+                moveDown = false;
+            }
+            else if (y === radius) {
+                moveUp = false;
+                moveDown = true;
+            }
+
+            if (moveUp) {
+                y--;
+            }
+            else if (moveDown) {
+                y++;
+            }
+
+            if (moveRight) {
+                x++;
+            }
+            else if (moveLeft) {
+                x--;
+            }
+
+            context.arc(x, y, radius, 0, 2 * Math.PI);
+            context.fillStyle = "#90CAD7";
+            context.stroke();
+            context.fill();
+
+        }
+
+        setInterval(ballMovement, 1);
+    </script>
+</body>
+</html>

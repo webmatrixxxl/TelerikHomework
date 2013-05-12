@@ -4,45 +4,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTesting
+namespace SchoolCourses
 {
     public class Course : School
     {
-        private List<Student> students = new List<Student>();
-        private byte maxStudents = 30;
+        private List<Student> courseStudents = new List<Student>();
+        private const byte MaxStudents = 30;
 
         public Course(string name)
             : base(name)
         {
         }
 
+        public Course(string name, List<Student> students)
+            : base(name)
+        {
+            this.courseStudents = new List<Student>();
+        }
+
+        public Course(string name, Student student)
+            : base(name)
+        {
+            this.courseStudents.Add(student);
+        }
+
+
         public List<Student> Students
         {
             get
             {
-                return this.students;
+                return this.courseStudents;
             }
             private set
             {
-                this.students = value;
+                this.courseStudents = value;
             }
         }
 
         public void AddStudent(Student students)
         {
-            if (this.students.Count<=maxStudents-1)
+            bool studentFound = this.CheckIfStudentIsFound(students);
+
+            if (studentFound)
             {
-                this.students.Add(students);
+                throw new ArgumentException("The student has been added already!");
+            }
+
+            if (this.courseStudents.Count <= MaxStudents - 1)
+            {
+                this.courseStudents.Add(students);
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Curse can't have more then " + maxStudents + " in class.");
+                throw new ArgumentOutOfRangeException("Curse can't have more then " + MaxStudents + " in class.");
             }
         }
 
         public void RemoveStudent(Student students)
         {
-            this.students.Remove(students);
+            this.courseStudents.Remove(students);
+        }
+
+        private bool CheckIfStudentIsFound(Student student)
+        {
+            bool studentFound = false;
+            for (int i = 0; i < this.Students.Count; i++)
+            {
+                if (this.Students[i].Name == student.Name)
+                {
+                    studentFound = true;
+                }
+            }
+
+            return studentFound;
         }
     }
 }

@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style type='text/css'>
+        #disp {
+            background-color: black;
+            font-size: 1.75em;
+            font-weight: bold;
+            color: white;
+            width: 7.65em;
+            font-family: "Courier New";
+            padding: 0.15em;
+            border-right-width: 0;
+        }
+
+        #butt {
+            font-size: 1em;
+            font-family: "Courier New";
+        }
+
+        #butt2 {
+            font-size: 1em;
+            font-family: "Courier New";
+        }
+
+        #lap {
+            margin-top: 0.5em;
+        }
+    </style>
+    <style>
+        #dropable {
+            width: 100px;
+            height: 150px;
+            background: url(images/trashCan.png);
+            margin: auto;
+            position: relative;
+            bottom: -150px;
+        }
+        /*#dropable:hover {
+            background-position:97px;
+            }*/
+    </style>
+    <!-- Script by hscripts.com -->
+    <script type="text/javascript" src="hstopwatch-with-lap/stopwatch-with-lap.js" />
+    <script type="text/javascript" src="modernizr.custom.js" />
+
+
+    </script>
+    <script>
+        var gameState = "start";
+        var garbageCount = 0;
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+            var el = document.getElementById(ev.target.id);
+            el.style.backgroundPosition = "97px";
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            garbageCount--;
+
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+
+            //remove img after put in trash
+            var img = document.getElementById(data);
+            img.parentNode.removeChild(img);
+
+            // make trash close
+            var el = document.getElementById(ev.target.id);
+            el.style.backgroundPosition = "0px";
+
+            gameStart();
+
+        }
+
+        function dragleave(ev) {
+
+        }
+
+        function genereteGarbage() {
+            garbageCount = 0;
+            for (var i = 0; i < getRandomInt(5, 10) ; i++) {
+                var garbage = document.createElement("img");
+                garbage.src = "images/garbage.png"
+                garbage.draggable = "true";
+                garbage.id = "drag" + i;
+                garbage.addEventListener('dragstart', drag, false);
+                garbage.addEventListener('dragleave', dragleave, false);
+
+                garbage.style.top = getRandomInt(300, 550) + "px";
+                garbage.style.left = getRandomInt(600, 400) + "px";
+
+                garbage.style.position = "absolute";
+                document.body.appendChild(garbage);
+                garbageCount++;
+            }
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function gameStart() {
+            if (gameState == "start") {
+                startTimer();
+                genereteGarbage();
+                gameState = "end"
+
+            }
+            if (garbageCount == 0) {
+                gameState = "start";
+                startTimer();
+            }
+
+        }
+
+        function setPlayerScores() {
+            var playerName = document.getElementById("playerName").value;
+            localStorage[playerName] = playerTime;
+            showPlayersScore()
+        }
+
+        function sortScoreBoard() {
+            var player;
+            var players = [];
+            for (var i = 0; i < localStorage.length; i++) {
+                player = {
+                    Name: localStorage.key(i),
+                    Score: localStorage.getItem(localStorage.key(i))
+                }
+
+                players.push(player);
+            }
+
+            players = players.sort(sortByScore);
+            return players;
+        }
+
+        function sortByScore(playerOne, playerTwo) {;
+            return parseFloat(playerOne.Score) - parseFloat(playerTwo.Score);
+        }
+
+        function showPlayersScore() {
+            var players = sortScoreBoard();
+            loadPairs()
+            clearPrompt();
+        }
+
+        function loadPairs() {
+            if (!localStorage.length || localStorage.length == 0) {
+                document.getElementById("pairs-container").innerHTML = "{ key:empty, value=empty}";
+                return;
+            }
+            var resultHTML = '<table>';
+            for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                resultHTML += '<tr><td>' + (t[7]++) + '</td><td align="left">Player Name: <strong>' + key + '</strong></td><td align="center">Time: <strong>' + localStorage.getItem(key) + '</strong></td></tr>';
+
+            }
+            resultHTML += '</table>';
+            document.getElementById("resultBoard").innerHTML = resultHTML;
+        }
+
+        function onClearStorageButtonClick() {
+            localStorage.clear();
+        }
+
+        function clearPrompt() {
+            var getPlayer = document.getElementById("getPlayer");
+            getPlayer.innerHTML = '';
+        }
+        function promptName() {
+            var getPlayerName = 'Enter your name: <input type="text" id="playerName" /><br/>Your Socre time is ' + format(t[1] - t[0]) + '<br/><input type="button" value="Submit"  onclick="setPlayerScores()" />';
+
+            var getPlayer = document.getElementById("getPlayer");
+            getPlayer.innerHTML = getPlayerName;
+
+        }
+    </script>
+</head>
+<body onload="stopwatch()">
+    <h1>Drag the Drop Garbage to Trash Can and Win The Game!</h1>
+    <div id="getPlayer"></div>
+    <div id="pairs-container"></div>
+    <div align="center">
+        <input type='text' id='disp' maxlength="12" readonly="redonly" /><br>
+        <br />
+        <button type='button' onclick='gameStart()' id='butt'>New Game</button>
+        <button type="button" onclick="onClearStorageButtonClick()" id='butt2'>Clear Results</button>
+        <div id="resultBoard"></div>
+    </div>
+
+
+    <div id="dropable" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>
