@@ -7,10 +7,17 @@
         #canvas {
             border: 1px solid black;
         }
+        h1 {
+            color:#ff6a00;
+        }
     </style>
 </head>
 <body>
-    <canvas width="520" height="410" id="canvas"></canvas>
+    <h1>Draw a circle that flies inside a box
+When it reaches an edge, it should bounce that edge
+</h1>
+    <p>Pritty cool yea ?</p>
+    <canvas width="600" height="400" id="canvas"></canvas>
     <script>
 
         var x = 200;
@@ -62,13 +69,13 @@
             }
 
             context.arc(x, y, radius, 0, 2 * Math.PI);
-            context.fillStyle = "#90CAD7";
+            context.fillStyle = "green";
             context.stroke();
             context.fill();
 
         }
 
-        setInterval(ballMovement, 1);
+        setInterval(ballMovement, 5);
     </script>
 </body>
 </html>
