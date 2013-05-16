@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bouncing ball</title>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            border:none;
+        }
+
+        button {
+            position:absolute;
+            font-size:17px;
+            font-weight:bold;
+            font-family:Calibri;
+        }
+
+        #start {
+            top:250px;
+            left:350px;
+        }
+
+        #stop {
+            top:250px;
+            left:420px;
+        }
+
+        #add-ball {
+            top:250px;
+            left:490px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <button id="start" onclick="onStartBouncing()">Start</button>
+        <button id="stop" onclick="onStopBouncing()">Stop</button>
+        <button id="add-ball" onclick="onAddBall()">Add ball</button>
+        <canvas id="canvas" width="1000" height="800"></canvas>
+    </div>
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateRandomColor() {
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function drawBox(x, y, w, h, fillStyle, lineWidth, strokeStyle) {
+            ctx.beginPath();
+            ctx.fillStyle = fillStyle;
+            ctx.lineWidth = lineWidth;
+            ctx.strokeStyle = strokeStyle;
+            ctx.rect(x, y, w, h);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function clearBox(x, y, w, h) {
+            ctx.clearRect(x, y, w, h);
+        }
+
+        function drawBall(x, y, r, fillStyle, lineWidth, strokeStyle) {
+            ctx.beginPath();
+            ctx.fillStyle = fillStyle;
+            ctx.lineWidth = lineWidth;
+            ctx.strokeStyle = strokeStyle;
+            ctx.arc(x, y, r, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function drawAllBalls() {
+            for (var i = 0; i < balls.length; i++) {
+                var currentBall = balls[i];
+                generateMovement(currentBall);
+                drawBall(currentBall.X + currentBall.dX, currentBall.Y + currentBall.dY, currentBall.Radius,
+                    currentBall.FillStyle, currentBall.LineWidth, currentBall.StrokeStyle);
+            }
+        }
+
+        var ball = function () {
+            this.X = getRandomInt(BOX_X + 30, BOX_X + BOX_WIDTH - 30);
+            this.Y = getRandomInt(BOX_Y + 30, BOX_Y + BOX_HEIGHT - 30);
+            this.Radius = BALL_RADIUS;
+            this.FillStyle = generateRandomColor();
+            this.LineWidth = BALL_LINEWIDTH;
+            this.StrokeStyle = generateRandomColor();
+            this.dX = 0;
+            this.dY = 0;
+            this.xSpeed = 4;
+            this.ySpeed = 4;
+        };
+
+        function initialize() {
+            drawBox(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT, BOX_FILLSTYLE, BOX_LINEWIDTH, BOX_STROKESTYLE);
+
+            var startingBall = new ball();
+            balls.push(startingBall);
+            drawAllBalls();
+
+            stopButton.disabled = true;
+        }
+
+        function generateMovement(currentBall) {
+            if (currentBall.dX + currentBall.X + currentBall.Radius >= BOX_X + BOX_WIDTH) {
+                currentBall.xSpeed *= -1;
+            }
+
+            if (currentBall.dX + currentBall.X - currentBall.Radius <= BOX_X) {
+                currentBall.xSpeed *= -1;
+            }
+
+            if (currentBall.dY + currentBall.Y + currentBall.Radius >= BOX_Y + BOX_HEIGHT) {
+                currentBall.ySpeed *= -1;
+            }
+
+            if (currentBall.dY + currentBall.Y - currentBall.Radius <= BOX_Y) {
+                currentBall.ySpeed *= -1;
+            }
+
+            currentBall.dX += currentBall.xSpeed;
+            currentBall.dY += currentBall.ySpeed;
+        }
+
+        function updateGame() {
+            clearBox(BOX_X - 10, BOX_Y - 10, BOX_WIDTH + 20, BOX_HEIGHT + 20);
+            drawBox(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT, BOX_FILLSTYLE, BOX_LINEWIDTH, BOX_STROKESTYLE);
+            drawAllBalls();
+        }
+
+        function onKeyDown(e) {
+            if (e.keyCode == ENTER_KEY) {
+                if (stopButton.disabled == true) {
+                    onStartBouncing();
+                }
+                else {
+                    onStopBouncing();
+                }
+            }
+
+            if (e.keyCode == PLUS_KEY) {
+                onAddBall();
+            }
+
+            return false;
+        }
+
+        function onStartBouncing() {
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            timer = setInterval(updateGame, 1000 / 30);
+        }
+
+        function onStopBouncing() {
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            clearInterval(timer);
+        }
+
+        function onAddBall() {
+            var newBall = new ball();
+            drawBall(newBall.X + newBall.dX, newBall.Y + newBall.dY, newBall.Radius,
+                    newBall.FillStyle, newBall.LineWidth, newBall.StrokeStyle);
+            balls.push(newBall);
+        }
+
+        //  http://html5.litten.com/moving-shapes-on-the-html5-canvas-with-the-keyboard/
+        // You can use enter and plus for better experience, have fun. :)
+        window.addEventListener('keydown', onKeyDown, true);
+        var startButton = document.getElementById("start");
+        var stopButton = document.getElementById("stop");
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var timer;
+
+        var ENTER_KEY = 13;
+        var PLUS_KEY = 107;
+
+        var BOX_X = 350;
+        var BOX_Y = 300;
+        var BOX_WIDTH = 500;
+        var BOX_HEIGHT = 350;
+        var BOX_FILLSTYLE = "white";
+        var BOX_LINEWIDTH = 3;
+        var BOX_STROKESTYLE = "black";
+
+        var BALL_RADIUS = 25;
+        var BALL_LINEWIDTH = 3;
+
+        var balls = [];
+        initialize();
+    </script>
+</body>
+</html>

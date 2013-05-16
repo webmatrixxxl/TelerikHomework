@@ -1,65 +1,221 @@
 ﻿<!DOCTYPE html>
 <html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/asoqoh/1/edit
+-->
 <head>
-    <title>sa</title>
-
-    <style type='text/css'>
-        #disp {
-            background-color: black;
-            font-size: 1.75em;
-            font-weight: bold;
-            color: white;
-            width: 7.65em;
-            font-family: "Courier New";
-            padding: 0.15em;
-            border-right-width: 0;
+    <title>Bouncing ball</title>
+  
+<style id="jsbin-css">
+body {
+            margin:0;
+            padding:0;
+            border:none;
         }
 
-        #butt {
-            font-size: 1em;
-            width: 8em;
-            font-family: "Courier New";
+        button {
+            position:absolute;
+            font-size:17px;
+            font-weight:bold;
+            font-family:Calibri;
         }
 
-        #butt2 {
-            font-size: 1em;
-            width: 5em;
-            font-family: "Courier New";
+        #start {
+            top:250px;
+            left:350px;
         }
 
-        #lap {
-            margin-top: 0.5em;
+        #stop {
+            top:250px;
+            left:420px;
         }
-    </style>
-        <script type="text/javascript" src="hstopwatch-with-lap/stopwatch-with-lap.js">
-    </script>
+
+        #add-ball {
+            top:250px;
+            left:490px;
+        }
+</style>
 </head>
-
-
-<body onload='stopwatch();'>
-    <br>
-    <div align="center">
-        <input type='text' id='disp' maxlength="12" readonly><br>
-        <br>
-        <button type='button' onclick='startTimer()' id='butt'>Start/Stop</button>
-        <button type='button' onclick='resetTimer()' id='butt2'>Reset</button>
+<body>
+    <div id="wrapper">
+        <button id="start" onclick="onStartBouncing()">Start</button>
+        <button id="stop" onclick="onStopBouncing()">Stop</button>
+        <button id="add-ball" onclick="onAddBall()">Add ball</button>
+        <canvas id="canvas" width="1000" height="800"></canvas>
     </div>
-    <br>
-    <table align="center" border="1">
-        <tr>
-            <th width="65">Lap #</th>
-            <th width="112">Running Total</th>
-            <th width="112">This Lap</th>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <div align="center" id='lap'>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <script>
+      </script>
+<script>
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateRandomColor() {
+        var red = (Math.random() * 256) | 0;
+        var green = (Math.random() * 256) | 0;
+        var blue = (Math.random() * 256) | 0;
+
+        return "rgb(" + red + "," + green + "," + blue + ")";
+    }
+
+    function drawBox(x, y, w, h, fillStyle, lineWidth, strokeStyle) {
+        ctx.beginPath();
+        ctx.fillStyle = fillStyle;
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = strokeStyle;
+        ctx.rect(x, y, w, h);
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function clearBox(x, y, w, h) {
+        ctx.clearRect(x, y, w, h);
+    }
+
+    function drawBall(x, y, r, fillStyle, lineWidth, strokeStyle) {
+        ctx.beginPath();
+        ctx.fillStyle = fillStyle;
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = strokeStyle;
+        ctx.arc(x, y, r, 0, Math.PI * 2, false);
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function drawAllBalls() {
+        for (var i = 0; i < balls.length; i++) {
+            var currentBall = balls[i];
+            generateMovement(currentBall);
+            drawBall(currentBall.X + currentBall.dX, currentBall.Y + currentBall.dY, currentBall.Radius,
+                currentBall.FillStyle, currentBall.LineWidth, currentBall.StrokeStyle);
+        }
+    }
+
+    var ball = function () {
+        this.X = getRandomInt(BOX_X + 30, BOX_X + BOX_WIDTH - 30);
+        this.Y = getRandomInt(BOX_Y + 30, BOX_Y + BOX_HEIGHT - 30);
+        this.Radius = BALL_RADIUS;
+        this.FillStyle = generateRandomColor();
+        this.LineWidth = BALL_LINEWIDTH;
+        this.StrokeStyle = generateRandomColor();
+        this.dX = 0;
+        this.dY = 0;
+        this.xSpeed = 4;
+        this.ySpeed = 4;
+    };
+
+    function initialize() {
+        drawBox(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT, BOX_FILLSTYLE, BOX_LINEWIDTH, BOX_STROKESTYLE);
+
+        var startingBall = new ball();
+        balls.push(startingBall);
+        drawAllBalls();
+
+        stopButton.disabled = true;
+    }
+
+    function generateMovement(currentBall) {
+        if (currentBall.dX + currentBall.X + currentBall.Radius >= BOX_X + BOX_WIDTH) {
+            currentBall.xSpeed *= -1;
+        }
+
+        if (currentBall.dX + currentBall.X - currentBall.Radius <= BOX_X) {
+            currentBall.xSpeed *= -1;
+        }
+
+        if (currentBall.dY + currentBall.Y + currentBall.Radius >= BOX_Y + BOX_HEIGHT) {
+            currentBall.ySpeed *= -1;
+        }
+
+        if (currentBall.dY + currentBall.Y - currentBall.Radius <= BOX_Y) {
+            currentBall.ySpeed *= -1;
+        }
+
+        currentBall.dX += currentBall.xSpeed;
+        currentBall.dY += currentBall.ySpeed;
+    }
+
+    function updateGame() {
+        clearBox(BOX_X - 10, BOX_Y - 10, BOX_WIDTH + 20, BOX_HEIGHT + 20);
+        drawBox(BOX_X, BOX_Y, BOX_WIDTH, BOX_HEIGHT, BOX_FILLSTYLE, BOX_LINEWIDTH, BOX_STROKESTYLE);
+        drawAllBalls();
+    }
+
+    function onKeyDown(e) {
+        if (e.keyCode == ENTER_KEY) {
+            if (stopButton.disabled == true) {
+                onStartBouncing();
+            }
+            else {
+                onStopBouncing();
+            }
+        }
+
+        if (e.keyCode == PLUS_KEY) {
+            onAddBall();
+        }
+
+        return false;
+    }
+
+    function onStartBouncing() {
+        startButton.disabled = true;
+        stopButton.disabled = false;
+        timer = setInterval(updateGame, 1000 / 30);
+    }
+
+    function onStopBouncing() {
+        startButton.disabled = false;
+        stopButton.disabled = true;
+        clearInterval(timer);
+    }
+
+    function onAddBall() {
+        var newBall = new ball();
+        drawBall(newBall.X + newBall.dX, newBall.Y + newBall.dY, newBall.Radius,
+                newBall.FillStyle, newBall.LineWidth, newBall.StrokeStyle);
+        balls.push(newBall);
+    }
+
+    window.addEventListener('keydown', onKeyDown, true);
+    var startButton = document.getElementById("start");
+    var stopButton = document.getElementById("stop");
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var timer;
+
+    var ENTER_KEY = 13;
+    var PLUS_KEY = 107;
+
+    var BOX_X = 350;
+    var BOX_Y = 300;
+    var BOX_WIDTH = 500;
+    var BOX_HEIGHT = 350;
+    var BOX_FILLSTYLE = "white";
+    var BOX_LINEWIDTH = 3;
+    var BOX_STROKESTYLE = "black";
+
+    var BALL_RADIUS = 25;
+    var BALL_LINEWIDTH = 3;
+
+    var balls = [];
+    initialize();
+</script>
+<script src="http://static.jsbin.com/js/render/edit.js"></script>
+<script>jsbinShowEdit({ "root": "http://static.jsbin.com", "csrf": "Wy5ei4eUGDaG1k8tf/rTKxxQ" });</script>
+<script src="http://static.jsbin.com/js/vendor/eventsource.js"></script>
+<script src="http://static.jsbin.com/js/spike.js"></script>
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1656750-34']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+</script>
 </body>
-<!-- Script by hscripts.com -->
-
-
 </html>

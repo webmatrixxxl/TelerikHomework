@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function init() {
+            var pnlToDo = document.getElementById('pnlToDo');
+            var btnAdd = document.getElementById('btnAdd');
+            btnAdd.addEventListener('click', function () {
+                var txtToDo = document.getElementById('txtToDo');
+                if (txtToDo != null && txtToDo.value != "") {
+                    var li = document.createElement('li');
+                    var html = '';
+                    html += '<div class="content"><input type="checkbox" id="btnSelected"></checkbox><span>' + txtToDo.value + '</span></div>';
+                    li.innerHTML = html;
+                    pnlToDo.appendChild(li);
+
+                }
+            });
+
+            var btnDelete = document.getElementById('btnDelete');
+            btnDelete.addEventListener('click', function () {
+                var selectedList = pnlToDo.querySelectorAll('#btnSelected');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].checked) {
+                        selectedList[i].parentElement.parentElement.parentElement.removeChild(selectedList[i].parentElement.parentElement);
+                    }
+                }
+            });
+
+            var btnHide = document.getElementById('btnHide');
+            btnHide.addEventListener('click', function () {
+                var selectedList = pnlToDo.querySelectorAll('#btnSelected');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].checked) {
+                        selectedList[i].parentElement.parentElement.style.display = 'none';
+                        selectedList[i].checked = false;
+                    }
+                }
+            });
+
+            var btnShow = document.getElementById('btnShow');
+            btnShow.addEventListener('click', function () {
+                var selectedList = pnlToDo.querySelectorAll('li');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].style.display === 'none') {
+                        selectedList[i].style.display = 'list-item';
+                    }
+                }
+            });
+        }
+    </script>
+    <style>
+        #wrapper {
+            margin: auto;
+            display: table;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .selected {
+            background-color: green;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div id="wrapper">
+        <div>
+            <input required="" type="text" id="txtToDo" />
+            <input type="submit" id="btnAdd" value="Add" />
+        </div>
+        <ul id="pnlToDo">
+        </ul>
+        <div>
+            <input type="button" id="btnDelete" value="Delete" />
+            <input type="button" id="btnHide" value="Hide" />
+            <input type="button" id="btnShow" value="Show" />
+        </div>
+    </div>
+</body>
+</html>

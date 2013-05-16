@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .corusel {
+            width: 225px;
+            display: block;
+            height: 75px;
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid black;
+            overflow: hidden;
+            padding: 20px 40px 20px 40px;
+            margin: auto;
+        }
+
+        .visible-Container {
+            height: 75px;
+            position: relative;
+            overflow: hidden;
+            top: -32px;
+        }
+
+        #slider-Img-Container {
+            left: 0px;
+            position: relative;
+            -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+            -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+            -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+            transition: left .6s cubic-bezier(.86, 0, .07, 1);
+        }
+
+            #slider-Img-Container > img {
+                position: relative;
+                float: left;
+                border: 2px solid #eee;
+            }
+
+        .slideLeft {
+            background: url(prev-horizontal.png);
+            height: 32px;
+            left: -35px;
+            position: relative;
+            top: 25px;
+            width: 32px;
+        }
+
+            .slideLeft:hover {
+                background: url(prev-horizontal.png) 32px 0px;
+            }
+
+        .slideRight {
+            background: url("next-horizontal.png") repeat scroll 0 0 transparent;
+            float: right;
+            height: 32px;
+            position: relative;
+            right: -35px;
+            top: -85px;
+            width: 32px;
+        }
+
+            .slideRight:hover {
+                background: url(next-horizontal.png) 32px 0px;
+            }
+    </style>
+</head>
+<body>
+    <div class="corusel">
+        <div class="slideLeft"></div>
+        <div class="visible-Container">
+            <div id="slider-Img-Container">
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+                <img src="images/199480111_87d4cb3e38_s.jpg" alt="" />
+
+            </div>
+        </div>
+        <div class="slideRight"></div>
+    </div>
+    <script>
+        var sliderImgContainer = document.getElementById("slider-Img-Container");
+        var imgCount = 0;
+        var slideSize = 0;
+        var slideLeft = true;
+
+        function setImgContainer() {
+            var totalImgSize = 0;
+            for (var i = 0; i < sliderImgContainer.childNodes.length; i++) {
+                if (sliderImgContainer.childNodes[i].nodeName == "IMG") {
+                    totalImgSize += sliderImgContainer.childNodes[i].offsetWidth;
+                    imgCount++;
+                }
+            }
+            sliderImgContainer.style.width = totalImgSize + "px";
+        }
+
+        function autoSlide(side) {
+            var slideLength = sliderImgContainer.offsetWidth / imgCount * 3;
+            console.log(side);
+
+            if (sliderImgContainer.offsetLeft >= (-sliderImgContainer.offsetWidth) && slideLeft == true &&side == "right") {
+                slideSize -= slideLength;
+                sliderImgContainer.style.left = slideSize + "px";
+            } else if (sliderImgContainer.offsetLeft < 0 && side == "left") {
+                slideLeft = false;
+                slideSize += slideLength;
+                sliderImgContainer.style.left = slideSize + "px";
+            } else if (sliderImgContainer.offsetLeft == 0) {
+                slideLeft = true
+            }
+        }
+        //setInterval(autoSlide, 2000);
+
+        setImgContainer();
+        function slideBy() {
+            var slideLength = sliderImgContainer.offsetWidth / imgCount * 3;
+            if ((-sliderImgContainer.offsetLeft) > 0) {
+                slideSize += slideLength;
+                sliderImgContainer.style.left = slideSize + "px";
+            }
+        }
+
+        var slideLeftAction = document.getElementsByClassName('slideRight')[0].addEventListener('click', function () {
+            autoSlide("right")
+        });
+
+        var slideLeftAction = document.getElementsByClassName('slideLeft')[0].addEventListener('click', function () {
+            autoSlide("left")
+        });
+    </script>
+</body>
+</html>

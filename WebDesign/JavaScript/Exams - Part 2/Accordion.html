@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #accordion-holder ul {
+            list-style-type: none;
+        }
+
+            #accordion-holder ul li a {
+                color: black;
+                text-decoration: none;
+            }
+
+            #accordion-holder ul li:hover > a {
+                text-decoration: underline;
+            }
+
+        #accordion-holder .collapsed {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="accordion-holder"></div>
+    <script>
+        var controls = (function () {
+
+            function hidePrev(item) {
+                var prev = item.previousElementSibling;
+                while (prev) {
+                    prev.querySelector("ul").style.display = "none";
+                    prev = prev.previousElementSibling;
+                }
+            }
+            function hideNext(item) {
+            }
+
+
+            function Accordion(selector) {
+                var items = [];
+
+                var accItem = document.querySelector(selector);
+                accItem.addEventListener("click",
+                    function (ev) {
+                        if (!ev) {
+                            ev = windows.event;
+                        }
+
+                        ev.stopPropagation();
+                        ev.preventDefault();
+
+                        //anchor
+                        var clickedItem = ev.target;
+
+                        if (!(clickedItem instanceof HTMLAnchorElement)) {
+                            return;
+                        }
+
+                        hidePrev(clickedItem.parentNode)
+                        hideNext(clickedItem.parentNode)
+
+                        var sublist = clickedItem.nextElementSibling;
+
+                        var liItem = clickedItem.parentNode;
+                        var list = liItem.parentNode;
+                        var node = list.firstChild;
+
+                        while (node) {
+                            node.getElementsByTagName("li")[0].style.display = "none";
+                            node = node.nextElementSibling;
+                        }
+
+
+                        if (!sublist) {
+                            return;
+                        }
+
+                        if (sublist.style.display === "none") {
+                            sublist.style.display = "block";
+                        } else {
+                            sublist.style.display = "none";
+                        }
+
+                    }, false);
+
+                var itemsList = document.createElement("ul");
+
+                this.add = function (title) {
+                    var newItem = new Item(title);
+                    items.push(newItem);
+
+                    return newItem;
+                }
+
+                this.render = function (title) {
+                    // cleaner
+                    while (accItem.firstChild) {
+                        accItem.removeChild(accItem.firstChild);
+                    }
+
+                    while (itemsList.firstChild) {
+                        itemsList.removeChild(itemsList.firstChild);
+                    }
+
+                    for (var i = 0; i < items.length; i++) {
+                        var domItem = items[i].render();
+                        itemsList.appendChild(domItem);
+                    }
+
+                    accItem.appendChild(itemsList);
+                }
+            }
+
+            function Item(title) {
+                var items = [];
+
+                this.add = function (title) {
+                    var newItem = new Item(title);
+                    items.push(newItem);
+
+                    return newItem;
+                }
+
+
+                this.render = function () {
+                    var itemNode = document.createElement("li");
+
+                    itemNode.innerHTML = '<a href="#">' + title + '</a>';
+
+                    if (items.length > 0) {
+                        var sublist = document.createElement("ul");
+                        sublist.className = "collapsed";
+
+                        for (var i = 0; i < items.length; i++) {
+                            var subitem = items[i].render();
+                            sublist.appendChild(subitem);
+                        }
+
+                        itemNode.appendChild(sublist);
+                    }
+
+                    return itemNode;
+                }
+            }
+
+            return {
+                getAccordion: function (selector) {
+                    return new Accordion(selector);
+                }
+            }
+        }());
+
+        var accordion = controls.getAccordion("#accordion-holder")
+        var webIten = accordion.add("Web");
+        var htmlItem = webIten.add("HTML");
+        htmlItem.add("v4.1");
+        htmlItem.add("v5");
+
+        var mobile = accordion.add("Mobile");
+        mobile.add("Android");
+        mobile.add("Windows Phone");
+        mobile.add("Mozilla OS");
+        mobile.add("iOS");
+
+        accordion.add("Desktop");
+        accordion.add("Embeded");
+
+        accordion.render();
+    </script>
+</body>
+</html>
