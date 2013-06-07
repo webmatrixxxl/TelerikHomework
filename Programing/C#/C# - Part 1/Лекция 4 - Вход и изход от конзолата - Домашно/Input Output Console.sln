@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Enter3numberANDsum", "Лекция 4 - Вход и изход от конзолата - Домашно\1.Enter3numberANDsum.csproj", "{A42A9A83-099B-49E8-B07E-651F2BC77B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Enter3numberANDsum", "Лекция 4 - Вход и изход от конзолата - Домашно\01.Enter3numberANDsum.csproj", "{A42A9A83-099B-49E8-B07E-651F2BC77B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.CalcolateCirclePerimeterAndArea", "CalcolateCircusPerimeterAndArea\2.CalcolateCirclePerimeterAndArea.csproj", "{39589053-D581-4A8C-9091-DDC98132E41B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CalcolateCirclePerimeterAndArea", "CalcolateCircusPerimeterAndArea\02.CalcolateCirclePerimeterAndArea.csproj", "{39589053-D581-4A8C-9091-DDC98132E41B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.ReadCompanyInfo", "ReadCompanyPerson\3.ReadCompanyInfo.csproj", "{E5939E9D-F53D-4CCF-9D39-971214FD3AD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.ReadCompanyInfo", "ReadCompanyPerson\03.ReadCompanyInfo.csproj", "{E5939E9D-F53D-4CCF-9D39-971214FD3AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.HowManyNumbersExistBetween", "4.HowManyNumbersExistBetween\4.HowManyNumbersExistBetween.csproj", "{747C6915-24EE-4718-8522-CA2F26CC8F40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.HowManyNumbersExistBetween", "4.HowManyNumbersExistBetween\04.HowManyNumbersExistBetween.csproj", "{747C6915-24EE-4718-8522-CA2F26CC8F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.QuadraticEquation", "QuadraticEquation\6.QuadraticEquation.csproj", "{74F1CF1B-312C-4576-90E1-54D7171A8DD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.QuadraticEquation", "QuadraticEquation\06.QuadraticEquation.csproj", "{74F1CF1B-312C-4576-90E1-54D7171A8DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.GestHowIsBigger", "GestHowIsBigger\5.GestHowIsBigger.csproj", "{A34FC492-A5C9-4373-94B3-CA50FCA719BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GestHowIsBigger", "GestHowIsBigger\05.GestHowIsBigger.csproj", "{A34FC492-A5C9-4373-94B3-CA50FCA719BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.NNumbersAndSum", "NNumbersAndSum\7.NNumbersAndSum.csproj", "{F5E6FB5A-5AD1-4068-8F83-85F5ADA40EB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.NNumbersAndSum", "NNumbersAndSum\07.NNumbersAndSum.csproj", "{F5E6FB5A-5AD1-4068-8F83-85F5ADA40EB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.FindNumbersBetweenNand0", "FindNumbersBetweemNand0\8.FindNumbersBetweenNand0.csproj", "{B4815D65-0019-45C1-A8EC-68069EB9C9D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.FindNumbersBetweenNand0", "FindNumbersBetweemNand0\08.FindNumbersBetweenNand0.csproj", "{B4815D65-0019-45C1-A8EC-68069EB9C9D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.SecuanceOfFibunaci", "SecuanceOfFibunaci\9.SecuanceOfFibunaci.csproj", "{C8BA10C1-FEAF-4C7C-8658-0ECD043F009B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.SecuanceOfFibunaci", "SecuanceOfFibunaci\09.SecuanceOfFibunaci.csproj", "{C8BA10C1-FEAF-4C7C-8658-0ECD043F009B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.DivideAndSumFloat", "DivideAndSumFloat\10.DivideAndSumFloat.csproj", "{1380C881-1B3B-4833-B3FE-95B5C35B76DF}"
 EndProject
