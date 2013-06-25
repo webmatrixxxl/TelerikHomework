@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/Slider.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/Slider.js"></script>
+    <script>
+        $(document).ready(function() {
+            var slider = Slider.create();
+            slider.duration(2000);
+            slider.init('#slider');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="slider">
+            <div class="preview"></div>
+            <div class="item"><img src="Images/image3.jpg"/></div>
+            <div class="item">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <div class="item"><img src="Images/image3.jpg" width="200px"/>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <img id="btnRightDirection" src="Images/arrowRight.png"/>
+            <img id="btnLeftDirection" src="Images/arrowLeft.png"/>
+        </div>
+    </div>
+</body>
+</html>

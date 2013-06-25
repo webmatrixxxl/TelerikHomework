@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+
+        //  Object create
+        if (!Object.create) {
+            Object.create = function (obj) {
+                function f() { };
+                f.prototype = obj;
+                return new f();
+            }
+        }
+
+        //  Prototypal inharitance
+        if (!Object.prototype.extend) {
+            Object.prototype.extend = function (properties) {
+                function f() { };
+                f.prototype = Object.create(this);
+
+                for (var prop in properties) {
+                    f.prototype[prop] = properties[prop];
+                }
+
+                f.prototype._super = this;
+                return new f();
+            }
+        }
+
+        var School = {
+            init: function (name, town, classes) {
+                this.name = name;
+                this.town = town;
+                this.classes = [classes];
+            },
+
+            introduce: function () {
+                return "Училище: " + this.name + "; Град: " + this.town + "; ";
+            }
+        };
+
+        var Classe = {
+            init: function (name, capacity, students, formTeacher) {
+                this.name = name;
+                this.capacity = capacity;
+                this.students = [students];
+                this.formTeacher = formTeacher;
+            },
+
+            introduce: function () {
+                var result;
+
+                for (var i = 0; i < this.students.length; i++) {
+                    result += "Студент: " + this.students[i].fname + "; ";
+                }
+
+                return result;
+            }
+        };
+
+        var Person = {
+            init: function (fname, lname, age) {
+                this.fname = fname;
+                this.lname = lname;
+                this.age = age;
+            },
+
+            introduce: function () {
+                return this.fname + " " + this.lname + " aka "
+            }
+        };
+
+        var Student = Person.extend({
+            init: function (fname, lname, age, grade) {
+                Person.init.apply(this, arguments);
+                //this._super.init(fname, lname, nickname);
+                this.grade = grade;
+            },
+
+            introduce: function () {
+                return Person.introduce.apply(this) + ", grade: " + this.grade;
+            }
+        });
+
+        var Teacher = Person.extend({
+            init: function (fname, lname, age, speciality) {
+                Person.init.apply(this, arguments);
+                //this._super.init(fname, lname, nickname);
+                this.speciality = speciality;
+            },
+
+            introduce: function () {
+                return Person.introduce.apply(this) + ", speciality: " + this.speciality;
+            }
+        });
+
+        var joro = Object.create(Student);
+        joro.init("Георги", "Георгиев", 10, 4);
+
+        var pesho = Object.create(Teacher);
+        pesho.init("Пешо", "Пешев", 29, "География");
+
+        pesho.age = 5;
+
+        var A7 = Object.create(Classe);
+        A7.init("7A Клас", [joro, pesho], pesho);
+
+        var IvanVazovSchool = Object.create(School);
+        IvanVazovSchool.init("5-о ОУ Иван Вазов", "София", [A7]);
+
+         
+        console.log(IvanVazovSchool.introduce());
+
+        console.log(IvanVazovSchool.classes);
+        console.log(A7.introduce());
+
+        console.log(joro);
+        console.log(pesho);
+
+        //console.log(pesho.introduce());
+        //console.log(joro.introduce());
+
+
+    </script>
+</body>
+</html>

@@ -51,6 +51,7 @@ namespace _01.TreeTraversal
 
                 nodes[parentId].Children.Add(nodes[childId]);
                 nodes[childId].HasParent = true;
+                nodes[childId].Parent = nodes[parentId];
 
             }
 
@@ -84,41 +85,68 @@ namespace _01.TreeTraversal
             var longestPath = FindLongestPath(FindRoot(nodes));
             Console.WriteLine("Longest path from the root is: {0}", longestPath);
 
-            // 5.
+            // 5. * all paths in the tree with given sum S of their nodes
+
+            Root = root;
             foreach (var node in nodes)
             {
-                if (node.Children.Count == 1)
+                if (node.Children.Count == 0)
                 {
                     usedNodes.Clear();
-                    TraverserDFS(node, 0);
+                    FindPathWithBiggestSum(node, 0);
                 }
             }
 
+            foreach (var item in used)
+            {
+                Console.Write("{0} ->", item.Value);
+            }
+            Console.WriteLine();
             Console.WriteLine(maxSum);
 
         }
 
         public static int maxSum = 0;
         public static List<Node<int>> usedNodes = new List<Node<int>>();
+        public static List<Node<int>> used = new List<Node<int>>();
+        public static bool isRoot = false;
+        public static Node<int> Root;
 
-        private static void TraverserDFS(Node<int> node, int currentSum)
+        private static void FindPathWithBiggestSum(Node<int> node, int currentSum)
         {
-            currentSum += node.Value;
             usedNodes.Add(node);
+            currentSum += node.Value;
 
-            for (int i = 0; i < node.Children.Count; i++)
+            if (Root == node)
             {
-                if (usedNodes.Contains(node.Children[i]))
-	            {
-		             continue;
-	            }
-
-                TraverserDFS(node.Children[i], currentSum);
+                isRoot = true;
             }
 
-            if (node.Children.Count == 1 && currentSum > maxSum)
+            if (isRoot)
             {
+
+                for (int i = 0; i < node.Children.Count; i++)
+                {
+                    if (usedNodes.Contains(node.Children[i]))
+                    {
+                        continue;
+                    }
+
+                    FindPathWithBiggestSum(node.Children[i], currentSum);
+                }
+            }
+            else if (node.Parent != null)
+            {
+                FindPathWithBiggestSum(node.Parent, currentSum);
+            }
+
+            isRoot = false;
+
+            if (currentSum >= maxSum && node.Children.Count == 0)
+            {
+                used = usedNodes;
                 maxSum = currentSum;
+
             }
         }
 

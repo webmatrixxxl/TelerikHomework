@@ -1,0 +1,16 @@
+﻿.item {
+    width: 1280px;
+    height: 800px;
+    background-color: lightgray;
+}
+#btnLeftDirection {
+    position: absolute;
+    left: 20px;
+    top: 400px;
+}
+
+#btnRightDirection {
+    position: absolute;
+    left: 1230px;
+    top: 400px;
+}

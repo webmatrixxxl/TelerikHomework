@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function Person(fname, lname, age) {
+            var getFullname = function () {
+                return fname + " " + lname;
+            }
+
+            this.introduce = function () {
+                return "Name: " + getFullname() + "; Age: " + age;
+            }
+        }
+
+        function Student(fname, lname, age, grade) {
+            Person.apply(this, arguments);
+            Person.call(this, fname, lname, age);
+
+            this.getGrade = function () {
+                return grade;
+            }
+
+            var getAge = function () {
+                return age;
+            }
+
+        }
+
+        function School(name, town, classes) {
+
+            this.getName = function () {
+                return name;
+            }
+
+            var getTown = function () {
+                return town;
+            }
+
+            var getClasses = function () {
+                var result;
+
+                for (var i = 0; i < this.classes.length; i++) {
+                    result += "Студент: " + this.classes[i].name + "; ";
+                }
+
+                return result;
+            }
+
+        }
+
+
+        function Classe(name, capacity, students, formTeacher) {
+        }
+
+
+        function Teacher(fname, lname, age, speciality) {
+            Person.apply(this, arguments);
+            Person.call(this, fname, lname, age);
+
+            this.getAge = function () {
+                return grade;
+            }
+
+            this.getFullname = function () {
+                return "";
+            }
+        }
+
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;
+
+        var cecoTroikata = new Student("Ceco", "Troikata", 10, 3);
+
+        var A7 = new Classe("7A", [cecoTroikata], coolTeacher);
+
+        var IvanVazovSchool = new School("5-о ОУ Иван Вазов", "София", [A7]);
+
+        var coolTeacher = new Teacher(Kiril, Daskalov, 24, "Оreakness");
+
+
+
+        console.log("cecoTroikata instanceof Student? " + (cecoTroikata instanceof Student));
+        console.log("cecoTroikata instanceof Person? " + (cecoTroikata instanceof Person));
+        console.log("cecoTroikata is in " + cecoTroikata.getGrade() + " grade");
+        console.log(cecoTroikata.introduce());
+
+    </script>
+</body>
+</html>

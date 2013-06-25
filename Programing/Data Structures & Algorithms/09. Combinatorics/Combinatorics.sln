@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Generating Permutations", "01. Generating Permutations\01. Generating Permutations.csproj", "{D22D2A2E-1761-4364-ADC2-85DA4222AD96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Generate Combinations", "02. Generate Combinations\02. Generate Combinations.csproj", "{AA67F2C8-46DB-4333-9A99-20D2503645E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Binary Passwords", "03. Binary Passwords\03. Binary Passwords.csproj", "{135A620F-FF70-49F8-927C-BA78C91E43CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Colorfull Rabits", "04. Colorfull Rabits\04. Colorfull Rabits.csproj", "{6F43D3FA-B4F0-4707-8769-4BC1B9AF1104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Colorfull Balls", "05. Colorfull Balls\05. Colorfull Balls.csproj", "{7FB12BA5-40A4-411C-AF2B-28C014A6E47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Binary Trees", "06. Binary Trees\06. Binary Trees.csproj", "{863B6B93-FCF0-49F0-B9E4-54B77040BB64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D22D2A2E-1761-4364-ADC2-85DA4222AD96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22D2A2E-1761-4364-ADC2-85DA4222AD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22D2A2E-1761-4364-ADC2-85DA4222AD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22D2A2E-1761-4364-ADC2-85DA4222AD96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA67F2C8-46DB-4333-9A99-20D2503645E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA67F2C8-46DB-4333-9A99-20D2503645E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA67F2C8-46DB-4333-9A99-20D2503645E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA67F2C8-46DB-4333-9A99-20D2503645E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135A620F-FF70-49F8-927C-BA78C91E43CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135A620F-FF70-49F8-927C-BA78C91E43CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135A620F-FF70-49F8-927C-BA78C91E43CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135A620F-FF70-49F8-927C-BA78C91E43CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F43D3FA-B4F0-4707-8769-4BC1B9AF1104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F43D3FA-B4F0-4707-8769-4BC1B9AF1104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F43D3FA-B4F0-4707-8769-4BC1B9AF1104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F43D3FA-B4F0-4707-8769-4BC1B9AF1104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB12BA5-40A4-411C-AF2B-28C014A6E47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB12BA5-40A4-411C-AF2B-28C014A6E47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB12BA5-40A4-411C-AF2B-28C014A6E47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB12BA5-40A4-411C-AF2B-28C014A6E47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863B6B93-FCF0-49F0-B9E4-54B77040BB64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863B6B93-FCF0-49F0-B9E4-54B77040BB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863B6B93-FCF0-49F0-B9E4-54B77040BB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863B6B93-FCF0-49F0-B9E4-54B77040BB64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

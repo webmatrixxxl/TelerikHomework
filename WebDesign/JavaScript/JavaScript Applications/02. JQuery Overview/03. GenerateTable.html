@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            var arr = [{ firstname: "Petar", lastname: "Ivanov", grade: "3" },
+                { firstname: "Milena", lastname: "Grigorova", grade: "6" },
+                { firstname: "Gergana", lastname: "Borisova", grade: "12" },
+                { firstname: "Boyko", lastname: "Petrov", grade: "7" }];
+
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                str += '<tr>' +
+                    '<td>' + arr[i].firstname + '</td>' +
+                    '<td>' + arr[i].lastname + '</td>' +
+                    '<td>' + arr[i].grade + '</td>' +
+                    '</tr>';
+            }
+            var table = $('<table>' +
+                '<tr>' +
+                '<th>First Name</th>' +
+                '<th>Last Name</th>' +
+                '<th>Grade</th>' +
+                '</tr>' + str + '</table>');
+            var container = $('#wrapper');
+            container.append(table);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>

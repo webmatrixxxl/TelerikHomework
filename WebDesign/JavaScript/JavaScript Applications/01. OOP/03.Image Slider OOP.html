@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #slider {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider">
+    </div>
+
+    <script>
+
+        //  Object create
+        if (!Object.create) {
+            Object.create = function (obj) {
+                function f() { };
+                f.prototype = obj;
+                return new f();
+            }
+        }
+
+        //  Prototypal inharitance
+        if (!Object.prototype.extend) {
+            Object.prototype.extend = function (properties) {
+                function f() { };
+                f.prototype = Object.create(this);
+
+                for (var prop in properties) {
+                    f.prototype[prop] = properties[prop];
+                }
+
+                f.prototype._super = this;
+                return new f();
+            }
+        }
+
+        var ImageSlider = {
+            init: function (selector, container) {
+                this.selector = selector;
+                this.container = container;
+                this.images = [];
+            },
+
+            addImage: function (image) {
+                this.images.push(image);
+            },
+
+            introduce: function () {
+                var selectedElement = document.querySelector(this.selector);
+                var createContainer = document.createElement(this.container);
+                var imageHolder = document.createElement('div');
+                imageHolder.id = 'image-holder';
+
+                var leftArrow = document.createElement('div');
+                leftArrow.imageHolder = imageHolder.id;
+                leftArrow.imagesSet = this.images;
+
+                var rightArrow = document.createElement('div');
+                rightArrow.imageHolder = imageHolder.id;
+                rightArrow.imagesSet = this.images;
+
+                leftArrow.addEventListener("click", leftNavEvent, false);
+                leftArrow.style.background = "url(http://agencypja.com/site/templates/images/arrows-left-black.png)";
+                leftArrow.style.height = 40 + 'px';
+                leftArrow.style.width = 21 + 'px';
+                leftArrow.style.display = 'inline-block';
+
+                rightArrow.addEventListener("click", rightNavEvent, false);
+                rightArrow.style.background = "url(http://agencypja.com/site/templates/images/arrows-right-black.png)";
+                rightArrow.style.height = 40 + 'px';
+                rightArrow.style.cssFloat = 'right';
+                rightArrow.style.width = 21 + 'px';
+                rightArrow.style.display = 'inline-block';
+
+                position = -1;
+
+                for (var i = this.images.length - 1; i >= 0; i--) {
+                    var img = document.createElement('img');
+                    img.src = this.images[i].thumbUrl;
+                    img.title = this.images[i].title;
+                    img.imageObj = this.images[i];
+                    img.imageHolder = imageHolder.id;
+                    img.style.width = 150 + 'px';
+                    img.id = 'image-' + i;
+                    img.style.height = 150 + 'px';
+                    img.addEventListener("click", onClickEvent, false);
+                    createContainer.appendChild(img);
+                };
+
+                selectedElement.appendChild(createContainer);
+                selectedElement.appendChild(imageHolder);
+                selectedElement.appendChild(leftArrow);
+                selectedElement.appendChild(rightArrow);
+
+
+            }
+        };
+
+        function leftNavEvent(ev) {
+            var elem = document.getElementById(ev.target.imageHolder).previousElementSibling;
+            var images = elem.getElementsByTagName('img');
+            var elem2 = document.getElementById(ev.target.imageHolder);
+            console.log(position);
+            if (images.length - 1 > position) {
+                position++;
+                elem2.innerHTML = '<img src=' + ev.target.imagesSet[position].fullUrl + ' width=' + 400 + ' heigth= ' + 300 + ' title=' + ev.target.imagesSet[position].title + ' />';
+            }
+        }
+
+        function rightNavEvent(ev) {
+            var elem = document.getElementById(ev.target.imageHolder).previousElementSibling;
+            var images = elem.getElementsByTagName('img');
+            var elem2 = document.getElementById(ev.target.imageHolder);
+
+            if (images.length > position && position > 0) {
+                position--;
+                elem2.innerHTML = '<img src=' + ev.target.imagesSet[position].fullUrl + ' width=' + 400 + ' heigth= ' + 300 + ' title=' + ev.target.imagesSet[position].title + ' />';
+            }
+        }
+
+        function onClickEvent(ev) {
+
+            var index = ev.target.id.split('-');
+            var elem = document.getElementById(ev.target.imageHolder);
+            elem.innerHTML = '<img src=' + ev.target.imageObj.fullUrl + ' width=' + 400 + ' heigth= ' + 300 + ' title=' + ev.target.imageObj.title + ' />';
+        }
+
+        function onLeftClick(ev) {
+
+        }
+
+        var Image = {
+            init: function (title, thumbUrl, fullUrl) {
+                this.title = title;
+                this.thumbUrl = thumbUrl;
+                this.fullUrl = fullUrl;
+            }
+        };
+
+        var Slider = Object.create(ImageSlider);
+        Slider.init("#slider", "div");
+
+
+        var image = Object.create(Image);
+        image.init("Гущерче", "http://t1.gstatic.com/images?q=tbn:ANd9GcRSYAnA5xrnuGWqTKWop7ivAAfM6vTq5mmOSPzr6zbdJrOZ5HN5FA", "http://www.theinformationarchives.com/Lizard/images/1_lizard.jpg");
+
+        var image2 = Object.create(Image);
+        image2.init("Динозавър", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSk3-qSNOeiAuw104JTDuUByaR94Q5vTP8JYACJgXhoUONTAHR0", "http://eofdreams.com/data_images/dreams/lizard/lizard-10.jpg");
+
+        var image3 = Object.create(Image);
+        image3.init("Влечуго", "http://t1.gstatic.com/images?q=tbn:ANd9GcR2eG45Uk2CwcbI0o55Gp6Br8npj5D2xaGM6JQOwUPSye89Z5Rd", "http://www.naturfoto.cz/fotografie/sevcik/lepojester-pestry--calotes-versicolor-2.jpg");
+
+
+
+        Slider.addImage(image);
+        Slider.addImage(image2);
+        Slider.addImage(image3);
+
+        Slider.introduce();
+
+    </script>
+</body>
+</html>
