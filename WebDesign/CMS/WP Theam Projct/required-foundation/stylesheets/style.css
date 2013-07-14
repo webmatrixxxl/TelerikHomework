@@ -1,0 +1,258 @@
+@import "http://fonts.googleapis.com/css?family=Abel|Allura";
+@import "http://fonts.googleapis.com/css?family=Oswald:400,300";
+
+body {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 30%, rgba(78,169,145,0.2) 80%, rgba(78,169,145,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,1)), color-stop(30%,rgba(0,0,0,0.7)), color-stop(80%,rgba(78,169,145,0.2)), color-stop(100%,rgba(78,169,145,0))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 30%,rgba(78,169,145,0.2) 80%,rgba(78,169,145,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 30%,rgba(78,169,145,0.2) 80%,rgba(78,169,145,0) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 30%,rgba(78,169,145,0.2) 80%,rgba(78,169,145,0) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 30%,rgba(78,169,145,0.2) 80%,rgba(78,169,145,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#004ea991',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-repeat: no-repeat;
+    background-color: #4ea991;
+    color: #8A8A8A;
+}
+
+.header-image img {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.column, .columns {
+    padding: 0 10px;
+}
+
+header {
+    margin: 30px 30px 0px 30px;
+}
+
+.container {
+    margin: 0px 30px 30px 30px;
+    padding: 30px;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.mobileUI-site-name {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Allura',cursive !important;
+    font-size: 70pt;
+    font-weight: 200;
+    letter-spacing: -1px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #006F00;
+    text-transform: lowercase;
+}
+
+    .mobileUI-site-name:hover {
+        color: #fff;
+    }
+
+.nav-bar {
+    text-align: center;
+    height: 60px;
+}
+
+    .nav-bar ul {
+        text-align: center;
+    }
+
+    .nav-bar li {
+        float: none;
+        display: inline-block;
+        margin-right: -5px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .nav-bar > li a {
+        text-transform: uppercase;
+        line-height: 60px;
+        font-family: 'Abel',sans-serif;
+        font-size: 13pt;
+    }
+
+        .nav-bar > li a:hover {
+            background-color: #006103;
+        }
+
+    .nav-bar > li.active {
+        background-color: #006103;
+    }
+
+.menu-newmenu-container {
+    height: 60px;
+    background: url("../images/img06.png") no-repeat right top transparent;
+}
+
+    .menu-newmenu-container ul {
+        background: none;
+    }
+
+        .menu-newmenu-container ul li {
+            border: none;
+        }
+
+
+.entry-content {
+    text-align: justify;
+    font-size: small;
+}
+
+    .entry-content img {
+        border: 2px solid white;
+        margin-right: 10px;
+    }
+
+
+.entry-title {
+    color: #2A2A2A;
+    font-size: 30pt;
+    letter-spacing: -2px;
+    padding: 0 0 40px;
+    text-transform: uppercase;
+}
+
+    .entry-title a {
+        color: #2A2A2A;
+    }
+
+.entry-header {
+    margin: 0px;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald',sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+}
+
+/*Sidebar*/
+
+#sidebar {
+    display: inline-block;
+}
+
+    #sidebar .widget {
+        margin-bottom: 50px;
+    }
+
+        #sidebar .widget h2 {
+            height: 100%;
+        }
+
+        #sidebar .widget ul {
+            list-style: none outside none;
+            margin: 0;
+            padding: 0;
+        }
+
+            #sidebar .widget ul li {
+                border-bottom: 1px solid #E6E6E6;
+                background: url("../images/img03.png") no-repeat scroll left center transparent;
+                padding: 15px 0px 15px 30px;
+            }
+
+
+                #sidebar .widget ul li a {
+                    color: #525252;
+                    display: block;
+                    text-decoration: none;
+                    font-size: small;
+                }
+
+                    #sidebar .widget ul li a:hover {
+                        text-decoration: underline;
+                    }
+
+.main-page .widget-area {
+    float: left;
+    display: inline-block;
+    width: 48%;
+    margin-right: 20px;
+}
+    .main-page .widget-area:last-child {
+        margin-right: 0px;
+    }
+/*SideBar-Main-Page*/
+.secondary-sidebar .widget-title {
+    background: url("../images/img10.png") no-repeat scroll right top transparent;
+    color: #FFFFFF;
+    font-size: 20pt;
+    line-height: 50px;
+    margin-bottom: 20px;
+    padding: 0 0 0 20px;
+    text-transform: uppercase;
+}
+
+/*Article*/
+
+.widget-title {
+    background: url("../images/img01.png") repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 20pt;
+    line-height: 50px;
+    margin-bottom: 20px;
+    padding: 0 0 0 20px;
+    text-transform: uppercase;
+}
+
+.more-link {
+    background: url("../images/img01.png") repeat scroll 0 0 transparent;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Oswald',sans-serif;
+    font-size: 14pt;
+    font-weight: 200;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 174px;
+}
+
+/*FOOTER*/
+#credits {
+      background: url("../images/img01.png") repeat scroll 0 0 #C55300;
+      height:126px;
+      padding-top:50px;
+
+}
+    #credits p {
+        color: #EEEEEE;
+        font-family: 'Abel',sans-serif;
+        font-size: 11pt;
+        text-align: center;
+    }
+#bottom {
+    padding:30px;
+}
+#bottom aside {
+    width:285px;
+    float:right;
+    margin-left:20px;
+}
+#bottom aside:last-of-type {
+
+    margin-left:0px;
+}
+
+#bottom .widget-title {
+    background: none;
+    font-weight:normal;
+    color: #FFFFFF;
+  
+}
+    #bottom [id*='text:text'] {
+        width:500px;
+    }
