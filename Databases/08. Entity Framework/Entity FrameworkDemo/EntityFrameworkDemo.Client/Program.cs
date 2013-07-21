@@ -9,77 +9,106 @@ namespace EntityFrameworkDemo.Client
 {
     class Program
     {
+
+        // Task02. Create a DAO class with static methods which provide functionality for
+        // inserting, modifying and deleting customers. Write a testing class.
+
+
+        public static void InsertCustomer(
+           string CustomerID,
+           string CompanyName,
+           string ContactName = null,
+           string City = null,
+           string ContactTitle = null,
+           string Address = null,
+           string Region = null,
+           string PostalCode = null,
+           string Country = null,
+           string Phone = null,
+           string Fax = null
+           )
+        {
+            using (var db = new NORTHWINDEntities())
+            {
+                var newCustomer = new Customer
+                {
+                    CustomerID = CustomerID,
+                    CompanyName = CompanyName,
+                    City = City,
+                    ContactName = ContactName,
+                    ContactTitle = ContactTitle,
+                    Address = Address,
+                    Region = Region,
+                    PostalCode = PostalCode,
+                    Country = Country,
+                    Phone = Phone,
+                    Fax = Fax,
+                };
+
+                db.Customers.Add(newCustomer);
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteCustomer(string customerID)
+        {
+            using (var db = new NORTHWINDEntities())
+            {
+                var customerToRemove = db.Customers.Find(customerID);
+                db.Customers.Remove(customerToRemove);
+                db.SaveChanges();
+            }
+        }
+
+        public static void ModifyCustomer(string customerID, string companyName)
+        {
+            using (var db = new NORTHWINDEntities())
+            {
+                var customerToModify = db.Customers.Find(customerID);
+                customerToModify.CompanyName = companyName;
+                db.SaveChanges();
+            }
+        }
+
+
         static void Main(string[] args)
         {
 
+
             using (var db = new NORTHWNDEntities())
             {
-                //var customers = db.Customers.Where(x => x.Country == "UK")
-                //.OrderBy(x => x.ContactName)
-                //.Where(x => x.City == "London").Select(x => new {x.Address});
 
-                //foreach (var item in customers)
-                //{
-                //    Console.WriteLine(item.Address);
-                //}
+                //Task 03. Write a method that finds all customers who have orders made in
+                //1997 and shipped to Canada.
 
 
-                //var region = new Region
-                //{
-                //    RegionDescription = "Dopsi"
-                //};
+                var getCustomersOrders = db.Orders.
+                    Where(o => o.OrderDate.Value.Year == 1997 && o.ShipCountry == "Canada").
+                    Select(o => o.Customer).
+                    Distinct().
+                    ToList();
 
-                //db.Regions.Add(region);
-                //db.SaveChanges();
+                foreach (var item in getCustomersOrders)
+                {
+                    Console.WriteLine(item.ContactName);
+                }
 
+                //Task 04. Implement previous by using native SQL query and executing it through the DbContext.
 
+                var result = FindAllCustomersSQLquery(1997, "Canada");
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item);
+                }
 
-                //var cust = db.Customers.Find("ALFKI");
-                //Console.WriteLine(cust);
+                //Tasl 05. Write a method that finds all the sales by specified region and period (start / end dates).
 
-                //var data = db.Customers.
-                //    Join(db.Suppliers,
-                //    (c => c.Country), (s => s.Country), (c, s) =>
-                //        new
-                //        {
-                //            Customer = c.CompanyName,
-                //            Supplier = s.CompanyName,
-                //            Cuntry = c.Country
-                //        });
+                var result = FindsAllSalesByRegionAndPeriod("SP", "Jan 1, 1995", "Jan 1, 1999");
 
-                //Console.WriteLine(data.GetType)
-
-                // Task 03. Write a method that finds all customers who have orders made in
-                // 1997 and shipped to Canada.
-
-
-                //var getCustomersOrders = db.Orders.
-                //    Where(o => o.OrderDate.Value.Year == 1997 && o.ShipCountry == "Canada").
-                //    Select(o => o.Customer).
-                //    Distinct().
-                //    ToList();
-
-                //foreach (var item in getCustomersOrders)
-                //{
-                //    Console.WriteLine(item.ContactName);
-                //}
-
-                // Task 04. Implement previous by using native SQL query and executing it through the DbContext.
-
-                //var result = FindAllCustomersSQLquery(1997, "Canada");
-                //    foreach (var item in result)
-                //{
-                //    Console.WriteLine(item);
-                //}
-
-                // Tasl 05. Write a method that finds all the sales by specified region and period (start / end dates).
-
-                //var result = FindsAllSalesByRegionAndPeriod("SP", "Jan 1, 1995", "Jan 1, 1999");
-
-                //foreach (var item in result)
-                //{
-                //    Console.WriteLine(item.Customer.CompanyName);
-                //}
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Customer.CompanyName);
+                }
 
                 foreach (var product in db.Products)
                 {
@@ -108,7 +137,7 @@ namespace EntityFrameworkDemo.Client
             return customers;
         }
 
-        private static List<Order> FindsAllSalesByRegionAndPeriod
+        private List<Order> FindsAllSalesByRegionAndPeriod
                (string region, string start, string end)
         {
             var parsedStart = DateTime.Parse(start);
