@@ -110,13 +110,13 @@ namespace EntityFrameworkDemo.Client
                     Console.WriteLine(item.Customer.CompanyName);
                 }
 
-                foreach (var product in db.Products)
-                {
-                    Console.WriteLine("Product: {0}; Company Name: {1}; Categoty Name: {2}",
-                        product.ProductName,
-                        product.Supplier.CompanyName,
-                        product.Category.CategoryName);
-                }
+                //foreach (var product in db.Products)
+                //{
+                //    Console.WriteLine("Product: {0}; Company Name: {1}; Categoty Name: {2}",
+                //        product.ProductName,
+                //        product.Supplier.CompanyName,
+                //        product.Category.CategoryName);
+                //}
             }
         }
 
