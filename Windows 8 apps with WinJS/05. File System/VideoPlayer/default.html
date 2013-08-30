@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>VideoPlayer</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- VideoPlayer references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="js/Math.uuid.js"></script>
+    <script src="js/VideoFile.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+	<div id="grdFileItem" data-win-control="WinJS.Binding.Template">
+		<div>
+			<ol>
+				<li><span>ID: </span><span data-win-bind="textContent:_id"></span></li>
+				<li><span>Title: </span><span data-win-bind="textContent:title"></span></li>
+				<li><span>Album: </span><span data-win-bind="textContent:album"></span></li>
+			</ol>
+		</div>
+	</div>
+	<div id="pnlMain">
+		<div id="grdFiles" data-win-control="WinJS.UI.ListView" data-win-options="{itemTemplate:select('#grdFileItem'), layout:{type:WinJS.UI.ListLayout}}"></div>
+		<video id="pnlVideoPlayer" controls="controls"></video>
+		<div id="pnlBottomButtons">
+			<button id="btnSavePlaylist" type="button">Save Playlist</button>
+			<button id="btnLoadPlaylist" type="button">Load Playlist</button>
+		</div>
+		<div id="pnlTopButtons" style="-ms-grid-row: 2;">
+			<button id="btnRemoveFile" type="button">Remove Selected File</button>
+			<button id="btnAddFile" type="button">Add Video Files
+			</button>
+		</div>
+	</div>
+</body>
+</html>

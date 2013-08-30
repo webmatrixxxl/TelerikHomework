@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WinJSLifeCycle</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- WinJSLifeCycle references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="editorContainer" style="display: inline-block; width: 700px; float:left">
+        <label>Check for rhymes</label>
+        <select id="rhymeSelect">
+            <option value="1">Sequntual lines</option>
+            <option value="2">Skipe one line</option>
+        </select>
+
+        <label>Lines for verse</label>
+        <select id="linesSelector">
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+            <option value="6">Six</option>
+        </select>
+        <textarea id="editor" style="width:500px; height: 600px"></textarea>
+    </div>
+    <div id="poemContainer" style="display: inline-block; padding-top:50px; padding-right:50px;"> 
+        text goes here
+    </div>
+
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button id="appbar-new-button" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'newCommand', label:'New', icon:'page2'}" type="button"></button>
+        <button id="appbar-save-button" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'saveCommand', label:'Save', icon:'save'}" type="button"></button>
+        <button id="appbar-open-button" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'openCommand', label:'Open', icon:'movetofolder'}" type="button"></button>
+
+    </div> 
+</body>
+</html>

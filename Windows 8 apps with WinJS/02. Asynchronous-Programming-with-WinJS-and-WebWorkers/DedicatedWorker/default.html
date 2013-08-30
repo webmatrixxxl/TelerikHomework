@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DedicatedWorker</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- DedicatedWorker references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+
+    <p>Calculate the prime numbers up to a given number N</p>
+    <label for="primes-last"> N:</label>
+    <input id="primes-last-N" />
+    <button id="calculate-primes-1toN">Calculate primes in Dedicated worker</button>
+    <br />
+
+    <p>Calculate the first N prime numbers by given N</p>
+    <label for="primes-NbyN"> N:</label>
+    <input id="primes-NbyN" />
+    <button id="calculate-primes-NbyN">Calculate primes in Dedicated worker</button>
+    <br />
+
+    <p>Calculate the prime numbers in the range  [A,B], where A and B are given</p>
+    <label for="primes-first">Primes A:</label>
+    <input id="primes-first" />
+    <label for="primes-last">Primes B:</label>
+    <input id="primes-last" />
+    <button id="calculate-primes">Calculate primes in Dedicated worker</button>
+    <br />
+    <div id="test"></div>
+</body>
+</html>

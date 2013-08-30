@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "WinJSLifeCycle", "WinJSLifeCycle\WinJSLifeCycle.jsproj", "{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|ARM.Build.0 = Debug|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|ARM.Deploy.0 = Debug|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x64.ActiveCfg = Debug|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x64.Build.0 = Debug|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x64.Deploy.0 = Debug|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x86.ActiveCfg = Debug|x86
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x86.Build.0 = Debug|x86
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Debug|x86.Deploy.0 = Debug|x86
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|ARM.ActiveCfg = Release|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|ARM.Build.0 = Release|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|ARM.Deploy.0 = Release|ARM
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x64.ActiveCfg = Release|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x64.Build.0 = Release|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x64.Deploy.0 = Release|x64
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x86.ActiveCfg = Release|x86
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x86.Build.0 = Release|x86
+		{CDC96162-B7E2-4589-AFD4-EA65A8CCDE2A}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
