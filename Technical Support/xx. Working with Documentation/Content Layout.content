@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="e21b4cc9-b5a3-40fb-8d6b-5bb13af6dff7" visible="True" title="First Article" />
+  <Topic id="336f4be5-fce5-47d1-81d0-d95c8444fde6" visible="True" isExpanded="true">
+    <Topic id="74caada5-dd92-48ee-a56a-5da62d1900e5" visible="True" isSelected="true" />
+  </Topic>
+</Topics>
