@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Geolocations</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Geolocations references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <!-- Bing Map Control references -->
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapicore.js"></script>
+</head>
+<body>
+    <div class="WinrtLocation fragment" style="z-index: 0">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">WinRT Geolocation API Sample</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="coordinates"></div>
+            <div id="address"></div>
+        </section>
+    </div>
+    <!--<iframe id="mapdiv" width="60%" height="280" frameborder="0" src="http://www.bing.com/maps/embed/viewer.aspx?v=3&cp=40.782498~-73.965515&lvl=14&w=100%&h=280&sty=r&typ=d&pp=Central%20Park%2C%20NY~~40.782379~-73.965858&ps=&dir=0&mkt=en-us&src=SHELL&form=BMEMJS"></iframe>
+    -->
+    <div id="mapdiv" width="100px" height="280px" frameborder="0"></div>
+</body>
+</html>

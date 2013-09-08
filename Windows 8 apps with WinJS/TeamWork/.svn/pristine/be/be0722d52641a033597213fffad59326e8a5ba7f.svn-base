@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/pages/home/home.js"></script>
+</head>
+<body>
+    <!-- Template for the group headers in the zoomed-in view. -->
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+       
+    </div>
+    <!-- Template for the ListView items in the zoomed-in view. -->
+    <div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="mediumListIconTextItem">
+            <img class="mediumListIconTextItem-Image" data-win-bind="src: pic" />
+            <div class="mediumListIconTextItem-Detail">
+                <h4 data-win-bind="innerText: name"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for the zoomed out view of the semantic view. -->
+    <div id="semanticZoomTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="semanticZoomItem">
+            <h1 class="semanticZoomItem-Text" data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">SocialAuth v1 : Facebook!</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="prUser">
+                <!-- Create an indeterminate progress bar -->
+                <label class="progressRingText">
+                    <progress class="win-ring withText"></progress>Fetching user info..</label>
+            </div>
+            <div id="userbinding" style="display: none">
+                <img src="#" data-win-bind="src: pic" width="200" height="200" />
+                <p data-win-bind="innerText: name"></p>
+                <!--Name-->
+                <p data-win-bind="innerText: bio"></p>
+                <!--about me-->
+
+                <h3>Basic Info</h3>
+                <p data-win-bind="innerText: gender"></p>
+                <!--gender-->
+                <p data-win-bind="innerText: quotes"></p>
+                <!--quotes-->
+                <p data-win-bind="innerText: locations.name "></p>
+                <!--Address-->
+            </div>
+            <div id="prFriends">
+                <!-- Create an indeterminate progress bar -->
+                <label class="progressRingText">
+                    <progress class="win-ring withText"></progress>Fetching friends..</label>
+            </div>
+
+            <div id="semanticZoomDiv" data-win-control="WinJS.UI.SemanticZoom">
+
+                <!-- The zoomed-in view. -->
+                <div id="zoomedInListView"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{ 
+                    itemTemplate: select('#mediumListIconTextTemplate'), 
+                    groupHeaderTemplate: select('#headerTemplate'), 
+                    selectionMode: 'none', 
+                    tapBehavior: 'none', 
+                    swipeBehavior: 'none' }">
+                </div>
+
+                <!--- The zoomed-out view. -->
+                <div id="zoomedOutListView"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{ 
+                    itemTemplate: select('#semanticZoomTemplate'), 
+                    selectionMode: 'none', 
+                    tapBehavior: 'invoke', 
+                    swipeBehavior: 'none' }">
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fblogin', label:'FB Login', icon:'placeholder'}" type="button"></button>
+    </div>
+</body>
+</html>

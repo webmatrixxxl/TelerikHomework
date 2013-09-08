@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>bench-details</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    
+    <link href="bench-details.css" rel="stylesheet" />
+    <script src="../../js/Models%20View/bench-details-view-model.js"></script>
+    <script src="../../js/Models%20View/user-details-view-model.js"></script>
+    <script src="bench-details.js"></script>
+    
+     <!-- Bing Map Control references -->
+    <script type="text/javascript" src="ms-appx:///Bing.Maps.JavaScript//js/veapicore.js"></script>
+    <script src="geolocation.js"></script>
+</head>
+<body>
+    <div class="bench_details fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle" data-win-bind="innerText: pickedBench.Name"></span>
+            </h1>
+        </header>
+         <h2>Pick a user:</h2>
+             <div id="user-tales-list"
+                data-win-control="WinJS.UI.ListView"
+                data-win-options="{
+                   itemDataSource: ViewModels.benchUsersLists.dataSource,
+                   oniteminvoked: Commands.navigateToUserEventDetailItem
+                }">
+            </div>
+        <section aria-label="Main content" role="main">
+            <div class="WinrtLocation fragment" style="z-index: 0">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">WinRT Geolocation API Sample</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="coordinates"></div>
+            <div id="address"></div>
+        </section>
+    </div>
+    <div id="mapdiv"></div>
+            <div data-win-bind="innerText: pickedBench.Users"></div>
+        </section>
+    </div>
+</body>
+</html>

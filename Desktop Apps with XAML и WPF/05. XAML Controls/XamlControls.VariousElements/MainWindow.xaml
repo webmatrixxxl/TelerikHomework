@@ -1,0 +1,18 @@
+﻿<Window x:Class="XamlControls.VariousElements.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <ComboBox>
+            <ComboBoxItem>
+                <TextBlock>tb</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Ellipse Width="50" Height="50" Fill="Blue"></Ellipse>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Image Source="image/wpf.jpg"></Image>
+            </ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
+</Window>

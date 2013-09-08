@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <link href="../../css/foundation.css" rel="stylesheet" />
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="../../js/Models%20View/home-page-view-model.js"></script>
+    <script src="/pages/home/home.js"></script>
+    <script src="../../js/Commands/commands.js"></script>
+</head>
+<body>
+
+    <!-- Template for the group headers in the zoomed-in view. -->
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="simpleHeaderItem">
+            <h1 data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+
+    <!-- Template for the ListView items in the zoomed-in view. -->
+    <div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="mediumListIconTextItem">
+            <img class="mediumListIconTextItem-Image" data-win-bind="src: pic" />
+            <div class="mediumListIconTextItem-Detail">
+                <h4 data-win-bind="innerText: name"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+
+
+    <!-- Template for the zoomed out view of the semantic view. -->
+    <div id="semanticZoomTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="semanticZoomItem">
+            <h1 class="semanticZoomItem-Text" data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to Bench Drinking!</span>
+            </h1>
+        </header>
+
+        <section aria-label="Main content" role="main">
+            <div id="prUser">
+                <!-- Create an indeterminate progress bar -->
+                <label class="progressRingText">
+                    <progress class="win-ring withText"></progress>Fetching user info..</label>
+            </div>
+            <div id="userbinding" class="headertemplate" style="" data-win-control="WinJS.Binding.Template">
+                <!-- Name -->
+                <h2 class="group-subtitle" data-win-bind="innerText: name"></h2>
+                <!-- Avatar -->
+                <img class="group-image" src="#" data-win-bind="src: pic" />
+                <!-- About me -->
+                <p data-win-bind="innerText: bio"></p>
+                <h3>Basic Info</h3>
+                <!-- Gender -->
+                <p data-win-bind="innerText: gender"></p>
+                <!-- Quotes-->
+                <p data-win-bind="innerText: quotes"></p>
+                <!-- Address -->
+                <p data-win-bind="innerText: locations.name "></p>
+            </div>
+            <div id="prFriends">
+                <!-- Create an indeterminate progress bar -->
+                <label class="progressRingText">
+                    <progress class="win-ring withText"></progress>Fetching friends..</label>
+            </div>
+
+            <div id="semanticZoomDiv" style="float: left; width: 300px;" data-win-control="WinJS.UI.SemanticZoom">
+
+                <!-- The zoomed-in view. -->
+                <div id="zoomedInListView"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{ 
+                    itemTemplate: select('#mediumListIconTextTemplate'), 
+                    groupHeaderTemplate: select('#headerTemplate'), 
+                    selectionMode: 'none', 
+                    tapBehavior: 'none', 
+                    swipeBehavior: 'none' }">
+                </div>
+
+                <!--- The zoomed-out view. -->
+                <div id="zoomedOutListView"
+                    data-win-control="WinJS.UI.ListView"
+                    data-win-options="{ 
+                    itemTemplate: select('#semanticZoomTemplate'), 
+                    selectionMode: 'none', 
+                    tapBehavior: 'invoke', 
+                    swipeBehavior: 'none' }">
+                </div>
+
+            </div>
+            <h2>Pick a bench:</h2>
+
+            <div id="bechListTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="benchTemplate" style="background-image: url(../../images/bench.png);">
+                    <div class="benchItem">
+                        <div class="benchUsers">
+                            <h2 class="bench-users-count" data-win-bind="innerText: UsersCount"></h2>
+
+                            <img class="benchCreatorImg" src="../../images/creator-img.png" />
+                            <img class="benchUserImg" src="../../images/bench-user1.jpg" />
+                            <img class="benchUserImg" src="../../images/bench-user2.jpg" />
+                            <img class="benchUserImg" src="../../images/bench-user3.jpg" />
+                            <img class="benchUserImg" src="../../images/bench-user4.jpg" />
+                            <img class="benchUserImg" src="../../images/bench-user5.jpg" />
+
+                        </div>
+                        <div class="bench-info">
+                            <h2 class="bench-title" data-win-bind="innerText: Name"></h2>
+                         
+                                <img data-win-control="WinJS.UI.Flyout" class="bench-position-pin" src="../../images/position-pin.png" />
+                           
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="bench-tales-list"
+                data-win-control="WinJS.UI.ListView"
+                data-win-options="{
+                   itemDataSource: ViewModels.allBenchesList.dataSource,
+                   oniteminvoked: Commands.navigateToBenchEventDetailItem,
+                   itemTemplate: select('#bechListTemplate'),
+                }"
+                style="height: 768px;">
+            </div>
+
+
+            <!--            <h2>Pick a user:</h2>
+            <div id="user-tales-list"
+                data-win-control="WinJS.UI.ListView"
+                data-win-options="{
+                   itemDataSource: ViewModels.allUsersList.dataSource,
+                   oniteminvoked: Commands.navigateToUserEventDetailItem
+                }">
+            </div>
+            <h2>Create Bench: </h2>
+            Title
+            <input type="text" id="name" name="name" value=" " />
+            <br />
+            Latitude
+            <input type="text" id="latitude" name="latitude" value=" " />
+            <br />
+            Longitude
+            <input type="text" id="longitude" name="latitude" value=" " />
+            <br />
+            Event begining:
+            <div id="start-date" data-win-control="WinJS.UI.DatePicker"></div>
+            <br />
+            <div id="start-time" class="time" data-win-control="WinJS.UI.TimePicker"></div>
+            <br />
+            Duration:
+            <div id="duration"
+                class="time"
+                data-win-control="WinJS.UI.TimePicker"
+                data-win-options="{
+                 clock: '24HourClock',
+                 current : '00:00'
+                }">
+            </div>
+            <button id="submit-bench-button" onclick="Commands.createBench(event)">Create Bench</button>-->
+
+        </section>
+        <div id="appbar" data-win-control="WinJS.UI.AppBar">
+            <button data-win-control="WinJS.UI.AppBarCommand" type="button"></button>
+        </div>
+        <div id="login-menu" role="login" style="-ms-grid-row-span: 2; margin: 0px 0px -62px;">
+            <h2>Login To BenchDrinking</h2>
+            <button class="button" id="fblogin">Facebook With Login</button>
+        </div>
+    </div>
+</body>
+</html>

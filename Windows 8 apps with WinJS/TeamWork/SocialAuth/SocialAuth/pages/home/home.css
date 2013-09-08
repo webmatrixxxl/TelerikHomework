@@ -1,0 +1,122 @@
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+}
+#userbinding {
+    width: 250px;
+    height: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+}
+
+.homepage section[role=main] {
+    display: -ms-grid;
+    -ms-grid-columns: 250px 1fr;
+    -ms-grid-rows: 1fr 10px;
+    width: calc(100% - 150px);
+}
+#prUser {
+    display: none;
+} 
+#prFriends {
+    display: none;
+}
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+    }
+}
+/* Template for headers in the zoomed-in ListView */
+.simpleHeaderItem
+{
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+}   
+
+/* Template for items in the zoomed-in ListView */  
+.mediumListIconTextItem
+{
+    width: 282px;
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-grid;
+}
+
+    .mediumListIconTextItem img.mediumListIconTextItem-Image 
+    {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        -ms-grid-column: 1;
+    }
+
+    .mediumListIconTextItem .mediumListIconTextItem-Detail
+    {
+        margin: 5px;
+        -ms-grid-column: 2;
+    }
+
+/* Template for items in the zoomed-out ListView */
+.semanticZoomItem
+{
+    width: 130px;
+    height: 130px;
+    background-color: rgba(38, 160, 218, 1.0);
+}   
+
+    .semanticZoomItem .semanticZoomItem-Text
+    {
+        padding: 10px;
+        line-height: 150px;
+        white-space: nowrap;
+        color: white;
+    }
+
+/* CSS for the zoomed-in ListView */
+#zoomedInListView
+{
+    width: 600px;
+    height: 300px;
+    border: solid 2px rgba(0, 0, 0, 0.13);
+}
+
+#semanticZoomDiv 
+{
+     -ms-grid-column: 2;
+    width: 100%;
+    background: #d5d5d5;  
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+}
+progress.withText
+{
+    color: inherit; /* Uses the same text color as the page */
+    vertical-align: text-bottom; /* Makes the bottom of the control align with the bottom of its label */
+}
+
+/* Text style for a label for the progress ring */
+.progressRingText
+{
+    font-family: "Segoe UI";
+}
+
+/* Text style for a label for a default size progress ring */
+.progressRingText
+{
+    font-size: 11pt;
+    line-height: 15pt;
+}
+
+/* The margin to separate the ring and its label */
+.progressRingText progress
+{
+    margin-right: 5px;
+}

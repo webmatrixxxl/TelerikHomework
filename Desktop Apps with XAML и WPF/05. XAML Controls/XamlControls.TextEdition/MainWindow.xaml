@@ -1,0 +1,30 @@
+﻿<Window x:Class="XamlControls.TextEditing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <ComboBox Name="cbFontFamily"></ComboBox>
+        <ComboBox Name="cbFontSize" Grid.Column="1">
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+        </ComboBox>
+
+        <TextBox Name="txtMain" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" Width="500" Height="300" AcceptsReturn="True"></TextBox>
+        
+        <Button Name="btnSave" Grid.Row="2">Save</Button>
+        <Button Name="btnLoad" Grid.Row="2" Grid.Column="1">Load</Button>
+    </Grid>
+</Window>

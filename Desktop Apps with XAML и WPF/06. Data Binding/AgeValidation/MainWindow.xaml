@@ -1,0 +1,39 @@
+﻿<Window x:Class="AgeValidation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:validators="clr-namespace:AgeValidation.Validators"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="{x:Type Slider}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock DockPanel.Dock="Right"  Foreground="Red" FontSize="12pt"> ! </TextBlock>
+                            <Border BorderBrush="Green" BorderThickness="1">
+                                <AdornedElementPlaceholder />
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},  Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Slider Name="txtAge" Minimum="1" Maximum="100" Width="200" IsSnapToTickEnabled="True" TickFrequency="1">
+            <Slider.Value>
+                <Binding Path="Age" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:StringRangeValidationRule MinimumLength="20" MaximumLength="80" ErrorMessage="A name is required." />
+                    </Binding.ValidationRules>
+                </Binding>
+            </Slider.Value>
+        </Slider>
+    </Grid>
+</Window>

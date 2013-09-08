@@ -1,0 +1,1 @@
+DrinkBench is social networking application designed to help you organize events with friends.

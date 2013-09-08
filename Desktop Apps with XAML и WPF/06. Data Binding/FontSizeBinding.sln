@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_02 FontSizeBinding", "FontSizeBinding\01_02 FontSizeBinding.csproj", "{E95D266F-7B56-42DE-99E7-36F502AF3886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. DrawText", "DrawText\03. DrawText.csproj", "{F286D454-C38C-441A-BD7A-C231CEB013AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. AgeValidation", "AgeValidation\04. AgeValidation.csproj", "{7DE3D2F4-F8D2-4C76-94FA-A51FB71215B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E95D266F-7B56-42DE-99E7-36F502AF3886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95D266F-7B56-42DE-99E7-36F502AF3886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95D266F-7B56-42DE-99E7-36F502AF3886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95D266F-7B56-42DE-99E7-36F502AF3886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F286D454-C38C-441A-BD7A-C231CEB013AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F286D454-C38C-441A-BD7A-C231CEB013AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F286D454-C38C-441A-BD7A-C231CEB013AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F286D454-C38C-441A-BD7A-C231CEB013AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE3D2F4-F8D2-4C76-94FA-A51FB71215B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE3D2F4-F8D2-4C76-94FA-A51FB71215B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE3D2F4-F8D2-4C76-94FA-A51FB71215B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE3D2F4-F8D2-4C76-94FA-A51FB71215B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

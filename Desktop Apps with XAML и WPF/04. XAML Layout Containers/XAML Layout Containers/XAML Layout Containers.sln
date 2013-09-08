@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. XAML Layout Containers", "XAML Layout Containers\01. XAML Layout Containers.csproj", "{17E8EEC0-88B9-41F1-ACCA-745475DDECB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. XAML Layout Containers", "02.XAML Layout Containers\02. XAML Layout Containers.csproj", "{F4098F87-BF04-43B1-91F9-7BD376CCBDBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Using Tabs", "04. Using Tabs\03. Using Tabs.csproj", "{C58D2B63-7BB8-448F-AA86-8E1BB1E9ED5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.XAML Layout GridSplitter", "04.XAMLLayoutGridSplitter\04.XAML Layout GridSplitter.csproj", "{57477D5C-23C4-4BFF-8D1B-66DC7D4D3346}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E8EEC0-88B9-41F1-ACCA-745475DDECB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E8EEC0-88B9-41F1-ACCA-745475DDECB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E8EEC0-88B9-41F1-ACCA-745475DDECB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E8EEC0-88B9-41F1-ACCA-745475DDECB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4098F87-BF04-43B1-91F9-7BD376CCBDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4098F87-BF04-43B1-91F9-7BD376CCBDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4098F87-BF04-43B1-91F9-7BD376CCBDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4098F87-BF04-43B1-91F9-7BD376CCBDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58D2B63-7BB8-448F-AA86-8E1BB1E9ED5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58D2B63-7BB8-448F-AA86-8E1BB1E9ED5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58D2B63-7BB8-448F-AA86-8E1BB1E9ED5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58D2B63-7BB8-448F-AA86-8E1BB1E9ED5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57477D5C-23C4-4BFF-8D1B-66DC7D4D3346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57477D5C-23C4-4BFF-8D1B-66DC7D4D3346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57477D5C-23C4-4BFF-8D1B-66DC7D4D3346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57477D5C-23C4-4BFF-8D1B-66DC7D4D3346}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
