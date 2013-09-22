@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Asynchronous_Programing_Homework.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Asynchronous_Programing_Homework"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Column="0" Grid.Row="0" Height="50" Width="100" Name="beginingRange"  Text="" />
+        <TextBox Grid.Column="1" Grid.Row="0"  Height="50" Width="100"   Name="endRange"  Text="" />
+        <Button Grid.Column="2" Grid.Row="0" Content="Calcolate" Click="CalculatePrimesClick" HorizontalAlignment="Left" />
+        <ToggleSwitch Grid.Column="3" Grid.Row="0" Name="primeSwitch"></ToggleSwitch>
+        <TextBlock Name="Primes" Grid.Column="5" Grid.Row="0" TextWrapping="Wrap"  Width="1000"></TextBlock>
+
+        <TextBox Grid.Column="0" Grid.Row="1"   Height="50" Width="100" Name="beginingRange2"  Text="" />
+        <TextBox Grid.Column="1" Grid.Row="1"   Height="50" Width="100" Name="endRange2"  Text="" />
+        <Button Grid.Column="2" Grid.Row="1" Content="Calcolate" Click="CalculatePrimesClick2"  HorizontalAlignment="Left" />
+        <ToggleSwitch Grid.Column="3" Grid.Row="1" Name="primeSwitch2"></ToggleSwitch>
+        <TextBlock Name="Primes2" Grid.Column="5" Grid.Row="1" TextWrapping="Wrap"  Width="1000"></TextBlock>
+
+        <TextBox Grid.Column="0" Grid.Row="2"  Height="50" Width="100" Name="beginingRange3"  Text="" />
+        <TextBox Grid.Column="1" Grid.Row="2"  Height="50" Width="100" Name="endRange3"  Text="" />
+        <Button Grid.Column="2" Grid.Row="2" Content="Calcolate" Click="CalculatePrimesClick3"  HorizontalAlignment="Left" />
+        <ToggleSwitch Grid.Column="3" Grid.Row="2" Name="primeSwitch3"></ToggleSwitch>
+        <TextBlock Name="Primes3" Grid.Column="5" Grid.Row="2" TextWrapping="Wrap"  Width="1000"></TextBlock>
+
+    </Grid>
+</Page>

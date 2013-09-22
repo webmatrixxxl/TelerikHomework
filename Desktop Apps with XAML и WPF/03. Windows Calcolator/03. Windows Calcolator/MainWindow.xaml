@@ -35,7 +35,14 @@
                 <LinearGradientBrush x:Key="operationFildStyleGradient" 	SpreadMethod="Pad" ColorInterpolationMode="SRgbLinearInterpolation"   StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="#e5edf8" Offset="0.25" />
                     <GradientStop Color="#ffffff" Offset="0.65" />
-
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="HoverOperationFildStyleGradient" 	SpreadMethod="Pad" ColorInterpolationMode="SRgbLinearInterpolation"     StartPoint="0.5,0" EndPoint="0.5,1" >
+                    <GradientStop Color="#FFFFF0DE" Offset="0.01" />
+                    <GradientStop Color="#FFFBD266" Offset="0.58" />
+                    <GradientStop Color="#FFFFFFCA" Offset="1" />
+                    <GradientStop Color="#FFFFF295" Offset="0.88" />
+                    <GradientStop Color="#FFFFDCC3" Offset="0.57" />
+                    <GradientStop Color="#FFFFF0DE" Offset="0.34" />
                 </LinearGradientBrush>
                 <Style x:Key="DigitBtn"   TargetType="{x:Type Button}">
                     <Style.Triggers>
@@ -51,27 +58,25 @@
                     <Setter Property="FontFamily" Value="sans-serif"></Setter>
                     <!--Tova ne raboti-->
                     <Setter Property="Background" Value="{StaticResource buttonStyleGradient}" />
-                    
+
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-
-                                <Border  CornerRadius="1" BorderBrush="#8e96a1" Background="{StaticResource buttonStyleGradient}"
+                                <Border  x:Name="border" CornerRadius="1" BorderBrush="#8e96a1" Background="{StaticResource buttonStyleGradient}"
                                 BorderThickness="1" >
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
 
                                     </ContentPresenter>
                                 </Border>
-                                
-                                <!--mouse over na koe? na bordera li? mi na butona... to.. i brder stava ako raboti.Tova trqbva daa e za mouse over e kakvo iskash da napravish? mi v momenta iskam da mi raboti mouse over--> 
-                                <!--<ControlTemplate.Triggers>
+                                   
+                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter   Property="Background" Value="Black" />
+                                        <Setter TargetName="border"   Property="Background" Value="{StaticResource HoverOperationFildStyleGradient}" />
+                                        <Setter TargetName="border"   Property="BorderBrush" Value="#e8d554"></Setter>
                                     </Trigger>
-                                </ControlTemplate.Triggers>-->
-
-                                
+                                </ControlTemplate.Triggers>
                             </ControlTemplate>
+                           
                         </Setter.Value>
 
                     </Setter>
@@ -93,6 +98,8 @@
                 <Style x:Key="OperationFild"   TargetType="{x:Type TextBox}">
                     <Setter Property="FontSize" Value="14pt"/>
                     <Setter Property="Margin" Value="0,10,0,0" />
+                    <Setter Property="VerticalContentAlignment" Value="Bottom" />
+                    <Setter Property="HorizontalContentAlignment" Value="Right" />
                     <Setter Property="Background" Value="{StaticResource operationFildStyleGradient}" />
                 </Style>
 
@@ -115,7 +122,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border Grid.RowSpan="2" Grid.ColumnSpan="5">
-                <TextBox Style="{StaticResource OperationFild}"  x:Name="BMemBox"   Width="188" Height="48" Text="xasdsa"  />
+                <TextBox Style="{StaticResource OperationFild}"  x:Name="BMemBox"   Width="188" Height="48" Text=""  />
             </Border>
             <Button Style="{StaticResource DigitBtn}"  x:Name="B7" Grid.Row="4" Content="7"  />
 
